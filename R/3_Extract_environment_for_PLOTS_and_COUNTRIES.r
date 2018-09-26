@@ -230,19 +230,34 @@ rm(MIN_ALT, MAX_ALT, ALT_DIF)
 # ISLAND/MAINLAND  ###
 ######################
 
-# extract plots
-MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
-                 layer = "main_landmasses")
-proj4string(MAINL) <- WGS84
+## OLD APPROACH WHERE TRUE ISLANDS AND SHELF ILANDS WERE ALL LUMPED TOGETHER
+## extract plots
+# MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
+#                 layer = "main_landmasses")
+# proj4string(MAINL) <- WGS84
+# CONTS <- over(x=plots, y=MAINL)
+# is.island <- is.na(CONTS$continent == "<NA>")*1
+# plots@data$ISLAND <- is.island
+# plot(plots, col=plots@data$ISLAND+1); plot(MAINL, add=T)
+## extract countries
+# CONTS <- over(SpatialPoints(coordinates(COUNTR.shp), proj4string=CRS(WGS84)), y=MAINL)
+# COUNTR.shp@data$ISLAND <- is.na(CONTS$continent == "<NA>")*1
 
-CONTS <- over(x=plots, y=MAINL)
-is.island <- is.na(CONTS$continent == "<NA>")*1
-plots@data$ISLAND <- is.island
-plot(plots, col=plots@data$ISLAND+1); plot(MAINL, add=T)
+# --------------------
 
-# extract countries
-CONTS <- over(SpatialPoints(coordinates(COUNTR.shp), proj4string=CRS(WGS84)), y=MAINL)
-COUNTR.shp@data$ISLAND <- is.na(CONTS$continent == "<NA>")*1
+# UPDATED APPROACH SUGGESTED BY HOLGER KREFT, IN WHICH SHELF ISLANDS ARE TREATED
+# AS EFFECTIVELY MAINLANDS
+
+ISLAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/ISLAND_clean.tif")
+ALL.LAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/LAND_clean.tif")
+MAINLAND <- ALL.LAND - ISLAND
+
+is.island.plots <- raster::extract(x = ISLAND, y = plots)
+is.mainl.countr <- raster::extract(x = MAINLAND, y = COUNTR.shp, fun = max)
+is.isl.countr <- as.vector((is.mainl.countr == 0) * 1)
+
+plots@data$ISLAND <- is.island.plots
+COUNTR.shp@data$ISLAND <- is.isl.countr
 
 
 ########################
@@ -287,6 +302,29 @@ writeOGR(obj = COUNTR.shp, dsn = "../Data/COUNTRIES",
          layer = "COUNTRIES_with_environment", 
          driver = "ESRI Shapefile",
          overwrite_layer = TRUE)
+
+
+
+################################################################################
+# Plot islandness raster
+ISL_MAINL <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/ALL_CLASSES_clean.tif")
+ISL_MAINL[ISL_MAINL == 0] <- NA
+
+SHORELINE <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE",
+                     layer = "GSHHS_i_L1")
+
+png("../Figures/islands_shelfs_mainlands.png", width = 2300, height = 1000)
+plot(ISL_MAINL, axes=FALSE, box=FALSE, col=c("#b2df8a", "#a6cee3", "#1f78b4"), legend=FALSE)
+dev.off()
+
+
+
+
+
+
+
+
+
 
 
 

@@ -578,7 +578,49 @@ abline(a=0, b=1)
 
 
 # ------------------------------------------------------------------------------
+# Observed vs predicted values with the full Bayesian uncertainty
 
+pred.REALM.brm <- predict(brm.REALM, type="response", 
+                          newdata = DAT, probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
+pred.REALM.brm <- data.frame(pred.REALM.brm, 
+                             S = DAT$S, 
+                             grain = DAT$DAT_TYPE,
+                             model = "Model REALM")
+
+pred.SMOOTH.brm <- predict(brm.SMOOTH, type="response", 
+                          newdata = DAT, probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
+pred.SMOOTH.brm <- data.frame(pred.SMOOTH.brm,  
+                              S = DAT$S, 
+                              grain = DAT$DAT_TYPE,
+                              model = "Model SMOOTH")
+
+pred.brm <- rbind(pred.REALM.brm, pred.SMOOTH.brm)
+
+
+
+obs.pred.brm <- ggplot(pred.brm, aes(x = S, y = X50.ile)) +
+  geom_linerange(aes(ymin = X2.5.ile, ymax = X97.5.ile, colour = grain), alpha = 0.2) +
+  geom_linerange(aes(ymin = X25.ile, ymax = X75.ile, colour = grain), size=1, alpha = 0.4) +
+  #geom_linerange(aes(ymin = X2.5.ile, ymax = X97.5.ile), colour = "lightgrey") +
+  #geom_linerange(aes(ymin = X25.ile, ymax = X75.ile), colour = "darkgrey", size=1) +
+  geom_point(aes(colour=grain), shape = 1) +
+  #geom_point(colour = "darkgrey", shape = 1) +
+  xlab("log10 Observed S") + ylab("log10 Predicted S") +
+  geom_abline(intercept = 0, slope = 1, colour="black") + theme_bw() +
+  scale_x_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) + 
+  scale_y_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) +
+  facet_grid(.~model) +
+  labs(size = "log10 Area [km]") + labs(colour = "grain") +
+  guides(colour = guide_legend(override.aes = list(size=4, shape=19), title="grain"))
+
+obs.pred.brm
+
+# export the figure
+png("../Figures/Fig_obs_vs_pred.png", width=2000, height=950, res=250)
+obs.pred.brm
+dev.off()
+
+# ------------------------------------------------------------------------------
 # TRACEPLOTS and CATERPILLAR PLOTS of model parameters
 
 pars.REALM <- rownames(data.frame(summary(brm.REALM$fit)[1]))[1:46]
@@ -605,6 +647,12 @@ dev.off()
 
 # this is how to get the data out:
 standata(brm.REALM)
+
+
+# ------------------------------------------------------------------------------
+# CORRELATION MATRIX OF MODEL PARAMETERS
+mcmc_pairs(x = as.mcmc(brm.REALM), pars = c("min_DBH", "ANN_T"))
+
 
 # ------------------------------------------------------------------------------
 # brm.SMOOTH results

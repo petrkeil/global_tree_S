@@ -94,29 +94,74 @@ case.folds <- rep(1:nfolds,length.out=nrow(DAT))
 # divide the cases as evenly as possible
 case.folds <- sample(case.folds) # randomly permute the order
 
+
+# CROSSVALIDATING MODEL SMOOTH
+
+preds <- list()
 par(mfrow=c(2,2))
-for (fold in 1:nfolds) {
-  # What are the training cases and what are the test cases?
+for (fold in 1:nfolds) 
+{
+  print(fold)
+  
   train <- DAT[case.folds!=fold,]
   test <- DAT[case.folds==fold,]
   
   gam.train <- gam(SMOOTH.formula, data=train, family="nb")
-  preds <- predict.gam(gam.train, newdata = test, type="response")
-  plot( log(test$S),log(preds), col=test$DAT_TYPE); abline(a=0, b=1)
+  res <- predict.gam(gam.train, newdata = test, type="response")
+  res <- data.frame(predicted = res,
+                    observed = test$S,
+                    grain = test$DAT_TYPE, 
+                    fold = paste("Fold", fold))
+  preds[[fold]] <- res
 }
 
+preds <- ldply(preds)
+
+SMOOTH.cross <- ggplot(data = preds, aes(x=observed, y=predicted)) +
+                geom_point(aes(colour = grain), shape = 1) +
+                scale_x_continuous(trans = "log10") + 
+                scale_y_continuous(trans = "log10") +
+                facet_grid(.~fold) +
+                geom_abline(intercept = 0, slope = 1) +
+                labs(x = "Observed test S", 
+                     y = "Predicted test S",
+                     title = "Model SMOOTH") +
+                theme_bw()
+SMOOTH.cross
+
+# CROSSVALIDATING MODEL REALM
+preds <- list()
+par(mfrow=c(2,2))
+for (fold in 1:nfolds) 
+{
+  print(fold)
+  
+  train <- DAT[case.folds!=fold,]
+  test <- DAT[case.folds==fold,]
+  
+  gam.train <- gam(REALM.formula, data=train, family="nb")
+  res <- predict.gam(gam.train, newdata = test, type="response")
+  res <- data.frame(predicted = res,
+                    observed = test$S,
+                    grain = test$DAT_TYPE, 
+                    fold = paste("Fold", fold))
+  preds[[fold]] <- res
+}
+
+preds <- ldply(preds)
+
+REALM.cross <- ggplot(data = preds, aes(x=observed, y=predicted)) +
+               geom_point(aes(colour = grain), shape = 1) +
+               scale_x_continuous(trans = "log10") + 
+               scale_y_continuous(trans = "log10") +
+               facet_grid(.~fold) +
+               geom_abline(intercept = 0, slope = 1) +
+               labs(x = "Observed test S", y = "Predicted test S",
+                    title = "Model REALM") +
+               theme_bw()
+REALM.cross
 
 
-################################################################################ 
-# 3. FIT THE TRAINING MODELS
-################################################################################
-
-gam.REALM <- gam(REALM.formula, data=DAT, family="nb")
-summary(gam.REALM)
-save(gam.REALM, file="../STAN_models/gam_REALM.Rdata")
-
-
-gam.SMOOTH <- gam(SMOOTH.formula, data = DAT, family="nb")
-summary(gam.SMOOTH)
-save(gam.SMOOTH, file="../STAN_models/gam_SMOOTH.Rdata")
-
+png("../Figures/Fig_crossvalidation.png", width=2500, height=1450, res=250)
+  grid.arrange(REALM.cross, SMOOTH.cross, ncol=1, nrow=2)
+dev.off()

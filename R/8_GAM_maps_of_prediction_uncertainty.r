@@ -74,10 +74,9 @@ grid.pred.S.brm <- data.frame(predict(brm.SMOOTH,
 
 names(grid.pred.S.brm)[1] <- "S"
 grid.pred.S.brm <- data.frame(grid.pred.S.brm, 
-                              ratio.95 = grid.pred.S.brm$X97.5.ile / grid.pred.S.brm$X2.5.ile)
+                              ratio.95 = grid.pred.S.brm$X97.5.ile / grid.pred.S.brm$X2.5.ile,
+                              std.diff = (grid.pred.S.brm$X97.5.ile - grid.pred.S.brm$X2.5.ile) / grid.pred.S.brm$X50.ile )
   
-plot(log10(ratio.95)~S, data = grid.pred.S.brm)
-
 
 # merge with the original grid
 grid5@data <- data.frame(grid5@data, grid.pred.S.brm)
@@ -102,11 +101,12 @@ plot.pred.S.brm <- predict(brm.SMOOTH,
                            newdata = pts, 
                            type="response",
                            probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
-plot.pred.S.brm <- as.data.frame(plot.pred.S.brm)
+plot.pred.S.brm <- data.frame(plot.pred.S.brm)
 
 names(plot.pred.S.brm)[1] <- "S"
 plot.pred.S.brm <- data.frame(plot.pred.S.brm, 
-                              ratio.95 = plot.pred.S.brm$`97.5%ile` / plot.pred.S.brm$`2.5%ile`)
+                              ratio.95 = plot.pred.S.brm$X97.5.ile / plot.pred.S.brm$X2.5.ile,
+                              std.diff = (plot.pred.S.brm$X97.5.ile - plot.pred.S.brm$X2.5.ile) / plot.pred.S.brm$X50.ile)
 
 
 
@@ -180,6 +180,45 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      plot.title = element_text(face=quote(bold)))
 
 # ------------------------------------------------------------------------------
+# plot the standardized difference
+
+plot.gr.diff <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
+  geom_polygon(data=LINES,  aes(long, lat, group=group), 
+               colour="darkgrey", size=0.2) +
+  geom_polygon(data=MAINL, aes(long, lat, group=group), 
+               fill="white", colour=NA, size=.2) +
+  geom_polygon(aes(fill=std.diff)) + 
+  geom_polygon(data=MAINL, aes(long, lat, group=group), 
+               fill=NA, colour="black", size=.2) +
+  scale_fill_distiller(palette = "Spectral") +
+  scale_x_continuous(limits = c(-12000000, 16000000)) +
+  scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
+  xlab("") + ylab("") +
+  labs(subtitle = expression(paste((q[97.5] - q[2.5]) / q[50])), title="k") +
+    theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
+  
+plot.gr.diff
+
+
+plot.pl.diff <- ggplot(MAINL, aes(long, lat, group=group)) +
+  geom_polygon(data=LINES,  aes(long, lat, group=group), 
+               colour="darkgrey", size=0.2) +
+  geom_polygon(colour=NA, fill="white", size=.2) + 
+  geom_point(data=plot.preds.ml, size=0.01,
+             aes(x=X, y=Y, group=NULL, colour=std.diff))  +
+  geom_polygon(colour="black", fill=NA, size=.2) + 
+  scale_colour_distiller(palette = "Spectral") +
+  scale_x_continuous(limits = c(-12000000, 16000000)) +
+  scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
+  xlab("") + ylab("") +
+  labs(subtitle = expression(paste((q[97.5] - q[2.5]) / q[50])), title="l") +
+  theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
+
+plot.pl.diff
+
+# ------------------------------------------------------------------------------
+
+
 
 plot.gr.high <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
@@ -190,15 +229,14 @@ plot.gr.high <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
   scale_fill_distiller(palette = "Spectral", 
-                       name=expression(S[hex]), 
                        limits=c(1,max(grid5.mlf$X97.5.ile)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = "97.5% quantile", title="a") +
+  labs(subtitle = expression(q[97.5]), title="a") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
-#plot.gr.high
+plot.gr.high
 
 # predicted S in hexagons
 plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
@@ -209,14 +247,13 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=X50.ile)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral", 
-                       name=expression(S[hex]), 
+  scale_fill_distiller(palette = "Spectral",
                        limits=c(1,max(grid5.mlf$X97.5.ile)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = "50% quantile", title="c") +
+  labs(subtitle = expression(q[50]), title="c") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 #plot.gr.S
 
@@ -229,13 +266,12 @@ plot.gr.low <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
   scale_fill_distiller(palette = "Spectral", 
-                       name=expression(S[hex]), 
                        limits=c(1,max(grid5.mlf$X97.5.ile)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = "2.5% quantile", title="e") +
+  labs(subtitle = expression(q[2.5]), title="e") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 #plot.gr.low
 
@@ -257,7 +293,7 @@ plot.pl.high <- ggplot(MAINL, aes(long, lat, group=group)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = "97.5% quantile", title="b") +
+  labs(subtitle = expression(q[97.5]), title="b") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 
 #plot.pl.high
@@ -276,7 +312,7 @@ plot.pl.S <- ggplot(MAINL, aes(long, lat, group=group)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = "50% quantile", title="d") +
+  labs(subtitle = expression(q[50]), title="d") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 
 #plot.pl.S 
@@ -295,7 +331,7 @@ plot.pl.low <- ggplot(MAINL, aes(long, lat, group=group)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = "2.5% quantile", title="f") +
+  labs(subtitle = expression(q[2.5]), title="f") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 
 #plot.pl.low
@@ -372,20 +408,22 @@ rank.pl.log <- ggplot(data = plot.rank, aes(x = order(X50.ile), y = X50.ile)) +
 
 # write to file
 
-lay <- matrix(nrow=4, ncol=4, byrow = TRUE,
+lay <- matrix(nrow=5, ncol=4, byrow = TRUE,
               c(1,1,2,2,
                 3,3,4,4,
                 5,5,6,6,
-                7,8,9,10))
+                7,8,9,10,
+                11, 11, 12, 12))
 
-tiff("../Figures/Fig_maps_of_uncertainty.tif", width=4000, height=4400, res=350,
+tiff("../Figures/Fig_maps_of_uncertainty.tif", width=4000, height=5400, res=350,
      compression = "lzw")
   grid.arrange(plot.gr.high, plot.pl.high,
                plot.gr.S, plot.pl.S,
                plot.gr.low, plot.pl.low,
                rank.gr.lin, rank.gr.log, rank.pl.lin, rank.pl.log, 
+               plot.gr.diff, plot.pl.diff,
                layout_matrix = lay,
-               heights = c(1,1,1,0.8)) 
+               heights = c(1,1,1,0.8, 1)) 
 dev.off()
 
 

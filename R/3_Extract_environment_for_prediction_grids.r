@@ -27,7 +27,7 @@ proj4string(MAINL) <- WGS84
 # ------------------------------------------------------------------------------
 # LOAD THE HEXAGONAL GRID THAT WILL BE USED FOR PREDICTIONS
 
-grid5 <- readOGR(dsn="../Data/Grids", layer = "hex5")
+grid5 <- readOGR(dsn="../Data/GRIDS", layer = "hex5")
 grid5 <- spTransform(grid5, CRSobj = WGS84)
 gr.coords <- data.frame(coordinates(grid5))
 names(gr.coords) <- c("Lon", "Lat")
@@ -36,7 +36,7 @@ grid5@data <- data.frame(grid5@data, gr.coords)
 
 # read a global 10X10 km raster on annual temperature (will be used to create a grid)
 # and convert it to a global raster of 10x10km cells with area of each cell
-RAST <- raster("../Data/Global_rasters_10km/ANN_T10.tif")
+RAST <- raster("../Data/GRIDS/ANN_T10.tif")
 RAST[is.na(RAST) == FALSE] <- 1
 RAST.area <- raster::area(RAST)
 RAST.area <- RAST.area * RAST
@@ -69,7 +69,7 @@ grid5@data <- data.frame(grid5@data,
 # ------------------------------------------------------------------------------
 # LOAD THE POINTS THAT WILL BE USED FOR PREDICTIONS
 
-pt.coords <- read.csv(file="../Data/Grids/Fine_points.csv")
+pt.coords <- read.csv(file="../Data/GRIDS/Fine_points.csv")
 pts <- SpatialPointsDataFrame(pt.coords, 
                               proj4string=CRS(WGS84),
                               data=data.frame(ptID = paste("pt", 1:nrow(pt.coords), sep="")))
@@ -284,29 +284,42 @@ rm(MIN_ALT, MAX_ALT, ALT_DIF)
 # ISLAND/MAINLAND  ###
 ######################
 
-MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
+## OLD APPROACH WHERE TRUE ISLANDS AND SHELF ILANDS WERE ALL LUMPED TOGETHER
+# MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
                  layer = "main_landmasses")
-proj4string(MAINL) <- WGS84
+# proj4string(MAINL) <- WGS84
+## extract points for predictions
+# CONTS <- over(x=pts, y=MAINL)
+# is.island <- is.na(CONTS$continent == "<NA>")*1
+# pts@data$ISLAND <- is.island
+# plot(pts, col=pts@data$ISLAND+1); plot(MAINL, add=T)
+## calculate the ISLAND status of the hexagonal cells
+# hexISL <- 1 - grid5$MainlArea/grid5$LandArea
+# hexISL <- ifelse(hexISL > 0.9, 1, 0)
+# grid5@data <- data.frame(grid5@data, ISLAND=hexISL)
 
-# extract points for predictions
-CONTS <- over(x=pts, y=MAINL)
-is.island <- is.na(CONTS$continent == "<NA>")*1
-pts@data$ISLAND <- is.island
-plot(pts, col=pts@data$ISLAND+1); plot(MAINL, add=T)
 
-# calculate the ISLAND status of the hexagonal cells
-hexISL <- 1 - grid5$MainlArea/grid5$LandArea
-hexISL <- ifelse(hexISL > 0.9, 1, 0)
-grid5@data <- data.frame(grid5@data, ISLAND=hexISL)
+# UPDATED APPROACH SUGGESTED BY HOLGER KREFT, IN WHICH SHELF ISLANDS ARE TREATED
+# AS EFFECTIVELY MAINLANDS
 
+ISLAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/ISLAND_clean.tif")
+ALL.LAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/LAND_clean.tif")
+MAINLAND <- ALL.LAND - ISLAND
+
+is.island.plots <- raster::extract(x = ISLAND, y = pts)
+is.mainl.hex <- raster::extract(x = MAINLAND, y = grid5, fun = max)
+is.isl.hex <- as.vector((is.mainl.hex == 0) * 1)
+
+pts@data$ISLAND <- is.island.plots
+grid5@data$ISLAND <- is.isl.hex
 
 
 ################################################################################
 # EXPORT THE DATA
 
-write.csv(pts@data, file="../Data/Grids/Fine_points_with_environment.csv", row.names = FALSE)
+write.csv(pts@data, file="../Data/GRIDS/Fine_points_with_environment.csv", row.names = FALSE)
 
-writeOGR(obj = grid5, dsn = "../Data/Grids", 
+writeOGR(obj = grid5, dsn = "../Data/GRIDS", 
          layer = "hex5_with_environment", 
          driver = "ESRI Shapefile",
          overwrite_layer = TRUE)

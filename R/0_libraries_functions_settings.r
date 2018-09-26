@@ -60,3 +60,26 @@ WGS84 <- "+proj=longlat +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +no_defs"
 LAMBERT <- "+proj=cea +lon_0=Central Meridian +lat_ts=Standard Parallel +x_0=False Easting +y_0=False Northing"
 MOLLWEIDE <- "+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
 ROBINSON <- "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+
+# ------------------------------------------------------------------------------
+# Blank theme for ggplot2
+
+# Set the minimalist theme for the plotting
+blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
+                     axis.text.y=element_blank(),axis.ticks=element_blank(),
+                     axis.title.x=element_blank(),
+                     axis.title.y=element_blank(),
+                     legend.position=c(0.63, 0.09),
+                     legend.direction = "horizontal",
+                     legend.title = element_blank(),
+                     legend.title.align = 0,
+                     #plot.title = element_text(hjust = 0),
+                     plot.subtitle = element_text(vjust=-3),
+                     panel.background=element_blank(),
+                     panel.border=element_blank(),panel.grid.major=element_blank(),
+                     panel.grid.minor=element_blank(),plot.background=element_blank(),
+                     plot.title = element_text(face=quote(bold)))
+
+
+
+

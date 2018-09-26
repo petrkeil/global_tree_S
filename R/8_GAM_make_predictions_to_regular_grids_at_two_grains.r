@@ -172,14 +172,13 @@ grid5.mlf <- left_join(x=grid5.mlf, y=grid5.ml@data, by="id")
   LINES <- tidy(LINES, region="name")
 
 
-# Set the minimalist theme for the plotting
 blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      axis.text.y=element_blank(),axis.ticks=element_blank(),
                      axis.title.x=element_blank(),
                      axis.title.y=element_blank(),
                      legend.position=c(0.63, 0.09),
                      legend.direction = "horizontal",
-                     legend.title = element_blank(),
+                     # legend.title = element_blank(),
                      legend.title.align = 0,
                      #plot.title = element_text(hjust = 0),
                      plot.subtitle = element_text(vjust=-3),
@@ -188,6 +187,7 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      panel.grid.minor=element_blank(),plot.background=element_blank())
 
 
+  
 # predicted S in hexagons
 plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
