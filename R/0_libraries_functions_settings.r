@@ -61,6 +61,10 @@ LAMBERT <- "+proj=cea +lon_0=Central Meridian +lat_ts=Standard Parallel +x_0=Fal
 MOLLWEIDE <- "+proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
 ROBINSON <- "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
 
+# Equidistant Azimuthal Projection
+AED <- "+proj=aeqd +lat_0=0 +lon_0=0 +x_0=100000 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+
+
 # ------------------------------------------------------------------------------
 # Blank theme for ggplot2
 
@@ -79,6 +83,42 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      panel.border=element_blank(),panel.grid.major=element_blank(),
                      panel.grid.minor=element_blank(),plot.background=element_blank(),
                      plot.title = element_text(face=quote(bold)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
