@@ -285,21 +285,21 @@ rm(MIN_ALT, MAX_ALT, ALT_DIF)
 ######################
 
 ## OLD APPROACH WHERE TRUE ISLANDS AND SHELF ILANDS WERE ALL LUMPED TOGETHER
-# MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
+ MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
                  layer = "main_landmasses")
-# proj4string(MAINL) <- WGS84
-## extract points for predictions
-# CONTS <- over(x=pts, y=MAINL)
-# is.island <- is.na(CONTS$continent == "<NA>")*1
-# pts@data$ISLAND <- is.island
-# plot(pts, col=pts@data$ISLAND+1); plot(MAINL, add=T)
-## calculate the ISLAND status of the hexagonal cells
-# hexISL <- 1 - grid5$MainlArea/grid5$LandArea
-# hexISL <- ifelse(hexISL > 0.9, 1, 0)
-# grid5@data <- data.frame(grid5@data, ISLAND=hexISL)
+ MAINL <- spTransform(MAINL,  CRSobj = WGS84)
+# extract points for predictions
+ CONTS <- over(x=pts, y=MAINL)
+ is.island <- is.na(CONTS$continent == "<NA>")*1
+ pts@data$ISLAND <- is.island
+ plot(pts, col=pts@data$ISLAND+1); plot(MAINL, add=T)
+# calculate the ISLAND status of the hexagonal cells
+ hexISL <- 1 - grid5$MainlArea/grid5$LandArea
+ hexISL <- ifelse(hexISL > 0.9, 1, 0)
+ grid5@data <- data.frame(grid5@data, ISLAND=hexISL)
 
 
-# UPDATED APPROACH SUGGESTED BY HOLGER KREFT, IN WHICH SHELF ISLANDS ARE TREATED
+# UPDATED APPROACH IN WHICH SHELF ISLANDS ARE TREATED
 # AS EFFECTIVELY MAINLANDS
 
 ISLAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/ISLAND_clean.tif")
@@ -307,11 +307,12 @@ ALL.LAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/LAND_cl
 MAINLAND <- ALL.LAND - ISLAND
 
 is.island.plots <- raster::extract(x = ISLAND, y = pts)
+is.island.plots <- ifelse(is.island.plots == 1, "island", "mainland")
+pts@data$INSULARITY <- is.island.plots
+
 is.mainl.hex <- raster::extract(x = MAINLAND, y = grid5, fun = max)
 is.isl.hex <- as.vector((is.mainl.hex == 0) * 1)
-
-pts@data$ISLAND <- is.island.plots
-grid5@data$ISLAND <- is.isl.hex
+grid5@data$INSULARITY <- is.isl.hex
 
 
 ################################################################################

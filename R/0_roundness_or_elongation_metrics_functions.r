@@ -11,7 +11,7 @@ library(car) # another one for ellipses
 # and calculates its elongation based on the ratio of the first two
 # eigenvalues of a Principal Coordinate Analysis of its ***borders***.
 
-# Arguments: pol - the polygon
+# Arguments: pol - the polygon (WGS84 projection)
 #            draw - should the polygon be plotted?
 
 elongation.sample <- function(pol, draw = FALSE)
@@ -53,7 +53,7 @@ elongation.sample <- function(pol, draw = FALSE)
 # eigenvalues of a Principal Coordinate Analysis of an ***ellipsoid hull***
 # fitted around the borders.
 
-# Arguments: pol - the polygon
+# Arguments: pol - the polygon (WGS84 projection)
 #            draw - should the polygon be plotted?
 
 elongation.ellipse <- function(pol, draw = FALSE)

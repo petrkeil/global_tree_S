@@ -30,7 +30,7 @@ plots <- SpatialPointsDataFrame(coords=data.frame(PLOTS$Lon, PLOTS$Lat),
 
 # read the COUNTRY data (as a shapefile with data in the attribute table)
 COUNTR.shp <- readOGR(dsn="../Data/COUNTRIES", layer = "COUNTRIES")
-proj4string(COUNTR.shp) <- WGS84
+COUNTR.shp <- spTransform(x = COUNTR.shp, CRSobj = WGS84)
 
 
 # ------------------------------------------------------------------------------
@@ -227,37 +227,57 @@ COUNTR.shp@data$ALT_DIF <- MAX_ALT_CN - MIN_ALT_CN
 rm(MIN_ALT, MAX_ALT, ALT_DIF)
 
 ######################
-# ISLAND/MAINLAND  ###
+# INSULARITY       ###
 ######################
 
 ## OLD APPROACH WHERE TRUE ISLANDS AND SHELF ILANDS WERE ALL LUMPED TOGETHER
 ## extract plots
-# MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
-#                 layer = "main_landmasses")
-# proj4string(MAINL) <- WGS84
-# CONTS <- over(x=plots, y=MAINL)
-# is.island <- is.na(CONTS$continent == "<NA>")*1
-# plots@data$ISLAND <- is.island
-# plot(plots, col=plots@data$ISLAND+1); plot(MAINL, add=T)
+ MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
+                 layer = "main_landmasses")
+ MAINL <- spTransform(MAINL,  CRSobj = WGS84)
+ CONTS <- over(x=plots, y=MAINL)
+ is.island <- is.na(CONTS$continent == "<NA>")*1
+ plots@data$ISLAND <- is.island
+ plot(plots, col=plots@data$ISLAND+1); plot(MAINL, add=T)
 ## extract countries
-# CONTS <- over(SpatialPoints(coordinates(COUNTR.shp), proj4string=CRS(WGS84)), y=MAINL)
-# COUNTR.shp@data$ISLAND <- is.na(CONTS$continent == "<NA>")*1
+ CONTS <- over(SpatialPoints(coordinates(COUNTR.shp), proj4string=CRS(WGS84)), y=MAINL)
+ COUNTR.shp@data$ISLAND <- is.na(CONTS$continent == "<NA>")*1
 
-# --------------------
+# ----------------------
 
-# UPDATED APPROACH SUGGESTED BY HOLGER KREFT, IN WHICH SHELF ISLANDS ARE TREATED
+# UPDATED APPROACH, IN WHICH SHELF ISLANDS ARE TREATED
 # AS EFFECTIVELY MAINLANDS
 
 ISLAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/ISLAND_clean.tif")
 ALL.LAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/LAND_clean.tif")
 MAINLAND <- ALL.LAND - ISLAND
 
-is.island.plots <- raster::extract(x = ISLAND, y = plots)
-is.mainl.countr <- raster::extract(x = MAINLAND, y = COUNTR.shp, fun = max)
-is.isl.countr <- as.vector((is.mainl.countr == 0) * 1)
+# plots
+is.mainland.plots <- raster::extract(x = MAINLAND, y = plots)
+is.island.plots <- ifelse(is.mainland.plots == 1, "mainland", "island")
+plots@data$INSULARITY <- is.island.plots
 
-plots@data$ISLAND <- is.island.plots
-COUNTR.shp@data$ISLAND <- is.isl.countr
+# manually extracted values for COUNTRIES
+is.isl.countr <- read.csv("../Data/COUNTRIES/A_Insularity_COUNTRIES.csv")[,c("NAME","INSULARITY")]
+COUNTR.shp@data <- dplyr::left_join(COUNTR.shp@data, is.isl.countr, by="NAME")
+
+
+
+########################
+# ELONGATION         ###
+########################
+
+source("0_roundness_or_elongation_metrics_functions.r")
+
+elong.cntr <- vector()
+
+for(i in 1:nrow(COUNTR.shp))
+{
+  cat("*")
+  pol <- COUNTR.shp[i,]  
+  elong.cntr[i] <- round(elongation.sample(pol), 3)
+}
+COUNTR.shp@data <- data.frame(COUNTR.shp@data, ELONGATION = elong.cntr)
 
 
 ########################
@@ -279,12 +299,14 @@ COUNTR.shp@data <- data.frame(COUNTR.shp@data,
                               HABITAT=REGS.OVER$WWF_MHTNAM,
                               REALM = REGS.OVER$WWF_REALM2)
 
+
+
 ########################
 # PETR's REGIONS     ###
 ########################
 
 # extract plots
-PK_REGS <- read.csv("../Data/COUNTRIES/realm_classification_PK.csv")
+PK_REGS <- read.csv("../Data/COUNTRIES/A_Realm_classification_COUNTRIES.csv")
 COUNTR.shp <- sp::merge(x=COUNTR.shp, y=PK_REGS, by="NAME", all.x=TRUE)
 
 # extract countries

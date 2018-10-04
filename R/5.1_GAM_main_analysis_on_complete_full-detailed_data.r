@@ -33,7 +33,7 @@ PLT$Tree_dens <- (PLT$N + 1) / PLT$Area_km
 # select only the variables of interest from the larger data.frame
 DAT <- dplyr::select(PLT, S, Area_km, Tree_dens, min_DBH=min_DBH_cm, 
                      GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                     ISLAND, REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
+                     INSULARITY, ELONGATION, REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
 
 # order the data frame by regions and area
 DAT <- DAT[order(DAT$REALM),]
@@ -48,6 +48,9 @@ DAT <- DAT[rowSums(is.na(DAT)) == 0,]
 # mean and sd of Area (will be used later to bring these to their origina scale)
 A.mean <- mean(DAT$Area_km)
 A.sd <- sd(DAT$Area_km)
+
+# see column names and their numbers
+data.frame(names(DAT))
 
 # means and sd of the rest of the variables
 centr <- attributes(scale(DAT[,2:12]))$'scaled:center'
@@ -73,7 +76,9 @@ REALM.formula <- S ~ REALM + poly(Area_km,3):REALM +
                      MIN_P + MIN_P:Area_km +  
                      P_SEAS + P_SEAS:Area_km + 
                      ALT_DIF + ALT_DIF:Area_km +
-                     ISLAND + ISLAND:Area_km
+                     INSULARITY + INSULARITY:Area_km +
+                     ELONGATION + ELONGATION:Area_km
+                     
   
 
 SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
@@ -86,7 +91,8 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
                       MIN_P + MIN_P:Area_km +  
                       P_SEAS + P_SEAS:Area_km + 
                       ALT_DIF + ALT_DIF:Area_km +
-                      ISLAND + ISLAND:Area_km
+                      INSULARITY + INSULARITY:Area_km +
+                      ELONGATION + ELONGATION:Area_km
 
 
 

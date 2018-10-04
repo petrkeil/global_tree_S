@@ -1,4 +1,4 @@
-Lat	Lon	Area_ha	Elongation	S	N	min_DBH_cm	Tree_def	Notes	Numerical_ID	Plot_ID	Dataset	Ref_short	Ref_long
+Lat	Lon	Area_ha	ELONGATION	S	N	min_DBH_cm	Tree_def	Notes	Numerical_ID	Plot_ID	Dataset	Ref_short	Ref_long
 18.667	108.833	1	1	171	1024	5	trees	NA	1	FH1	Fang_Hainan	Fang et al. 2004	Fang et al. (2004) Community structures and species richness in the montane rain forest of Jianfengling, Hainan Island, China. Biodiversity Science 12: 29-43.
 21.95	101.2	1	1	106	393	10	trees	NA	2	Lu_Menglun	Lu_SW_China	Lu et al. 2010	Lu et al. (2010) Structure, tree species diversity and composition of tropical seasonal rainforests in Xishuangbanna, south-west China. Journal of Tropical Forest Science 22: 260-270.
 21.533	101.55	1	1	94	423	10	trees	NA	3	Lu_Mengla	Lu_SW_China	Lu et al. 2010	Lu et al. (2010) Structure, tree species diversity and composition of tropical seasonal rainforests in Xishuangbanna, south-west China. Journal of Tropical Forest Science 22: 260-270.
