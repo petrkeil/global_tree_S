@@ -58,7 +58,8 @@ PLOTS <- dplyr::select(PLOTS, Dataset, Loc_ID = Plot_ID, Lat, Lon,
                        Area_km = Area_ha,
                        S, N, min_DBH_cm, GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, 
                        P_SEAS, 
-                       ALT_DIF, INSULARITY, ELONGATION, HABITAT, REALM, REALM_PK = REALM_PK)
+                       ALT_DIF, ISLAND, INSULARITY, ELONGATION, 
+                       HABITAT, REALM, REALM_PK = REALM_PK)
 PLOTS$Area_km <- PLOTS$Area_km/100
 PLOTS <- data.frame(PLOTS, DAT_TYPE="Plot")
 PLOTS <- na.omit(PLOTS)
@@ -69,7 +70,8 @@ PLOTS.subset <- dplyr::select(PLOTS.subset, Dataset, Loc_ID = Plot_ID, Lat, Lon,
                        Area_km = Area_ha,
                        S, N, min_DBH_cm, GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, 
                        P_SEAS, 
-                       ALT_DIF, INSULARITY, ELONGATION, HABITAT, REALM, REALM_PK = REALM_PK)
+                       ALT_DIF, ISLAND, INSULARITY, ELONGATION, 
+                       HABITAT, REALM, REALM_PK = REALM_PK)
 PLOTS.subset$Area_km <- PLOTS.subset$Area_km/100
 PLOTS.subset <- data.frame( PLOTS.subset, DAT_TYPE="Plot")
 PLOTS.subset <- na.omit(PLOTS.subset)
@@ -83,7 +85,8 @@ PLOTS.subset <- na.omit(PLOTS.subset)
 CNTRS.dat <- dplyr::select(CNTRS@data, Aggregated, Dataset, Loc_ID = NAME, Lat, Lon, Area_km,
                             S, N = TREE_DENS, min_DBH_cm, GPP, ET, ANN_T, WARM_T, 
                             ISO_T, MIN_P, P_SEAS, 
-                            ALT_DIF, INSULARITY, ELONGATION, HABITAT, REALM, REALM_PK = REALM_3)
+                            ALT_DIF, ISLAND, INSULARITY, ELONGATION, 
+                           HABITAT, REALM, REALM_PK = REALM_3)
 CNTRS.dat <- data.frame(CNTRS.dat, DAT_TYPE="Country")
 
 

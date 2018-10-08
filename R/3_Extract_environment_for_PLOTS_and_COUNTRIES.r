@@ -231,18 +231,22 @@ rm(MIN_ALT, MAX_ALT, ALT_DIF)
 ######################
 
 ## OLD APPROACH WHERE TRUE ISLANDS AND SHELF ILANDS WERE ALL LUMPED TOGETHER
-## extract plots
+ 
+ ## extract plots
  MAINL <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE", 
                  layer = "main_landmasses")
  MAINL <- spTransform(MAINL,  CRSobj = WGS84)
  CONTS <- over(x=plots, y=MAINL)
  is.island <- is.na(CONTS$continent == "<NA>")*1
- plots@data$ISLAND <- is.island
- plot(plots, col=plots@data$ISLAND+1); plot(MAINL, add=T)
-## extract countries
+ plots@data$ISL_LS <- ifelse(is.island == 1, "island", "mainland")
+ 
+ 
+ ## extract countries
  CONTS <- over(SpatialPoints(coordinates(COUNTR.shp), proj4string=CRS(WGS84)), y=MAINL)
- COUNTR.shp@data$ISLAND <- is.na(CONTS$continent == "<NA>")*1
+ is.island <- is.na(CONTS$continent == "<NA>")*1
+ COUNTR.shp@data$ISL_LS <- ifelse(is.island == 1, "island", "mainland")
 
+ 
 # ----------------------
 
 # UPDATED APPROACH, IN WHICH SHELF ISLANDS ARE TREATED
@@ -250,15 +254,28 @@ rm(MIN_ALT, MAX_ALT, ALT_DIF)
 
 ISLAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/ISLAND_clean.tif")
 ALL.LAND <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/LAND_clean.tif")
-MAINLAND <- ALL.LAND - ISLAND
+LAND_AND_SHELF <- ALL.LAND - ISLAND
 
 # plots
-is.mainland.plots <- raster::extract(x = MAINLAND, y = plots)
+is.mainland.plots <- raster::extract(x = LAND_AND_SHELF , y = plots)
 is.island.plots <- ifelse(is.mainland.plots == 1, "mainland", "island")
-plots@data$INSULARITY <- is.island.plots
+plots@data$ISLAND_ST <- is.island.plots
 
 # manually extracted values for COUNTRIES
-is.isl.countr <- read.csv("../Data/COUNTRIES/A_Insularity_COUNTRIES.csv")[,c("NAME","INSULARITY")]
+is.isl.countr <- read.csv("../Data/COUNTRIES/A_Insularity_COUNTRIES.csv")[,c("NAME","ISL_ST")]
+COUNTR.shp@data <- dplyr::left_join(COUNTR.shp@data, is.isl.countr, by="NAME")
+
+
+# YET ANOTHER APPROACH, IN WHICH SHELF ISLANDS ARE TREATED
+# AS EFFECTIVELY MAINLANDS, AND DISJUNCT COUNTRIES ARE ALSO FLAGGED
+
+# plots
+is.mainland.plots <- raster::extract(x = LAND_AND_SHELF , y = plots)
+is.island.plots <- ifelse(is.mainland.plots == 1, "mainland", "island")
+plots@data$ISL_DIS <- is.island.plots
+
+# manually extracted values for COUNTRIES
+is.isl.countr <- read.csv("../Data/COUNTRIES/A_Insularity_COUNTRIES.csv")[,c("NAME","ISL_DIS")]
 COUNTR.shp@data <- dplyr::left_join(COUNTR.shp@data, is.isl.countr, by="NAME")
 
 
@@ -277,7 +294,7 @@ for(i in 1:nrow(COUNTR.shp))
   pol <- COUNTR.shp[i,]  
   elong.cntr[i] <- round(elongation.sample(pol), 3)
 }
-COUNTR.shp@data <- data.frame(COUNTR.shp@data, ELONGATION = elong.cntr)
+COUNTR.shp@data <- data.frame(COUNTR.shp@data, ELONG = elong.cntr)
 
 
 ########################

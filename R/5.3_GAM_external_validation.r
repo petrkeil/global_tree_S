@@ -8,6 +8,7 @@ source("0_libraries_functions_settings.r")
 # read the data
 grid5 <- readOGR(dsn = "../Data/GRIDS", layer = "hex5_with_environment")
 grid5 <- spTransform(x = grid5, CRSobj = WGS84)
+grid5@data <- data.frame(grid5@data, ELONGATION = 1)
 
 # -----------------------------------------
 
@@ -19,7 +20,7 @@ grid5@data <- data.frame(grid5@data, min_DBH = 0, DAT_TYPE = "Country")
 
 grid5.dat <- dplyr::select(grid5@data, Area_km = LandArea, Tree_dens, min_DBH,
                            GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                           ISLAND, Lat, Lon, DAT_TYPE) %>%
+                           INSULARITY, ELONGATION, Lat, Lon, DAT_TYPE) %>%
   mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
 
 # get the scaling constants that were used to scale the raw plot and country data:
@@ -44,8 +45,8 @@ BI <- read.csv("../Data/VALIDATION/BIEN_woody_grid5.csv")
 
 # load the saved SMOOTH model that will be used for the global predictions
 library(mgcv)
-load("../STAN_models/gam_SMOOTH.Rdata")
-load("../STAN_models/brms_SMOOTH.RData")
+load("../Models/gam_SMOOTH.Rdata")
+load("../Models/brms_SMOOTH.RData")
 
 ################################################################################
 ### Predictions in hexagons
