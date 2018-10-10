@@ -25,44 +25,51 @@ grid5 <- spTransform(x = grid5, CRSobj = WGS84)
 # -----------------------------------------
 
 pts$Tree_dens <- (pts$TREE_DENS + 1) / pts$A # calculate tree density (note the x+1 step!!)
-pts <- data.frame(pts, Area_km = 0.01, min_DBH = 0, DAT_TYPE = "Plot")
+pts <- data.frame(pts, 
+                  Area_km = 0.01, 
+                  min_DBH = 0, 
+                  ELONG = 1,
+                  DAT_TYPE = "Plot")
 
 # tree density at the grid level
 grid5$Tree_dens <- (grid5$TREE_DENS + 1) / grid5$LandArea
-grid5@data <- data.frame(grid5@data, min_DBH = 0, DAT_TYPE = "Country")
+grid5@data <- data.frame(grid5@data, 
+                         min_DBH = 0, 
+                         ELONG = 1,
+                         DAT_TYPE = "Country")
 
 # -----------------------------------------
 
 pts <- dplyr::select(pts, Area_km, Tree_dens, min_DBH, 
-                     GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                     ISLAND, Lat, Lon, DAT_TYPE) %>%
-              mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
+                     GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONG,
+                     ISLAND = ISL_LS, Lat, Lon, DAT_TYPE) %>%
+  mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
 
 grid5.dat <- dplyr::select(grid5@data, Area_km = LandArea, Tree_dens, min_DBH,
-                           GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                           ISLAND, Lat, Lon, DAT_TYPE) %>%
-                    mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
+                           GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONG,
+                           ISLAND = ISL_LS, Lat, Lon, DAT_TYPE) %>%
+  mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
 
 # get the scaling constants that were used to scale the raw plot and country data:
 scal.tab <- read.csv("scale_tab.csv")
 scal.tab <- scal.tab[scal.tab$var %in% c("ET","WARM_T") == FALSE,]
 
 # scale the grid data in the same way as the original data
-pts[,1:9] <- scale(pts[,1:9],
-                   center = scal.tab$centr, 
-                   scale = scal.tab$scale)
+pts[,1:10] <- scale(pts[,1:10],
+                    center = scal.tab$centr, 
+                    scale = scal.tab$scale)
 
-grid5.dat[,1:9] <- scale(grid5.dat[,1:9],
-                   center = scal.tab$centr, 
-                   scale = scal.tab$scale)
+grid5.dat[,1:10] <- scale(grid5.dat[,1:10],
+                          center = scal.tab$centr, 
+                          scale = scal.tab$scale)
 
 ################################################################################
 ### Make the predictions
 
 # load the saved SMOOTH model that will be used for the global predictions
 library(mgcv)
-load("../STAN_models/gam_SMOOTH.Rdata")
-load("../STAN_models/brms_SMOOTH.RData")
+load("../Models/gam_SMOOTH.Rdata")
+load("../Models/brms_SMOOTH.RData")
 
 ################################################################################
 ### Predictions in hexagons
@@ -107,8 +114,6 @@ names(plot.pred.S.brm)[1] <- "S"
 plot.pred.S.brm <- data.frame(plot.pred.S.brm, 
                               ratio.95 = plot.pred.S.brm$X97.5.ile / plot.pred.S.brm$X2.5.ile,
                               std.diff = (plot.pred.S.brm$X97.5.ile - plot.pred.S.brm$X2.5.ile) / plot.pred.S.brm$X50.ile)
-
-
 
 # put all together
 plot.preds <- data.frame(pts, 

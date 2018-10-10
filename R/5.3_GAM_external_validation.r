@@ -8,7 +8,7 @@ source("0_libraries_functions_settings.r")
 # read the data
 grid5 <- readOGR(dsn = "../Data/GRIDS", layer = "hex5_with_environment")
 grid5 <- spTransform(x = grid5, CRSobj = WGS84)
-grid5@data <- data.frame(grid5@data, ELONGATION = 1)
+grid5@data <- data.frame(grid5@data, ELONG = 1)
 
 # -----------------------------------------
 
@@ -19,8 +19,8 @@ grid5@data <- data.frame(grid5@data, min_DBH = 0, DAT_TYPE = "Country")
 # -----------------------------------------
 
 grid5.dat <- dplyr::select(grid5@data, Area_km = LandArea, Tree_dens, min_DBH,
-                           GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                           INSULARITY, ELONGATION, Lat, Lon, DAT_TYPE) %>%
+                           GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONG,
+                           ISLAND = ISL_LS, Lat, Lon, DAT_TYPE) %>%
   mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
 
 # get the scaling constants that were used to scale the raw plot and country data:
@@ -28,8 +28,9 @@ scal.tab <- read.csv("scale_tab.csv")
 scal.tab <- scal.tab[scal.tab$var %in% c("ET","WARM_T") == FALSE,]
 
 # scale the grid data in the same way as the original data
+data.frame(names(grid5.dat))
 
-grid5.dat[,1:9] <- scale(grid5.dat[,1:9],
+grid5.dat[,1:10] <- scale(grid5.dat[,1:10],
                          center = scal.tab$centr, 
                          scale = scal.tab$scale)
 
@@ -111,6 +112,9 @@ grid5.ex@data <- left_join(x = grid5.ex@data, y = all.external, by = "id")
 grid5.ex <- grid5.ex[is.na(grid5.ex@data$S.x) == FALSE, ]
 grid5.ex$id <- as.character(grid5.ex$id)
 
+# remove cells with less than 50% area
+grid5.ex <-  grid5.ex[grid5.ex$LandArea.x / grid5.ex$CellArea.x > 0.5,]
+
 
 grid5.ml <- spTransform(grid5.ex, CRSobj=MOLLWEIDE)
 grid5.mlf <- tidy(grid5.ml, region="id")
@@ -163,7 +167,7 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   blank.theme + theme(plot.title = element_text(face=quote(bold)))
 plot.gr.S
 
-tiff("../Figures/Fig_external_validation.tif", width=4000, height=1400, res=350,
+tiff("../Figures/external_validation.tif", width=4000, height=1400, res=350,
      compression = "lzw")
 grid.arrange(plot.gr.S, p.valid, ncol=2, nrow = 1, widths = c(0.65, 0.35))
 dev.off()

@@ -30,8 +30,7 @@ REALM.formula <- S ~ REALM + poly(Area_km,3):REALM +
   MIN_P + MIN_P:Area_km +  
   P_SEAS + P_SEAS:Area_km + 
   ALT_DIF + ALT_DIF:Area_km +
-  ELONGATION + ELONGATION:Area_km +
-  INSULARITY + INSULARITY:Area_km
+  ISLAND + ISLAND:Area_km
 
 
 SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
@@ -44,8 +43,7 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
   MIN_P + MIN_P:Area_km +  
   P_SEAS + P_SEAS:Area_km + 
   ALT_DIF + ALT_DIF:Area_km +
-  ELONGATION + ELONGATION:Area_km +
-  INSULARITY + INSULARITY:Area_km
+  ISLAND + ISLAND:Area_km
 
 # ------------------------------------------------------------------------------
 
@@ -122,6 +120,6 @@ REALM.cross <- ggplot(data = preds, aes(x=observed, y=predicted)) +
 REALM.cross
 
 
-png("../Figures/Fig_crossvalidation.png", width=2500, height=1450, res=250)
+png("../Figures/crossvalidation.png", width=2500, height=1600, res=250)
   grid.arrange(REALM.cross, SMOOTH.cross, ncol=1, nrow=2)
 dev.off()

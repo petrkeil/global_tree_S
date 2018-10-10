@@ -291,11 +291,13 @@ rm(MIN_ALT, MAX_ALT, ALT_DIF)
 # extract points for predictions
  CONTS <- over(x=pts, y=MAINL)
  is.island <- is.na(CONTS$continent == "<NA>")*1
+ is.island <- ifelse(is.island == 1, "island", "mainland")
  pts@data$ISL_LS <- is.island
+ 
  plot(pts, col=pts@data$ISL_LS+1); plot(MAINL, add=T)
 # calculate the ISLAND status of the hexagonal cells
  hexISL <- 1 - grid5$MainlArea/grid5$LandArea
- hexISL <- ifelse(hexISL > 0.9, 1, 0)
+ hexISL <- ifelse(hexISL > 0.9, "island", "mainland")
  grid5@data <- data.frame(grid5@data, ISL_LS=hexISL)
 
 

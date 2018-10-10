@@ -25,22 +25,29 @@ grid5 <- spTransform(x = grid5, CRSobj = WGS84)
 # -----------------------------------------
 
 pts$Tree_dens <- (pts$TREE_DENS + 1) / pts$A # calculate tree density (note the x+1 step!!)
-pts <- data.frame(pts, Area_km = 0.01, min_DBH = 0, DAT_TYPE = "Plot")
+pts <- data.frame(pts, 
+                  Area_km = 0.01, 
+                  min_DBH = 0, 
+                  ELONG = 1,
+                  DAT_TYPE = "Plot")
 
 # tree density at the grid level
 grid5$Tree_dens <- (grid5$TREE_DENS + 1) / grid5$LandArea
-grid5@data <- data.frame(grid5@data, min_DBH = 0, DAT_TYPE = "Country")
+grid5@data <- data.frame(grid5@data, 
+                         min_DBH = 0, 
+                         ELONG = 1,
+                         DAT_TYPE = "Country")
 
 # -----------------------------------------
 
 pts <- dplyr::select(pts, Area_km, Tree_dens, min_DBH, 
-                     GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                     ISLAND, Lat, Lon, DAT_TYPE) %>%
+                     GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONG,
+                     ISLAND = ISL_LS, Lat, Lon, DAT_TYPE) %>%
               mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
 
 grid5.dat <- dplyr::select(grid5@data, Area_km = LandArea, Tree_dens, min_DBH,
-                           GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                           ISLAND, Lat, Lon, DAT_TYPE) %>%
+                           GPP, ANN_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONG,
+                           ISLAND = ISL_LS, Lat, Lon, DAT_TYPE) %>%
                     mutate(Area_km = log(Area_km), Tree_dens=log(Tree_dens))
 
 # get the scaling constants that were used to scale the raw plot and country data:
@@ -48,11 +55,11 @@ scal.tab <- read.csv("scale_tab.csv")
 scal.tab <- scal.tab[scal.tab$var %in% c("ET","WARM_T") == FALSE,]
 
 # scale the grid data in the same way as the original data
-pts[,1:9] <- scale(pts[,1:9],
+pts[,1:10] <- scale(pts[,1:10],
                    center = scal.tab$centr, 
                    scale = scal.tab$scale)
 
-grid5.dat[,1:9] <- scale(grid5.dat[,1:9],
+grid5.dat[,1:10] <- scale(grid5.dat[,1:10],
                    center = scal.tab$centr, 
                    scale = scal.tab$scale)
 
@@ -61,7 +68,8 @@ grid5.dat[,1:9] <- scale(grid5.dat[,1:9],
 
 # load the saved SMOOTH model that will be used for the global predictions
 library(mgcv)
-load("../STAN_models/gam_SMOOTH.Rdata")
+load("../Models/gam_SMOOTH.Rdata")
+
 
 
 ################################################################################
@@ -178,7 +186,7 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      axis.title.y=element_blank(),
                      legend.position=c(0.63, 0.09),
                      legend.direction = "horizontal",
-                     # legend.title = element_blank(),
+                      legend.title = element_blank(),
                      legend.title.align = 0,
                      #plot.title = element_text(hjust = 0),
                      plot.subtitle = element_text(vjust=-3),
@@ -310,13 +318,13 @@ plot.beta.smth <- ggplot(MAINL, aes(long, lat, group=group)) +
 # write to file
 
 library(cowplot)
-tiff("../Figures/Fig_2_SMOOTH_prediction_grids.tif", width=4000, height=3200, res=350,
+tiff("../Figures/SMOOTH_prediction_grids.tif", width=4000, height=3200, res=350,
      compression = "lzw")
   plot_grid(plot.gr.S, plot.gr.smth,
             plot.pl.S, plot.pl.smth, 
             plot.beta.S, plot.beta.smth,
             nrow=3, ncol=2,
-            labels = c("A", "D", "B", "E", "C", "F"))
+            labels = c("a", "d", "b", "e", "c", "f"))
 dev.off()
 
 
@@ -346,7 +354,7 @@ LG.plot <- ggplot(LG.data, aes(x=Latitude, y=S)) +
             coord_flip() 
 
 # write to file
-png(file="../Figures/Fig_S2_Latitudinal_gradient.png", width=1500, height=1200, res=250)
+png(file="../Figures/latitudinal_gradient.png", width=1500, height=1200, res=250)
 LG.plot
 dev.off()
 

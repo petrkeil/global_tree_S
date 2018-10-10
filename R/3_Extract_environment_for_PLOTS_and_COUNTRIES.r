@@ -259,7 +259,7 @@ LAND_AND_SHELF <- ALL.LAND - ISLAND
 # plots
 is.mainland.plots <- raster::extract(x = LAND_AND_SHELF , y = plots)
 is.island.plots <- ifelse(is.mainland.plots == 1, "mainland", "island")
-plots@data$ISLAND_ST <- is.island.plots
+plots@data$ISL_ST <- is.island.plots
 
 # manually extracted values for COUNTRIES
 is.isl.countr <- read.csv("../Data/COUNTRIES/A_Insularity_COUNTRIES.csv")[,c("NAME","ISL_ST")]

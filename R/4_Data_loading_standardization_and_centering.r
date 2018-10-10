@@ -8,8 +8,9 @@ PLT$Tree_dens <- (PLT$N + 1) / PLT$Area_km
 
 # select only the variables of interest from the larger data.frame
 DAT <- dplyr::select(PLT, S, Area_km, Tree_dens, min_DBH=min_DBH_cm, 
-                     GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONGATION,
-                     INSULARITY, ISLAND, REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
+                     GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONG,
+                     ISLAND = ISL_LS,
+                     ISL_LS, ISL_ST, ISL_DIS, REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
 
 
 # order the data frame by regions and area

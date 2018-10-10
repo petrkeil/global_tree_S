@@ -110,7 +110,7 @@ cor.data <- rbind(RP, RC, SP, SC, RIP, RIC)
 
 
 # plot the correlograms
-png("../Figures/Fig_S4_correlograms.png", width=2000, height=900, res=250)
+png("../Figures/spatial_correlograms.png", width=2000, height=900, res=250)
 ggplot(cor.data, aes(x=Dist, y=Cor)) + 
   geom_hline(yintercept = 0, colour="darkgrey") +
   geom_line(aes(colour=Variable)) + 
