@@ -420,7 +420,7 @@ lay <- matrix(nrow=5, ncol=4, byrow = TRUE,
                 7,8,9,10,
                 11, 11, 12, 12))
 
-tiff("../Figures/Fig_maps_of_uncertainty.tif", width=4000, height=5400, res=350,
+tiff("../Figures/maps_of_prediction_uncertainty.tif", width=4000, height=5400, res=350,
      compression = "lzw")
   grid.arrange(plot.gr.high, plot.pl.high,
                plot.gr.S, plot.pl.S,

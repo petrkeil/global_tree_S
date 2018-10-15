@@ -12,6 +12,7 @@
 # THE PROTOCOL IS THE SAME AS IN THE FULL DATASET, ONLY THE BASE DATA ARE SMALLER.
 
 
+
 ################################################################################ 
 # 0. LOAD THE DATA AND THE PACKAGES
 ################################################################################
@@ -36,7 +37,7 @@ PLT$Tree_dens <- (PLT$N + 1) / PLT$Area_km
 # select only the variables of interest from the larger data.frame
 DAT <- dplyr::select(PLT, S, Area_km, Tree_dens, min_DBH=min_DBH_cm, 
                      GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, P_SEAS, ALT_DIF,
-                     ISLAND, REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
+                     ISLAND = ISL_LS, REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
 
 # order the data frame by regions and area
 DAT <- DAT[order(DAT$REALM),]
@@ -94,7 +95,7 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
 
 
 ################################################################################ 
-# 3. FIT THE MODELS
+# FIT THE MODELS
 ################################################################################
 
 gam.REALM <- gam(REALM.formula, data=DAT, family="nb")
@@ -112,7 +113,7 @@ AIC(gam.NULL, gam.REALM, gam.SMOOTH)
 
 
 ################################################################################ 
-# 4. PLOT OBSERVED VS. PREDICTED VALUES
+# LOT OBSERVED VS. PREDICTED VALUES
 ################################################################################
 
 pred.REALM <- data.frame( DAT, pred=predict(gam.REALM, type="response"),
@@ -140,7 +141,7 @@ dev.off()
 
 
 ################################################################################ 
-# 5. MORAN'S I CORRELOGRAMS OF THE RESIDUALS for both models at two scales
+# MORAN'S I CORRELOGRAMS OF THE RESIDUALS for both models at two scales
 ################################################################################
 
 # width of the correlogram increment [km]
@@ -851,60 +852,5 @@ p <- ggpairs(for.pairs, aes(colour=DAT_TYPE)) + theme_bw() +
 png("../Figures/Subset_data_sensitivity_analysis/subset_pairplot.png", width=1500, height=1700, res=100)
 p
 dev.off()
-
-
-
-
-################################################################################
-# 14. ADDITIONAL RANDOM FOREST ANALYSIS
-################################################################################
-
-# fit the random forest models
-rf.plot <- randomForest(S ~ REALM + Area_km + Tree_dens + min_DBH + 
-                          GPP + ANN_T + ISO_T +
-                          MIN_P + P_SEAS + ALT_DIF + ISLAND, 
-                        data=DAT[DAT$DAT_TYPE=="Plot",])
-rf.country <- randomForest(S ~ REALM + Area_km + Tree_dens + min_DBH + 
-                             GPP + ANN_T + ISO_T +
-                             MIN_P + P_SEAS + ALT_DIF + ISLAND, 
-                           data=DAT[DAT$DAT_TYPE=="Country",])
-
-# plot variable importance
-par(mfrow=c(1,2))
-varImpPlot(rf.plot)
-varImpPlot(rf.country)
-
-# prepare data for ggplot variable importance plots
-plot.imp <- data.frame(variable=rownames(importance(rf.plot)), 
-                       importance=importance(rf.plot),
-                       type = as.factor(c(1,0,0,0,0,0,0,0,0,0,0)))
-cntr.imp <- data.frame(variable=rownames(importance(rf.country)), 
-                       importance=importance(rf.country),
-                       type = as.factor(c(1,0,0,0,0,0,0,0,0,0,0)))
-
-
-# variable importance plots
-cntr.p <- ggplot(cntr.imp, aes(variable, IncNodePurity)) + 
-  geom_col(aes(fill=type)) + 
-  theme_bw() + xlab("Predictor") + ylab("Importance") + coord_flip() +
-  labs(title = "A", subtitle = "Country")  +
-  theme(legend.position="none")
-
-
-plot.p <- ggplot(plot.imp, aes(variable, IncNodePurity)) + 
-  geom_col(aes(fill=type)) + 
-  theme_bw() + xlab("Predictor") + ylab("Importance") + coord_flip() +
-  labs(title = "B", subtitle = "Plot") +
-  theme(legend.position="none")
-
-
-png("../Figures/Subset_data_sensitivity_analysis/subset_random_forest_variable_importance.png", width=1000, height=500, res=150)
-grid.arrange(cntr.p, plot.p, ncol=2)
-dev.off()
-
-
-
-
-
 
 
