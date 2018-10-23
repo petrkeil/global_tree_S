@@ -1,4 +1,17 @@
 ################################################################################
+# Author: Petr Keil
+# Email: pkeil@seznam.cz
+# Date: Oct 23 2018
+################################################################################
+
+# Description: This contains two functions that can be used to measure 
+# spatial elongation (an opposite of roundness) of a polygon, given that
+# it uses the WGS84 projection.
+# Originally, this elongation was intended to be used as along elevation
+# span as a proxy for environmental heterogeneity, but we ended up not using it.
+
+
+################################################################################
 # Functions for calculation of the ELONGATION METRICS
 
 # libraries for working with ellipses 
@@ -18,6 +31,9 @@ elongation.sample <- function(pol, draw = FALSE)
 {
   LAT = coordinates(pol)[1,2]
   LON = coordinates(pol)[1,1]
+  
+  # create Equidistant Azimuthal Projection projection
+  # string using centroid of the given polygon
   AED <- paste("+proj=aeqd +lat_0=", 
                LAT, 
                " +lon_0=", 
@@ -60,6 +76,9 @@ elongation.ellipse <- function(pol, draw = FALSE)
 {
   LAT = coordinates(pol)[1,2]
   LON = coordinates(pol)[1,1]
+  
+  # create Equidistant Azimuthal Projection string
+  # using centroid of the given polygon
   AED <- paste("+proj=aeqd +lat_0=", 
                LAT, 
                " +lon_0=", 
@@ -96,8 +115,11 @@ elongation.ellipse <- function(pol, draw = FALSE)
 
 #-------------------------------------------------------------------------------
 # Should the plots showing the elongation metric for each polygon be plotted?
-
 test.on.all.polygons = FALSE
+
+# If the above condition is true, this script will plot each polygon and
+# export it into a .pdf file, together with the estimated elongation value.
+# The purpose is to check if the values make any sense.
 
 if(test.on.all.polygons)
 {

@@ -492,19 +492,22 @@ resid.REALM <- prd.history.REALM[,'50%'] + res.brm.REALM
 HIST <- data.frame(prd.history.REALM, DAT, resid.REALM)
 
 
-p.hist.multi <- ggplot(HIST, aes(log10(exp(Area_km*A.sd + A.mean)), X50.)) +
-  geom_point(aes(log10(exp(Area_km*A.sd + A.mean)), resid.REALM), 
+p.hist.multi <- ggplot(HIST, aes(exp(Area_km*A.sd + A.mean), X50.)) +
+  geom_point(aes(exp(Area_km*A.sd + A.mean), resid.REALM), 
              colour="grey", shape=1) +
   geom_linerange(aes(ymin=X2.5., ymax=X97.5., colour=REALM), alpha=0.5) +
   geom_linerange(aes(ymin=X25., ymax=X75., colour=REALM), size=1) +
- # geom_hline(yintercept = 0, linetype=2) +
   geom_line(aes(colour=REALM)) + 
-  xlab(expression(log[10] ~ "Area" ~ (km^2))) +
+  scale_y_continuous(minor_breaks = NULL) +
+  scale_x_continuous(trans = "log10",
+                     minor_breaks = NULL,
+                     breaks = c(0.01, 1, 100, 10000, 1000000),
+                     labels = c("0.01", "1", "100", expression(10^4), expression(10^6))) +
+  xlab(expression("Area" ~ (km^2))) +
   ylab("Region effect") + 
   scale_colour_brewer(palette = "Dark2", name="Realm") +
   theme_bw()  +  
   theme(legend.position="none") +
-  #ggtitle("B") +
   facet_grid(. ~ REALM) 
 p.hist.multi
 
@@ -516,14 +519,18 @@ theme.legend <- theme(legend.position="right",#c(0.25,0.8),
                                                        colour ="black"))
 
 
-p.hist.single <- ggplot(HIST, aes(log10(exp(Area_km*A.sd + A.mean)), X50.)) +
+p.hist.single <- ggplot(HIST, aes(exp(Area_km*A.sd + A.mean), X50.)) +
   geom_linerange(aes(ymin=X2.5., ymax=X97.5., colour=REALM), alpha=0.4) +
   geom_linerange(aes(ymin=X25., ymax=X75., colour=REALM), size=1) +
   geom_line( aes(colour=REALM)) +
   scale_colour_brewer(palette = "Dark2", name="Realm") +
-  xlab(expression(log[10] ~ "Area" ~ (km^2))) +
+  scale_y_continuous(minor_breaks = NULL) +
+  scale_x_continuous(trans = "log10",
+                     minor_breaks = NULL,
+                     breaks = c(0.01, 1, 100, 10000, 1000000),
+                     labels = c("0.01", "1", "100", expression(10^4), expression(10^6))) +
+  xlab(expression("Area" ~ (km^2))) +
   ylab("Region effect") + 
- # ggtitle("B") +
   theme_bw()+
   theme.legend +
   theme(plot.title = element_text(hjust = -0.125))
@@ -568,12 +575,16 @@ AREA <- data.frame(prd.area.SMOOTH, DAT, partial.resid = partial.res.area)
 
 # save to a file
 png("../Figures/triphasic_SAR_SMOOTH.png", width=1500, height=1500, res=500)
-ggplot(AREA, aes(x=log10(exp(Area_km*A.sd + A.mean)), y=X50.)) + 
+ggplot(AREA, aes(x=exp(Area_km*A.sd + A.mean), y=X50.)) + 
        geom_point(aes(x=log10(exp(Area_km*A.sd + A.mean)), y=partial.resid.50.), 
                   color="grey", shape=1) +
        geom_line(size=0.8) +
+  scale_x_continuous(trans = "log10",
+                     minor_breaks = NULL,
+                     breaks = c(0.01, 1, 100, 10000, 1000000),
+                     labels = c("0.01", "1", expression(10^2), expression(10^4), expression(10^6))) +
        ylab("Partial effect of Area") +
-       xlab(expression(log[10] ~ "Area" ~ (km^2))) +
+       xlab(expression("Area" ~ (km^2))) +
        geom_ribbon(aes(ymin=X2.5., ymax=X97.5.), alpha=0.3) +
        theme_bw()
 dev.off()
@@ -699,36 +710,36 @@ scale.coefs$variable <- factor(scale.coefs$variable,
 # ------------------------------------------------------------------------------
 # plot the coefficients
 
-ticks <- data.frame (t = c(-2, 0, 2, 4, 6), l = c(-2,0,2,4, 6))
 
-coef.plot <- ggplot(scale.coefs, aes(x=log10(exp(A*A.sd + A.mean)), y=X50.)) + 
+coef.plot <- ggplot(scale.coefs, aes(x=exp(A*A.sd + A.mean), y=X50.)) + 
              geom_ribbon(aes(ymin=X2.5., ymax=X97.5., fill=Model), alpha=0.3) +
              #geom_ribbon(aes(ymin=X25., ymax=X75., fill=NA), alpha=0.3) +
              geom_line(aes(colour=Model), size=1) +
-             geom_line(aes(x=log10(exp(A*A.sd + A.mean)), y=X25., colour=Model), 
+             geom_line(aes(x=exp(A*A.sd + A.mean), y=X25., colour=Model), 
                        linetype="dashed") +
-             geom_line(aes(x=log10(exp(A*A.sd + A.mean)), y=X75., colour=Model), 
+             geom_line(aes(x=exp(A*A.sd + A.mean), y=X75., colour=Model), 
                        linetype="dashed") +
              facet_grid(.~variable) +
              geom_hline(yintercept=0, colour="darkgrey") +
-             xlab(expression(log[10] ~ "Area" ~ (km^2))) + 
-             ylab("Standardized coefficient") +
+             xlab(expression("Area" ~ (km^2))) + 
+             ylab("Environment effect") +
              scale_colour_brewer(palette = "Set1") +
              scale_fill_brewer(palette = "Set1") +
-             scale_x_continuous(breaks=c(ticks$t), 
-                               labels=c(ticks$l),
-                               minor_breaks = NULL) +
+  scale_x_continuous(trans = "log10",
+                     minor_breaks = NULL,
+                     breaks = c(0.001, 1, 1000, 1000000),
+                     labels = c(expression(10^-3), "1", expression(10^3), expression(10^6))) +
              theme_bw() +
              theme(legend.position="right")
 coef.plot
 
 # save to a file
-png("../Figures/environment_effects.png", width=2200, height=400, res=200)
+png("../Figures/environment_effects.png", width=2200, height=600, res=200)
 coef.plot
 dev.off()
 
 # save to a file
-pdf("../Figures/environment_effects.pdf", width=11, height=2)
+pdf("../Figures/environment_effects.pdf", width=11, height=3)
 coef.plot
 dev.off()
 
