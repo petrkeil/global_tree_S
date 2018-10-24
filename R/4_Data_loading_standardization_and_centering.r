@@ -1,6 +1,19 @@
+################################################################################
+# Author: Petr Keil
+# Email: pkeil@seznam.cz
+# Date: Oct 23 2018
+################################################################################
+
+# Description: Here we load the data that contain both the plot and country units, 
+# we do all the transformations, selections, NA removal, and we scale the
+# continuous predictors to 0 mean and variance of 1. The resulting DAT data.frame
+# is then used for all the model fitting purposes.
+
+################################################################################
+
+
 # load the data
 PLT <- read.csv("../Data/Main_dataset_full_detail.csv")
-
 
 # calculate tree density (note the x+1 step!!)
 PLT$Tree_dens <- (PLT$N + 1) / PLT$Area_km 
@@ -10,7 +23,8 @@ PLT$Tree_dens <- (PLT$N + 1) / PLT$Area_km
 DAT <- dplyr::select(PLT, S, Area_km, Tree_dens, min_DBH=min_DBH_cm, 
                      GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, P_SEAS, ALT_DIF, ELONG,
                      ISLAND = ISL_LS,
-                     ISL_LS, ISL_ST, ISL_DIS, REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
+                     ISL_LS, ISL_ST, ISL_DIS, 
+                     REALM=REALM_PK, Lat, Lon, DAT_TYPE, Loc_ID) 
 
 
 # order the data frame by regions and area

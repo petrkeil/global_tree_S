@@ -1,12 +1,15 @@
 ################################################################################
 # Author: Petr Keil
 # Email: pkeil@seznam.cz
-# Date: Dec 7 2017
+# Date: Oct 23 2018
 ################################################################################
 
 #
-# Description: 
-#
+# Description: This is where the two models are fit to the data, both in
+# using maximum likelihood (package 'mgcv') and Hamiltonian Monte Carlo 
+# (package 'brms'). The fitted objects are exported to files, so that they
+# can be further used for predictions and inference.
+
 
 ################################################################################ 
 # LOAD THE DATA AND THE PACKAGES
@@ -47,7 +50,7 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
 
 
 ################################################################################ 
-# FIT THE MODELS IN mgcv
+# FIT THE MODELS using 'mgcv' function 'gam'
 ################################################################################
 
 gam.REALM <- gam(REALM.formula, data=DAT, family="nb")

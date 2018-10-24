@@ -1,8 +1,19 @@
+################################################################################
+# Author: Petr Keil
+# Email: pkeil@seznam.cz
+# Date: Oct 23 2018
+################################################################################
+
+#
+# Description: Here we plot the coarse hexagon predictions against the 
+# externally sourced data from 3 observational databases.
+#
+
+################################################################################
+
 # clean the workspace and load the libraries
 source("0_libraries_functions_settings.r")
 
-
-################################################################################
 ### Read, transform and scale the data
 
 # read the data
@@ -35,7 +46,7 @@ grid5.dat[,1:10] <- scale(grid5.dat[,1:10],
                          scale = scal.tab$scale)
 
 ################################################################################
-# 1. The African data
+# Read the external data from the 3 databases
 
 RB <- read.csv("../Data/VALIDATION/RAINBIO_Africa_SN_grid5.csv")
 EU <- read.csv("../Data/VALIDATION/EUForest_SN_grid5.csv")
@@ -49,23 +60,18 @@ library(mgcv)
 load("../Models/gam_SMOOTH.Rdata")
 load("../Models/brms_SMOOTH.RData")
 
-################################################################################
-### Predictions in hexagons
-
 # predict S from the model SMOOTH
 grid.pred.S.brm <- data.frame(predict(brm.SMOOTH, 
                                       newdata = grid5.dat,
                                       probs = c(0.025, 0.25, 0.5, 0.75, 0.975)))
-
 names(grid.pred.S.brm)[1] <- "S"
 
 # merge with the original grid
-
 for.plot <- data.frame(grid5@data, grid.pred.S.brm)
 
 
 ################################################################################
-### External data for the hexagon
+### External data for the hexagons
 
 RAINBIO <- left_join(x = for.plot, y = RB, by="id")
 RAINBIO <- RAINBIO[is.na(RAINBIO$N) == FALSE, ]
@@ -82,10 +88,10 @@ BIEN <- BIEN[is.na(BIEN$N) == FALSE, ]
 BIEN <- BIEN[BIEN$N > 10000,]
 BIEN <- data.frame(BIEN, Dataset = "New World - BIEN")
 
-
+# put all three in a single data.frame
 all.external <- rbind(RAINBIO, EUForest, BIEN)
 
-
+# create the predicted vs observed plots
 p.valid <- ggplot(data = all.external, aes(x=S.y, y = X50.ile)) + 
             geom_linerange(aes(x=S.y, ymin = X2.5.ile, ymax = X97.5.ile, colour = Dataset), 
                            alpha = 0.5) +
@@ -105,8 +111,9 @@ p.valid
 
 
 # ------------------------------------------------------------------------------
-# Plotting the external validation maps
+# Plot maps with the external validation data
 
+# merge the data with the hexagonal grid shapefile
 grid5.ex <- grid5
 grid5.ex@data <- left_join(x = grid5.ex@data, y = all.external, by = "id")
 grid5.ex <- grid5.ex[is.na(grid5.ex@data$S.x) == FALSE, ]
@@ -115,7 +122,7 @@ grid5.ex$id <- as.character(grid5.ex$id)
 # remove cells with less than 50% area
 grid5.ex <-  grid5.ex[grid5.ex$LandArea.x / grid5.ex$CellArea.x > 0.5,]
 
-
+# reproject and prepare for ggplot2
 grid5.ml <- spTransform(grid5.ex, CRSobj=MOLLWEIDE)
 grid5.mlf <- tidy(grid5.ml, region="id")
 grid5.mlf <- left_join(x=grid5.mlf, y=grid5.ex@data, by="id")
@@ -130,7 +137,7 @@ LINES <- readOGR(dsn = "../Data/COUNTRIES", layer = "ne_110m_geographic_lines")
 LINES <- spTransform(LINES, CRSobj = CRS(MOLLWEIDE))
 LINES <- tidy(LINES, region="name")
 
-
+# make everyting minimalist and simple
 blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      axis.text.y=element_blank(),axis.ticks=element_blank(),
                      axis.title.x=element_blank(),
@@ -146,7 +153,7 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      panel.grid.minor=element_blank(),plot.background=element_blank())
 
 
-
+# plot the map
 plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
                colour="darkgrey", size=0.2) +
@@ -167,6 +174,7 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   blank.theme + theme(plot.title = element_text(face=quote(bold)))
 plot.gr.S
 
+# export to a file
 tiff("../Figures/external_validation.tif", width=4000, height=1400, res=350,
      compression = "lzw")
 grid.arrange(plot.gr.S, p.valid, ncol=2, nrow = 1, widths = c(0.65, 0.35))

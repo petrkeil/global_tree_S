@@ -1,6 +1,19 @@
+################################################################################
+# Author: Petr Keil
+# Email: pkeil@seznam.cz
+# Date: Oct 23 2018
+################################################################################
+
+#
+# Description: Here we produce spatial Moran's I correlograms of the raw
+# observed richness values, and also of the residuals of models SMOOTH and 
+# REALM, at the two spatial resolutions of the data. Significance of correlations
+# is tested by a permutation test at each distance class
+#
+
+################################################################################
 
 source("0_libraries_functions_settings.r")
-
 source("4_Data_loading_standardization_and_centering.r")
 
 load("../Models/gam_REALM.Rdata")
@@ -111,14 +124,14 @@ cor.data <- rbind(RP, RC, SP, SC, RIP, RIC)
 
 # plot the correlograms
 png("../Figures/spatial_correlograms.png", width=2000, height=900, res=250)
-ggplot(cor.data, aes(x=Dist, y=Cor)) + 
-  geom_hline(yintercept = 0, colour="darkgrey") +
-  geom_line(aes(colour=Variable)) + 
-  geom_point(aes(colour=Variable, shape=P), size = 2) + 
-  scale_shape_manual(values = c(1,19)) + 
-  xlim(c(0, 3000)) + ylim(c(-0.2,0.5)) +
-  scale_colour_brewer(palette="Set1") +
-  facet_grid(.~Scale) +
-  xlab("Distance [km]") + ylab("Moran's I") +
-  theme_bw()
+  ggplot(cor.data, aes(x=Dist, y=Cor)) + 
+    geom_hline(yintercept = 0, colour="darkgrey") +
+    geom_line(aes(colour=Variable)) + 
+    geom_point(aes(colour=Variable, shape=P), size = 2) + 
+    scale_shape_manual(values = c(1,19)) + 
+    xlim(c(0, 3000)) + ylim(c(-0.2,0.5)) +
+    scale_colour_brewer(palette="Set1") +
+    facet_grid(.~Scale) +
+    xlab("Distance [km]") + ylab("Moran's I") +
+    theme_bw()
 dev.off()

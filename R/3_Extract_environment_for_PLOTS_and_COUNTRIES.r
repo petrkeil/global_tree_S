@@ -1,7 +1,7 @@
 ################################################################################
 # Author: Petr Keil
 # Email: pkeil@seznam.cz
-# Date: April 26 2018
+# Date: Oct 23 2018
 ################################################################################
 
 # Description: These scripts extract the environmental conditions for the 

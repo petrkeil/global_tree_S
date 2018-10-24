@@ -5,7 +5,7 @@
 ################################################################################
 
 #
-# Description: 
+# Description: Here we do the 4-fold cross-validation.
 #
 
 ################################################################################ 
@@ -47,25 +47,30 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
 
 # ------------------------------------------------------------------------------
 
+# How many folds do we need?
 nfolds <- 4
+
 case.folds <- rep(1:nfolds,length.out=nrow(DAT))
 # divide the cases as evenly as possible
 case.folds <- sample(case.folds) # randomly permute the order
 
 
-# CROSSVALIDATING MODEL SMOOTH
+# CROSSVALIDATING MODEL SMOOTH -------------------------------------------------
 
+# empty container for the results
 preds <- list()
-par(mfrow=c(2,2))
+par(mfrow=c(2,2)) # prepare the plotting device
 for (fold in 1:nfolds) 
 {
   print(fold)
   
-  train <- DAT[case.folds!=fold,]
-  test <- DAT[case.folds==fold,]
+  train <- DAT[case.folds!=fold,] # training data
+  test <- DAT[case.folds==fold,]  # test data
   
+  # fit the model
   gam.train <- gam(SMOOTH.formula, data=train, family="nb")
-  res <- predict.gam(gam.train, newdata = test, type="response")
+  # extract predictions
+  res <- predict.gam(gam.train, newdata = test, type="response") 
   res <- data.frame(predicted = res,
                     observed = test$S,
                     grain = test$DAT_TYPE, 
@@ -87,17 +92,22 @@ SMOOTH.cross <- ggplot(data = preds, aes(x=observed, y=predicted)) +
                 theme_bw()
 SMOOTH.cross
 
-# CROSSVALIDATING MODEL REALM
+
+
+# CROSSVALIDATING MODEL REALM --------------------------------------------------
+
 preds <- list()
 par(mfrow=c(2,2))
 for (fold in 1:nfolds) 
 {
   print(fold)
   
-  train <- DAT[case.folds!=fold,]
-  test <- DAT[case.folds==fold,]
+  train <- DAT[case.folds!=fold,] # train dataset
+  test <- DAT[case.folds==fold,]  # test dataset
   
-  gam.train <- gam(REALM.formula, data=train, family="nb")
+  # fit the model
+  gam.train <- gam(REALM.formula, data=train, family="nb") 
+  # extract predictions
   res <- predict.gam(gam.train, newdata = test, type="response")
   res <- data.frame(predicted = res,
                     observed = test$S,
@@ -106,8 +116,13 @@ for (fold in 1:nfolds)
   preds[[fold]] <- res
 }
 
+# collapse the folds from a list to a data frame
 preds <- ldply(preds)
 
+
+# ------------------------------------------------------------------------------
+
+# plot the results
 REALM.cross <- ggplot(data = preds, aes(x=observed, y=predicted)) +
                geom_point(aes(colour = grain), shape = 1) +
                scale_x_continuous(trans = "log10") + 
@@ -119,7 +134,7 @@ REALM.cross <- ggplot(data = preds, aes(x=observed, y=predicted)) +
                theme_bw()
 REALM.cross
 
-
+# export the plots
 png("../Figures/crossvalidation.png", width=2500, height=1600, res=250)
   grid.arrange(REALM.cross, SMOOTH.cross, ncol=1, nrow=2)
 dev.off()

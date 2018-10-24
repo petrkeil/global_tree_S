@@ -5,7 +5,7 @@
 ################################################################################
 
 #
-# Description: 
+# Description: Here is where most of the core figures are produced.
 #
 
 ################################################################################ 
@@ -22,21 +22,6 @@ load("../Models/brms_REALM.RData")
 load("../Models/brms_SMOOTH.RData")
 
 
-
-# ------------------------------------------------------------------------------
-# CORRELATION MATRIX OF MODEL PARAMETERS
-
-library(corrplot)
-
-one.chain = data.frame(as.mcmc(brm.REALM)[1][[1]])
-data.frame(names(one.chain))
-one.chain = one.chain[, c(1, 2:7, 17:37, 8:16, 38:46)]
-
-par.cors <- cor(one.chain)
-
-png("../Figures/parameter_correlation_matrix.png", width=2000, height=2000, res = 150)
-  corrplot(par.cors, method = "square", tl.col = "black")
-dev.off()
 
 
 ################################################################################ 
@@ -280,7 +265,6 @@ realm.plot.small
 dev.off()
 
 
-
 # ------------------------------------------------------------------------------
 # ISLANDS
 
@@ -349,18 +333,18 @@ pred.SMOOTH.brm <- data.frame(pred.SMOOTH.brm,
 pred.brm <- rbind(pred.REALM.brm, pred.SMOOTH.brm)
 
 
-
-obs.pred.brm <- ggplot(pred.brm, aes(x = S, y = X50.ile)) +
-  geom_linerange(aes(ymin = X2.5.ile, ymax = X97.5.ile, colour = grain), alpha = 0.2) +
-  geom_linerange(aes(ymin = X25.ile, ymax = X75.ile, colour = grain), size=1, alpha = 0.4) +
+# observed vs predicted plots
+obs.pred.brm <- ggplot(pred.brm, aes(x = S, y = Q50)) +
+  geom_linerange(aes(ymin = Q2.5, ymax = Q97.5, colour = grain), alpha = 0.2) +
+  geom_linerange(aes(ymin = Q25, ymax = Q75, colour = grain), size=1, alpha = 0.4) +
   geom_point(aes(colour=grain), shape = 1) +
-  xlab("log10 Observed S") + 
-  ylab("log10 Predicted S") +
+  xlab("Observed S") + 
+  ylab("Predicted S") +
   geom_abline(intercept = 0, slope = 1, colour="black") + theme_bw() +
   scale_x_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) + 
   scale_y_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) +
   facet_grid(.~model) +
-  labs(size = "log10 Area [km]") + labs(colour = "grain") +
+  labs(colour = "grain") +
   guides(colour = guide_legend(override.aes = list(size=4, shape=19), title="grain"))
 
 obs.pred.brm
@@ -538,14 +522,6 @@ p.hist.single
 
 
 # Figure for the main text - save to a file
-tiff("../Figures/region_effects_ovelaid_REALM.tif", width=1800, height=2700, res=400,
-     compression = "lzw")
-grid.arrange(realm.plot + ggtitle("A") +theme(legend.position="none") , 
-             p.hist.single,
-             heights=c(0.6,1),
-             nrow=2)
-dev.off()
-
 pdf("../Figures/region_effects_ovelaid_REALM.pdf", width=6, height=4)
 p.hist.single
 dev.off()
@@ -576,7 +552,7 @@ AREA <- data.frame(prd.area.SMOOTH, DAT, partial.resid = partial.res.area)
 # save to a file
 png("../Figures/triphasic_SAR_SMOOTH.png", width=1500, height=1500, res=500)
 ggplot(AREA, aes(x=exp(Area_km*A.sd + A.mean), y=X50.)) + 
-       geom_point(aes(x=log10(exp(Area_km*A.sd + A.mean)), y=partial.resid.50.), 
+       geom_point(aes(x=exp(Area_km*A.sd + A.mean), y=partial.resid.50.), 
                   color="grey", shape=1) +
        geom_line(size=0.8) +
   scale_x_continuous(trans = "log10",
@@ -588,6 +564,8 @@ ggplot(AREA, aes(x=exp(Area_km*A.sd + A.mean), y=X50.)) +
        geom_ribbon(aes(ymin=X2.5., ymax=X97.5.), alpha=0.3) +
        theme_bw()
 dev.off()
+
+
 
 
 ################################################################################
@@ -744,19 +722,41 @@ coef.plot
 dev.off()
 
 
+
+
 ################################################################################
-#  PAIRPLOTS SHOWING COLLINEARITY BETWEEN THE PREDICTORS
+#  PAIRPLOTS OF THE PREDICTORS
 ################################################################################
 
 
 for.pairs <- dplyr::select(DAT, S, Tree_dens, min_DBH, GPP, ANN_T, ISO_T, 
-                           MIN_P, P_SEAS, ALT_DIF, ELONG, ISLAND, REALM, DAT_TYPE)
+                           MIN_P, P_SEAS, ALT_DIF, ISLAND, REALM, DAT_TYPE)
 
 p <- ggpairs(for.pairs, aes(colour=DAT_TYPE)) + theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+     theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 # save to a file
 png("../Figures/predictors_pairplot.png", width=2000, height=2300, res=100)
-p
+ggpairs(for.pairs, aes(colour=DAT_TYPE)) + theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
 dev.off()
+
+
+
+################################################################################
+# CORRELATION MATRIX OF MODEL PARAMETERS
+################################################################################
+
+library(corrplot)
+
+one.chain = data.frame(as.mcmc(brm.REALM)[1][[1]])
+data.frame(names(one.chain))
+one.chain = one.chain[, c(1, 2:7, 17:37, 8:16, 38:46)]
+
+par.cors <- cor(one.chain)
+
+png("../Figures/parameter_correlation_matrix.png", width=2000, height=2000, res = 150)
+corrplot(par.cors, method = "square", tl.col = "black")
+dev.off()
+
 

@@ -1,11 +1,13 @@
 ################################################################################
 # Author: Petr Keil
 # Email: pkeil@seznam.cz
-# Date: April 26 2018
+# Date: Oct 23 2018
 ################################################################################
 
-# Description: Here is where model SMOOTH is used to generate predictions to the
-# regular global network of 1 ha plots, and to the grid of large hexagons.
+# Description: Here we assess and map uncertainty around predicted values of species 
+# richness. We do this by plotting maps of full Bayesian prediction intervals that 
+# reflect both uncertainty in model parameters, and also uncertainty coming from
+# the negative binomial error term.
 
 
 ################################################################################

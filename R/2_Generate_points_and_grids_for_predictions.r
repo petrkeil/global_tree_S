@@ -1,3 +1,14 @@
+################################################################################
+# Author: Petr Keil
+# Email: pkeil@seznam.cz
+# Date: Oct 23 2018
+################################################################################
+
+# Description: These are scripts that generate the global layer of the 1-ha plots,
+# and the hexagonal prediction grid.
+
+################################################################################
+
 # clean the workspace and load the libraries
 source("0_libraries_functions_settings.r")
 library(dggridR)
@@ -8,6 +19,7 @@ library(sp)
 library(raster)
 library(gridExtra)
 library(rgeos)
+
 
 
 # read the COUNTRY data (as a shapefile with data in the attribute table)
@@ -59,6 +71,7 @@ x <- over(grid, COUNTR.shp)
 good.cells <- is.na(x[,1]) == FALSE
 grid.land <- grid[good.cells,]
 plot(grid.land)
+
 
 writeOGR(obj=grid.land, dsn = "../Data/GRIDS" , layer="hex5", driver="ESRI Shapefile")
 # NOTE: This file will be manually adjusted in QGIS to delete the grid cells 
