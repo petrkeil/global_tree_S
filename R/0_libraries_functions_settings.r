@@ -51,6 +51,7 @@ library(ggplot2)
 library(colorRamps)
 library(GGally)
 library(ggthemes)
+library(rasterVis)
 
 
 # ------------------------------------------------------------------------------

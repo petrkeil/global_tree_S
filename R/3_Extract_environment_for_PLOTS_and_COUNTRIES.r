@@ -344,18 +344,6 @@ writeOGR(obj = COUNTR.shp, dsn = "../Data/COUNTRIES",
 
 
 
-################################################################################
-# Plot islandness raster
-ISL_MAINL <- raster("/media/pk33loci/Elements/GIS_data/ISLANDNESS/rasters/ALL_CLASSES_clean.tif")
-ISL_MAINL[ISL_MAINL == 0] <- NA
-
-SHORELINE <- readOGR(dsn = "/media/pk33loci/Elements/GIS_data/Boundaries/GLOBAL_SHORELINE",
-                     layer = "GSHHS_i_L1")
-
-png("../Figures/islands_shelfs_mainlands.png", width = 2300, height = 1000)
-plot(ISL_MAINL, axes=FALSE, box=FALSE, col=c("#b2df8a", "#a6cee3", "#1f78b4"), legend=FALSE)
-dev.off()
-
 
 
 
