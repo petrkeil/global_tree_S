@@ -393,7 +393,7 @@ scale.coefs[scale.coefs$variable=="MIN_P",'variable'] <- "Minimum P"
 scale.coefs[scale.coefs$variable=="P_SEAS",'variable'] <- "P Seasonality"
 scale.coefs[scale.coefs$variable=="ALT_DIF",'variable'] <- "Elevation span"
 scale.coefs[scale.coefs$variable=="ISLANDmainland",'variable'] <- "Mainland"
-scale.coefs[scale.coefs$variable=="ELONG",'variable'] <- "Elongation"
+# scale.coefs[scale.coefs$variable=="ELONG",'variable'] <- "Elongation"
 
 scale.coefs$variable <- factor(scale.coefs$variable, 
                                levels=c("Mainland",

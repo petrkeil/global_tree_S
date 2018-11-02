@@ -14,7 +14,7 @@
 
 
 ################################################################################ 
-# 0. LOAD THE DATA AND THE PACKAGES
+# LOAD THE DATA AND THE PACKAGES
 ################################################################################
 
 
@@ -28,7 +28,7 @@ PLT <- read.csv("../Data/Main_dataset_subset.csv")
 
 
 ################################################################################ 
-# 1. PREPARE THE DATA FOR THE ANALYSES
+# PREPARE THE DATA FOR THE ANALYSES
 ################################################################################
 
 # cakculate tree density (note the x+1 step!!)
@@ -65,7 +65,7 @@ DAT[,2:12] <- scale(DAT[,2:12])
 
 
 ################################################################################ 
-# 2. THE MODEL FORMULAS
+# THE MODEL FORMULAS
 ################################################################################
 
 REALM.formula <- S ~ REALM + poly(Area_km,3):REALM +  
@@ -94,7 +94,7 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
 
 
 ################################################################################ 
-# FIT THE MODELS
+# FIT THE MODELS IN mgcv
 ################################################################################
 
 gam.REALM <- gam(REALM.formula, data=DAT, family="nb")
@@ -109,6 +109,39 @@ gam.NULL <- gam(S~1, data=DAT, family="nb")
 # compare the models using AIC
 AIC(gam.NULL, gam.REALM, gam.SMOOTH)
 
+
+
+################################################################################
+# FIT THE MODELS IN STAN, using 'brms' function 'brm'
+################################################################################
+
+# Beware, this will take several hours to run.
+# YOU CAN SKIP THIS AND LAOD THE FITTED MODELS IN THE NEXT STEP (DEFAULT BEHAVIOR)
+
+fit.brm = FALSE # Should we skip this step? TRUE/FALSE
+if(fit.brm){
+  brm.SMOOTH <- brm(SMOOTH.formula, family="negbinomial", data=DAT,
+                    cores=3,
+                    seed=12355,
+                    chains=3, iter=3000, warmup=1000, thin=10)
+  
+  save(brm.SMOOTH , file="../Models/subset_brms_SMOOTH.RData")
+  
+  brm.REALM <- brm(REALM.formula, family="negbinomial", data=DAT,
+                   cores=3,
+                   seed=12355,
+                   chains=3, iter=3000, warmup=1000, thin=10)
+  
+  save(brm.REALM, file="../Models/subset_brms_REALM.RData")
+}
+
+
+################################################################################
+# LOAD THE FITTED STAN OBJECTS
+################################################################################
+
+load("../Models/subset_brms_SMOOTH.RData")
+load("../Models/subset_brms_REALM.RData")
 
 
 ################################################################################ 
@@ -131,12 +164,50 @@ obs.glm <- ggplot(pred, aes(log10(S), log10(pred))) +
   labs(size = "log10 Area [km]") + labs(colour = "Realm") +
   guides(colour = guide_legend(override.aes = list(size=4, shape=19)))
 
-# export the figure
-png("../Figures/Subset_data_sensitivity_analysis/subset_obs_vs_pred.png", 
-    width=2000, height=950, res=250)
-    print(obs.glm)
-dev.off()
 
+
+# ------------------------------------------------------------------------------
+# Observed vs predicted values with the full Bayesian uncertainty
+
+pred.REALM.brm <- predict(brm.REALM, type="response", 
+                          newdata = DAT, probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
+pred.REALM.brm <- data.frame(pred.REALM.brm, 
+                             S = DAT$S, 
+                             grain = DAT$DAT_TYPE,
+                             model = "Model REALM")
+
+pred.SMOOTH.brm <- predict(brm.SMOOTH, type="response", 
+                           newdata = DAT, probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
+pred.SMOOTH.brm <- data.frame(pred.SMOOTH.brm,  
+                              S = DAT$S, 
+                              grain = DAT$DAT_TYPE,
+                              model = "Model SMOOTH")
+
+pred.brm <- rbind(pred.REALM.brm, pred.SMOOTH.brm)
+
+
+# observed vs predicted plots
+obs.pred.brm <- ggplot(pred.brm, aes(x = S, y = Q50)) +
+  geom_linerange(aes(ymin = Q2.5, ymax = Q97.5, colour = grain), alpha = 0.2) +
+  geom_linerange(aes(ymin = Q25, ymax = Q75, colour = grain), size=1, alpha = 0.4) +
+  geom_point(aes(colour=grain), shape = 1) +
+  xlab("Observed S") + 
+  ylab("Predicted S") +
+  geom_abline(intercept = 0, slope = 1, colour="black") + theme_bw() +
+  scale_x_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) + 
+  scale_y_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) +
+  facet_grid(.~model) +
+  labs(colour = "grain") +
+  guides(colour = guide_legend(override.aes = list(size=4, shape=19), title="grain"))
+
+obs.pred.brm
+
+# export the figure
+# export the figure
+png("../Figures/Subset_data_sensitivity_analysis/subset_observed_vs_predicted.png", 
+    width=2000, height=950, res=250)
+print(obs.pred.brm)
+dev.off()
 
 
 
@@ -238,7 +309,7 @@ g.cntr <- ggplot(C.fort, aes(long, lat, group=group)) +
                        name="Region\neffect") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
   xlab("") + ylab("") + 
-  ggtitle("A") +  
+  ggtitle("Smooth region effects at country grain") +  
   theme_minimal() + blank.theme
 
 
@@ -252,10 +323,10 @@ g.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
                          name="Region\neffect") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
   xlab("") + ylab("") +
-  ggtitle("B") +
+  ggtitle("Smooth region effects at plot grain") +
   theme_minimal() + blank.theme
 
-png("../Figures/Subset_data_sensitivity_analysis/subset_smooth_map.png", width=2000, height=2000, res=250)
+png("../Figures/Subset_data_sensitivity_analysis/subset_region_effect_map_SMOOTH.png", width=2000, height=2000, res=250)
 grid.arrange(g.cntr, g.plot, ncol=1, nrow=2)
 dev.off()
 
@@ -270,7 +341,7 @@ s.pred.cntr <- ggplot(C.fort, aes(long, lat, group=group)) +
   scale_fill_distiller(palette = "Spectral", name="Predicted S", 
                        trans="log10") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
-  ggtitle("A") + theme_minimal() +
+  ggtitle("Predicted richness at country grain (model SMOOTH)") + theme_minimal() +
   xlab("") + ylab("") + blank.theme
 
 s.pred.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
@@ -281,10 +352,10 @@ s.pred.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
   scale_colour_distiller(palette = "Spectral", name="Predicted S", 
                          trans="log10") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
-  ggtitle("B") + theme_minimal() +
+  ggtitle("Predicted richness at plot grain (model SMOOTH)") + theme_minimal() +
   xlab("") + ylab("") + blank.theme
 
-png("../Figures/Subset_data_sensitivity_analysis/subset_predictions.png", 
+png("../Figures/Subset_data_sensitivity_analysis/subset_predicted_richness_SMOOTH.png", 
     width=2000, height=2000, res=250)
 grid.arrange(s.pred.cntr, s.pred.plot, ncol=1, nrow=2)
 dev.off()
@@ -300,7 +371,7 @@ s.cntr <- ggplot(C.fort, aes(long, lat, group=group)) +
                        trans="log10", limits=c(1,10000)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
-  ggtitle("A") + theme_minimal() +
+  ggtitle("Observed species richness - country grain") + theme_minimal() +
   # labs(subtitle = expression(S[country] ~ "(richness at the country grain)")) +
   xlab("") + ylab("") + blank.theme
 
@@ -315,11 +386,11 @@ s.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
                          trans="log10", limits=c(1,10000)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
-  ggtitle("B") + theme_minimal() +
+  ggtitle("Observed species richness - plot grain") + theme_minimal() +
   #labs(subtitle = expression(S[plot] ~ "(richness at the plot grain)")) +
   xlab("") + ylab("") + blank.theme
 
-png("../Figures/Subset_data_sensitivity_analysis/subset_richness_map.png", width=2000, height=2000, res=250)
+png("../Figures/Subset_data_sensitivity_analysis/subset_observed_richness_map.png", width=2000, height=2000, res=250)
 grid.arrange(s.cntr, s.plot, ncol=1, nrow=2)
 dev.off()
 
@@ -335,7 +406,7 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      panel.grid.minor=element_blank(),plot.background=element_blank())
 
 
-png("../Figures/Subset_data_sensitivity_analysis/realms_map.png", width=2300, height=1000, res=200)
+png("../Figures/Subset_data_sensitivity_analysis/subset_realms_map.png", width=1800, height=1000, res=200)
 realm.plot <- ggplot(C.fort[is.na(C.fort$REALM) == FALSE,], aes(long, lat, group=group)) +
   geom_polygon(aes(fill=REALM), colour="darkgray", size=.2) + 
   geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL), shape=3, colour="black") +
@@ -343,43 +414,12 @@ realm.plot <- ggplot(C.fort[is.na(C.fort$REALM) == FALSE,], aes(long, lat, group
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") + theme_minimal() + blank.theme +
+  ggtitle("Biogeographic realms") +
   theme(legend.position="none") 
 realm.plot
 dev.off()
 
 
-
-################################################################################
-# FIT THE MODELS IN STAN, using 'brms' function 'brm'
-################################################################################
-
-# Beware, this will take several hours to run.
-# YOU CAN SKIP THIS AND LAOD THE FITTED MODELS IN THE NEXT STEP (DEFAULT BEHAVIOR)
-
-fit.brm = TRUE # Should we skip this step? TRUE/FALSE
-if(fit.brm){
-  brm.SMOOTH <- brm(SMOOTH.formula, family="negbinomial", data=DAT,
-                    cores=3,
-                    seed=12355,
-                    chains=3, iter=3000, warmup=1000, thin=10)
-  
-  save(brm.SMOOTH , file="../Models/subset_brms_SMOOTH.RData")
-  
-  brm.REALM <- brm(REALM.formula, family="negbinomial", data=DAT,
-                   cores=3,
-                   seed=12355,
-                   chains=3, iter=3000, warmup=1000, thin=10)
-  
-  save(brm.REALM, file="../Models/subset_brms_REALM.RData")
-}
-
-
-################################################################################
-# LOAD THE FITTED STAN OBJECTS
-################################################################################
-
-load("../Models/subset_brms_SMOOTH.RData")
-load("../Models/subset_brms_REALM.RData")
 
 
 
@@ -415,45 +455,6 @@ rstan::plot(brm.REALM$fit, pars=pars.REALM)
 standata(brm.REALM)
 
 
-# ------------------------------------------------------------------------------
-# OBSERVED VS PREDICTED PLOTS
-
-# Observed vs predicted values with the full Bayesian uncertainty
-
-pred.REALM.brm <- predict(brm.REALM, type="response", 
-                          probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
-pred.REALM.brm <- data.frame(pred.REALM.brm, 
-                             S = DAT$S, 
-                             grain = DAT$DAT_TYPE,
-                             model = "Model REALM")
-
-pred.SMOOTH.brm <- predict(brm.SMOOTH, type="response", 
-                           probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
-pred.SMOOTH.brm <- data.frame(pred.SMOOTH.brm,  
-                              S = DAT$S, 
-                              grain = DAT$DAT_TYPE,
-                              model = "Model SMOOTH")
-
-pred.brm <- rbind(pred.REALM.brm, pred.SMOOTH.brm)
-
-
-# observed vs predicted plots
-obs.pred.brm <- ggplot(pred.brm, aes(x = S, y = Q50)) +
-  geom_linerange(aes(ymin = Q2.5, ymax = Q97.5, colour = grain), alpha = 0.2) +
-  geom_linerange(aes(ymin = Q25, ymax = Q75, colour = grain), size=1, alpha = 0.4) +
-  geom_point(aes(colour=grain), shape = 1) +
-  xlab("Observed S") + 
-  ylab("Predicted S") +
-  geom_abline(intercept = 0, slope = 1, colour="black") + theme_bw() +
-  scale_x_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) + 
-  scale_y_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) +
-  facet_grid(.~model) +
-  labs(colour = "grain") +
-  guides(colour = guide_legend(override.aes = list(size=4, shape=19), title="grain"))
-
-obs.pred.brm
-
-
 
 
 # ------------------------------------------------------------------------------
@@ -462,13 +463,14 @@ obs.pred.brm
 
 all.varnames.SMOOTH <- rownames(summary(brm.SMOOTH)$fixed)
 data.frame(all.varnames.SMOOTH)
+data.frame(1:52, summary(brm.SMOOTH$fit)$summary[,'50%'])
+
 all.vars.SMOOTH <- standata(brm.SMOOTH)$X
 
 all.splines.SMOOTH <- standata(brm.SMOOTH)$Zs_2_1
 pars.country.splines.SMOOTH <- summary(brm.SMOOTH$fit)$summary[,'50%'][26:38]
 pars.plot.splines.SMOOTH <- summary(brm.SMOOTH$fit)$summary[,'50%'][39:51]
-pars.envivars.SMOOTH <- summary(brm.SMOOTH$fit)$summary[,'50%'][39:51]
-
+pars.envivars.SMOOTH <- summary(brm.SMOOTH$fit)$summary[,'50%'][5:22]
 
 SMOOTH.area.id <- c(2:4)
 area.varnames.SMOOTH <- all.varnames.SMOOTH[SMOOTH.area.id]
@@ -554,7 +556,6 @@ draw.all <- function(par.names, vars, brm.fit, probs=c(0.025, 0.25, 0.5,0.75, 0.
 # SUMMARIZE THE REALM PREDICTIONS
 ################################################################################
 
-
 prd.brm.REALM <- all.vars.REALM %*% all.pars.REALM
 #prd.brm.REALM <- predict(brm.REALM, newdata=DAT, type="link")[,'Estimate']
 res.brm.REALM <- prd.brm.REALM - log(DAT$S)
@@ -570,50 +571,57 @@ resid.REALM <- prd.history.REALM[,'50%'] + res.brm.REALM
 HIST <- data.frame(prd.history.REALM, DAT, resid.REALM)
 
 
-p.hist.multi <- ggplot(HIST, aes(log10(exp(Area_km*A.sd + A.mean)), X50.)) +
-  geom_point(aes(log10(exp(Area_km*A.sd + A.mean)), resid.REALM), 
+p.hist.multi <- ggplot(HIST, aes(exp(Area_km*A.sd + A.mean), X50.)) +
+  geom_point(aes(exp(Area_km*A.sd + A.mean), resid.REALM), 
              colour="grey", shape=1) +
   geom_linerange(aes(ymin=X2.5., ymax=X97.5., colour=REALM), alpha=0.5) +
   geom_linerange(aes(ymin=X25., ymax=X75., colour=REALM), size=1) +
-  # geom_hline(yintercept = 0, linetype=2) +
   geom_line(aes(colour=REALM)) + 
-  xlab(expression(log[10] ~ "Area" ~ (km^2))) +
+  scale_y_continuous(minor_breaks = NULL) +
+  scale_x_continuous(trans = "log10",
+                     minor_breaks = NULL,
+                     breaks = c(0.01, 1, 100, 10000, 1000000),
+                     labels = c("0.01", "1", "100", expression(10^4), expression(10^6))) +
+  xlab(expression("Area" ~ (km^2))) +
   ylab("Region effect") + 
   scale_colour_brewer(palette = "Dark2", name="Realm") +
   theme_bw()  +  
   theme(legend.position="none") +
-  ggtitle("B") +
   facet_grid(. ~ REALM) 
 p.hist.multi
 
-p.hist.single <- ggplot(HIST, aes(log10(exp(Area_km*A.sd + A.mean)), X50.)) +
+
+theme.legend <- theme(legend.position="right",#c(0.25,0.8), 
+                      legend.title = element_blank(),
+                      legend.background = element_rect(fill="white",
+                                                       size=0.2, linetype="solid", 
+                                                       colour ="black"))
+
+
+p.hist.single <- ggplot(HIST, aes(exp(Area_km*A.sd + A.mean), X50.)) +
   geom_linerange(aes(ymin=X2.5., ymax=X97.5., colour=REALM), alpha=0.4) +
   geom_linerange(aes(ymin=X25., ymax=X75., colour=REALM), size=1) +
-  #geom_hline(yintercept = 0, linetype=2) +
-  #geom_point( aes(colour=REALM)) + 
   geom_line( aes(colour=REALM)) +
   scale_colour_brewer(palette = "Dark2", name="Realm") +
-  # xlab("log10 Area [km^2]") + 
-  xlab(expression(log[10] ~ "Area" ~ (km^2))) +
+  scale_y_continuous(minor_breaks = NULL,
+                     breaks = c(-3, -2, -1, 0, 1, 2, 3, 4, 5, 6 )) +
+  scale_x_continuous(trans = "log10",
+                     minor_breaks = NULL,
+                     breaks = c(0.01, 1, 100, 10000, 1000000),
+                     labels = c("0.01", "1", "100", expression(10^4), expression(10^6))) +
+  xlab(expression("Area" ~ (km^2))) +
   ylab("Region effect") + 
-  ggtitle("C") +
-  theme_bw() + 
-  theme(legend.position="none") 
+  theme_bw()+
+  theme.legend +
+  theme(plot.title = element_text(hjust = -0.125))
 p.hist.single
 
-lay.mat <- matrix(c(1, 1, 2, 
-                    3, 3, 3), 2, 3, byrow = TRUE)
 
-png("../Figures/Subset_data_sensitivity_analysis/subset_historical_effects_curves.png", width=3500, height=2200, res=350)
-grid.arrange(realm.plot + ggtitle("a") , 
-             p.hist.single, 
-             p.hist.multi, 
-             #p.hist.linear,
-             heights=c(1.2,0.8),
-             # widths=c(4,2),
-             layout_matrix=lay.mat)
+# Figure for the main text - save to a file
+png("../Figures/Subset_data_sensitivity_analysis/subset_region_effects_ovelaid_REALM.png", 
+     width=1200, height=800, res=200)
+p.hist.single
 dev.off()
-
 
 
 
@@ -631,7 +639,7 @@ partial.res.area <- prd.area.SMOOTH + residuals(gam.SMOOTH)
 
 AREA <- data.frame(prd.area.SMOOTH, DAT, partial.resid = partial.res.area)
 
-png("../Figures/Subset_data_sensitivity_analysis/subset_SAR_SMOOTH.png", width=1500, height=1500, res=500)
+png("../Figures/Subset_data_sensitivity_analysis/subset_partial_area_effect_SMOOTH.png", width=1500, height=1500, res=500)
 ggplot(AREA, aes(x=log10(exp(Area_km*A.sd + A.mean)), y=X50.)) + 
   geom_point(aes(x=log10(exp(Area_km*A.sd + A.mean)), y=partial.resid.50.), 
              color="grey", shape=1) +
@@ -647,11 +655,8 @@ dev.off()
 # GRAIN-DEPENDENT ENVIRONMENTAL PREDICTORS
 ################################################################################
 
-data.frame(all.varnames.REALM)
-data.frame(all.varnames.SMOOTH)
-
-
 # indices of variable coefficients - model REALM
+data.frame(all.varnames.REALM)
 pure.id.REALM <- 8:16
 area.id.REALM <- 38:46
 
@@ -666,6 +671,7 @@ area.coefs.REALM <- extract.pars(area.coefnames.REALM, brm.REALM)
 
 # -----------------
 # indices of variable coefficients - model SMOOTH
+data.frame(all.varnames.SMOOTH)
 pure.id.SMOOTH <- 5:13
 area.id.SMOOTH <- 14:22
 
@@ -685,7 +691,7 @@ get.one.var <- function(i, pure.coefs, area.coefs, varnames, model,
 {
   pure.coef <- pure.coefs[[i]]
   area.coef <- area.coefs[[i]]
-  A <- seq(from=-0.94, to=2.82, by=0.1)
+  A <- seq(from=-0.94, to=2.83, by=0.1)
   N <- length(pure.coef)
   
   res <- matrix(nrow=length(A), ncol=N)
@@ -746,15 +752,18 @@ scale.coefs$variable <- as.character(scale.coefs$variable)
 # use better names for scale coefficients
 
 scale.coefs[scale.coefs$variable=="Tree_dens",'variable'] <- "Tree density"
-scale.coefs[scale.coefs$variable=="min_DBH_cm",'variable'] <- "Minimum DBH"
+scale.coefs[scale.coefs$variable=="min_DBH",'variable'] <- "Minimum DBH"
 scale.coefs[scale.coefs$variable=="ANN_T",'variable'] <- "Annual T"
 scale.coefs[scale.coefs$variable=="ISO_T",'variable'] <- "Isothermality"
 scale.coefs[scale.coefs$variable=="MIN_P",'variable'] <- "Minimum P"
 scale.coefs[scale.coefs$variable=="P_SEAS",'variable'] <- "P Seasonality"
 scale.coefs[scale.coefs$variable=="ALT_DIF",'variable'] <- "Elevation span"
-scale.coefs[scale.coefs$variable=="ISLAND",'variable'] <- "Island"
+scale.coefs[scale.coefs$variable=="ISLANDmainland",'variable'] <- "Mainland"
+
+
 scale.coefs$variable <- factor(scale.coefs$variable, 
-                               levels=c("Island", "Elevation span", "GPP", 
+                               levels=c("Mainland",
+                                        "Elevation span", "GPP", 
                                         "P Seasonality", "Minimum P",
                                         "Annual T", "Isothermality", 
                                         "Tree density", "Minimum DBH") )
@@ -762,25 +771,31 @@ scale.coefs$variable <- factor(scale.coefs$variable,
 # ------------------------------------------------------------------------------
 # plot the coefficients
 
-coef.plot <- ggplot(scale.coefs, aes(x=log10(exp(A*A.sd + A.mean)), y=X50.)) + 
+
+coef.plot <- ggplot(scale.coefs, aes(x=exp(A*A.sd + A.mean), y=X50.)) + 
   geom_ribbon(aes(ymin=X2.5., ymax=X97.5., fill=Model), alpha=0.3) +
   #geom_ribbon(aes(ymin=X25., ymax=X75., fill=NA), alpha=0.3) +
   geom_line(aes(colour=Model), size=1) +
-  geom_line(aes(x=log10(exp(A*A.sd + A.mean)), y=X25., colour=Model), 
+  geom_line(aes(x=exp(A*A.sd + A.mean), y=X25., colour=Model), 
             linetype="dashed") +
-  geom_line(aes(x=log10(exp(A*A.sd + A.mean)), y=X75., colour=Model), 
+  geom_line(aes(x=exp(A*A.sd + A.mean), y=X75., colour=Model), 
             linetype="dashed") +
   facet_grid(.~variable) +
   geom_hline(yintercept=0, colour="darkgrey") +
-  xlab("log10 Area [km^2]") + 
-  ylab("Standardized coefficient") +
+  xlab(expression("Area" ~ (km^2))) + 
+  ylab("Environment effect") +
   scale_colour_brewer(palette = "Set1") +
   scale_fill_brewer(palette = "Set1") +
+  scale_x_continuous(trans = "log10",
+                     minor_breaks = NULL,
+                     breaks = c(0.001, 1, 1000, 1000000),
+                     labels = c(expression(10^-3), "1", expression(10^3), expression(10^6))) +
   theme_bw() +
-  theme(legend.position="top")
+  theme(legend.position="right")
 coef.plot
 
-png("../Figures/Subset_data_sensitivity_analysis/subset_envir_effects.png", width=3000, height=800, res=250)
+# save to a file
+png("../Figures/Subset_data_sensitivity_analysis/subset_environment_effects.png", width=2200, height=600, res=200)
 coef.plot
 dev.off()
 
