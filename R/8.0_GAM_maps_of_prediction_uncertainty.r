@@ -236,7 +236,7 @@ plot.gr.high <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
   scale_fill_distiller(palette = "Spectral", 
-                       limits=c(1,max(grid5.mlf$X97.5.ile)),
+                       limits=c(1,max(grid5.mlf$Q97.5)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
@@ -255,7 +255,7 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
   scale_fill_distiller(palette = "Spectral",
-                       limits=c(1,max(grid5.mlf$X97.5.ile)),
+                       limits=c(1,max(grid5.mlf$Q97.5)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
@@ -273,7 +273,7 @@ plot.gr.low <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
   scale_fill_distiller(palette = "Spectral", 
-                       limits=c(1,max(grid5.mlf$X97.5.ile)),
+                       limits=c(1,max(grid5.mlf$Q97.5)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
@@ -291,7 +291,7 @@ plot.pl.high <- ggplot(MAINL, aes(long, lat, group=group)) +
                colour="darkgrey", size=0.2) +
   geom_polygon(colour=NA, fill="white", size=.2) + 
   geom_point(data=plot.preds.ml, size=0.01,
-             aes(x=X, y=Y, group=NULL, colour=X97.5.ile))  +
+             aes(x=X, y=Y, group=NULL, colour=Q97.5))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
   scale_colour_distiller(palette = "Spectral", 
                          name=expression(S[plot]),
@@ -314,7 +314,7 @@ plot.pl.S <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_polygon(colour="black", fill=NA, size=.2) + 
   scale_colour_distiller(palette = "Spectral", 
                          name=expression(S[plot]),
-                         limits=c(1,max(plot.preds.ml$X97.5.ile)),
+                         limits=c(1,max(plot.preds.ml$Q97.5)),
                          trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
@@ -333,7 +333,7 @@ plot.pl.low <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_polygon(colour="black", fill=NA, size=.2) + 
   scale_colour_distiller(palette = "Spectral", 
                          name=expression(S[plot]),
-                         limits=c(1,max(plot.preds.ml$X97.5.ile)),
+                         limits=c(1,max(plot.preds.ml$Q97.5)),
                          trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
@@ -369,7 +369,6 @@ rank.gr.log <- ggplot(data = grid.rank, aes(x = order(Q50), y = Q50)) +
                               #size = 1, 
                               colour="darkgrey") +
                scale_y_continuous(trans = "log10", 
-                                   # limits=c(0.1, max(grid5$X97.5.ile)),
                                   labels = c(1,10,100,1000, 10000),
                                   breaks = c(1,10,100,1000, 10000)) +
                xlab("Rank") + ylab("Predicted S") + ggtitle("h") +
@@ -401,8 +400,7 @@ rank.pl.log <- ggplot(data = plot.rank, aes(x = order(Q50), y = Q50)) +
                               #size = 1, 
                               colour="darkgrey") +
                scale_y_continuous(trans = "log10", 
-                                  # limits=c(0.1, max(grid5$X97.5.ile)),
-                                  labels = c(1,10,100,1000, 10000),
+                                 labels = c(1,10,100,1000, 10000),
                                   breaks = c(1,10,100,1000, 10000)) +
                xlab("Rank") + ylab("Predicted S") +
                geom_point(size = 0.5) + theme_bw() + ggtitle("j") + 
@@ -511,6 +509,15 @@ large.cells[is.na(large.cells)] <- FALSE
 grid.mcmc.sub <- grid.mcmc[,(good.cells * large.cells) == 1]
 grid.dat.sub <-  grid5.dat[(good.cells * large.cells) == 1,]
 
+## ASSESS STANDARD DEVIATIONS AT THE GRID GRAIN ---------------------------------
+nrow(grid.mcmc.sub)
+ncol(grid.mcmc.sub)
+grid.sd <- apply(X = grid.mcmc.sub, MARGIN = 2, FUN = var)
+grid.mean <- apply(X = grid.mcmc.sub, MARGIN = 2, FUN = mean)
+plot(grid.mean, grid.sd)
+
+# ------------------------------------------------------------------------------
+
 # fit a smoother to each iteration of the MCMC algorithm
 res.grid <- matrix(nrow=nrow(grid.dat.sub), ncol=nrow(grid.mcmc.sub))
 for(i in 1:nrow(grid.mcmc.sub))
@@ -595,7 +602,7 @@ smoothers.both <- rbind(smoother.grid, smoother.plot)
 
 # ------------------------------------------------------------------------------
 
-# plot IT
+# plot the latitudinal gradient
 LGU.plot <- ggplot(LG.data, aes(x=Latitude, y=Q50)) +
   geom_vline(xintercept = 0, size=.2) +
   geom_vline(xintercept = 23.5, size=.2) +

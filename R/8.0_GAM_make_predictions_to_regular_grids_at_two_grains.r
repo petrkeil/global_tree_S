@@ -139,7 +139,7 @@ gamma <- over(x=plot.preds, y=grid5)[,c("S", "ALT_DIF", "smooth.country")]
 names(gamma) <- c("gamma", "ALT_DIF_grid", "smooth.country")
 # calculate beta diversity per plot
 plot.preds@data <- data.frame(plot.preds@data, gamma) %>%
-  mutate(beta = gamma/S, reg.beta = (smooth.country - smooth.plot))
+  mutate(beta = gamma/S, reg.beta = exp(smooth.country)/exp(smooth.plot))
 
 # ------------------------------------------------------------------------------
 # write out data with no NA values
@@ -303,15 +303,14 @@ plot.beta.smth <- ggplot(MAINL, aes(long, lat, group=group)) +
              aes(x=X, y=Y, group=NULL, colour=reg.beta))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
   scale_colour_distiller(palette = "Spectral", 
-                         name=expression("Region" ~ beta),
-                         limits=c(-2, 2)) +
+                         name=expression("Region" ~ beta)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
   #ggtitle("F") +  
-  labs(subtitle = expression(Delta ~ "=" ~ s[2](Lat, Lon) - s[2](Lat, Lon))) +
+  labs(subtitle = expression(Delta ~ "=" ~ e^s[2](Lat, Lon) / e^s[1](Lat, Lon) )) +
   theme_minimal() + blank.theme
-
+plot.beta.smth
 
 # ------------------------------------------------------------------------------
 

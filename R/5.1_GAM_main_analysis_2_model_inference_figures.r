@@ -224,7 +224,8 @@ p.hist.single <- ggplot(HIST, aes(exp(Area_km*A.sd + A.mean), X50.)) +
   geom_linerange(aes(ymin=X25., ymax=X75., colour=REALM), size=1) +
   geom_line( aes(colour=REALM)) +
   scale_colour_brewer(palette = "Dark2", name="Realm") +
-  scale_y_continuous(minor_breaks = NULL) +
+  scale_y_continuous(minor_breaks = NULL,
+                     breaks = c(-3, -2, -1, 0, 1, 2, 3, 4, 5, 6 )) +
   scale_x_continuous(trans = "log10",
                      minor_breaks = NULL,
                      breaks = c(0.01, 1, 100, 10000, 1000000),

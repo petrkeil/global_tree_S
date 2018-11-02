@@ -122,6 +122,67 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
 
 
 # ------------------------------------------------------------------------------
+# RAW RICHNESS MAPS
+
+s.cntr <- ggplot(C.fort, aes(long, lat, group=group)) + 
+  geom_polygon(data=LINES,  aes(long, lat, group=group), 
+               colour="darkgrey", size=0.2) +
+  geom_polygon(aes(fill=S), colour="black", size=.2) + 
+  scale_fill_distiller(palette = "Spectral", name="S", 
+                       trans="log10", limits=c(1,6500)) +
+  scale_x_continuous(limits = c(-12000000, 16000000)) +
+  scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
+  ggtitle("a") + theme_minimal() +
+  xlab("") + ylab("") + blank.theme
+
+s.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
+  geom_polygon(data=LINES,  aes(long, lat, group=group), 
+               colour="white", size=0.2) +
+  geom_polygon(fill="black", colour="black", size=.2) + 
+  geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL, colour=S), size=1, shape=1) +
+  scale_colour_distiller(palette = "Spectral", name="S", 
+                         trans="log10", limits=c(1,6500)) +
+  scale_x_continuous(limits = c(-12000000, 16000000)) +
+  scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
+  ggtitle("b") + theme_minimal() +
+  xlab("") + ylab("") + blank.theme +
+  theme(panel.background = element_rect(fill = "grey",
+                                        colour = "grey",
+                                        size = 0.5, linetype = "solid"),)
+
+tiff("../Figures/observed_richness_maps.tif", width=2000, height=2100, res=350, 
+     compression = "lzw")
+grid.arrange(s.cntr, s.plot, ncol=1, nrow=2)
+dev.off()
+
+
+# ------------------------------------------------------------------------------
+# PREDICTED RICHNESS MAPS
+
+s.pred.cntr <- ggplot(C.fort, aes(long, lat, group=group)) + 
+  geom_polygon(data=LINES,  aes(long, lat, group=group), 
+               colour="darkgrey", size=0.2) +
+  geom_polygon(aes(fill=S.pred), colour="black", size=.2) + 
+  scale_fill_distiller(palette = "Spectral", name="Predicted S", 
+                       trans="log10") +
+  scale_x_continuous(limits = c(-13000000, 16000000)) +
+  ggtitle("a") + theme_minimal() +
+  xlab("") + ylab("") + blank.theme
+
+s.pred.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
+  geom_polygon(data=LINES,  aes(long, lat, group=group), 
+               colour="darkgrey", size=0.2) +
+  geom_polygon(fill="white", colour="black", size=.2) + 
+  geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL, colour=S.pred)) +
+  scale_colour_distiller(palette = "Spectral", name="Predicted S", 
+                         trans="log10") +
+  scale_x_continuous(limits = c(-13000000, 16000000)) +
+  ggtitle("b") + theme_minimal() +
+  xlab("") + ylab("") + blank.theme
+
+
+
+# ------------------------------------------------------------------------------
 # SMOOTHER MAPS in observational units
 
 g.cntr <- ggplot(C.fort, aes(long, lat, group=group)) + 
@@ -155,69 +216,7 @@ png("../Figures/smoothing_splines_at_data_points_map.png", width=2000, height=20
 grid.arrange(g.cntr, g.plot, ncol=1, nrow=2)
 dev.off()
 
-# ------------------------------------------------------------------------------
-# PREDICTED RICHNESS MAPS
 
-s.pred.cntr <- ggplot(C.fort, aes(long, lat, group=group)) + 
-  geom_polygon(data=LINES,  aes(long, lat, group=group), 
-               colour="darkgrey", size=0.2) +
-  geom_polygon(aes(fill=S.pred), colour="black", size=.2) + 
-  scale_fill_distiller(palette = "Spectral", name="Predicted S", 
-                       trans="log10") +
-  scale_x_continuous(limits = c(-13000000, 16000000)) +
-  ggtitle("a") + theme_minimal() +
-  xlab("") + ylab("") + blank.theme
-
-s.pred.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
-  geom_polygon(data=LINES,  aes(long, lat, group=group), 
-               colour="darkgrey", size=0.2) +
-  geom_polygon(fill="white", colour="black", size=.2) + 
-  geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL, colour=S.pred)) +
-  scale_colour_distiller(palette = "Spectral", name="Predicted S", 
-                         trans="log10") +
-  scale_x_continuous(limits = c(-13000000, 16000000)) +
-  ggtitle("b") + theme_minimal() +
-  xlab("") + ylab("") + blank.theme
-
-
-
-# ------------------------------------------------------------------------------
-# RAW RICHNESS MAPS
-
-s.cntr <- ggplot(C.fort, aes(long, lat, group=group)) + 
-  geom_polygon(data=LINES,  aes(long, lat, group=group), 
-               colour="darkgrey", size=0.2) +
-  geom_polygon(aes(fill=S), colour="black", size=.2) + 
-  scale_fill_distiller(palette = "Spectral", name="S", 
-                       trans="log10", limits=c(1,6500)) +
-  scale_x_continuous(limits = c(-12000000, 16000000)) +
-  scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
-  ggtitle("a") + theme_minimal() +
-  # labs(subtitle = expression(S[country] ~ "(richness at the country grain)")) +
-  xlab("") + ylab("") + blank.theme
-
-s.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
-  geom_polygon(data=LINES,  aes(long, lat, group=group), 
-               colour="darkgrey", size=0.2) +
-  geom_polygon(fill="darkgrey", colour="darkgrey", size=.2) + 
-  geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL, colour=S), size=1, shape=1) +
-  #geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL), size=1, colour="black", 
-  #           shape =1 , size=.2) +
-  scale_colour_distiller(palette = "Spectral", name="S", 
-                         trans="log10", limits=c(1,6500)) +
-  scale_x_continuous(limits = c(-12000000, 16000000)) +
-  scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
-  ggtitle("b") + theme_minimal() +
-  #labs(subtitle = expression(S[plot] ~ "(richness at the plot grain)")) +
-  xlab("") + ylab("") + blank.theme +
-  theme(panel.background = element_rect(fill = "lightgrey",
-                                        colour = "lightgrey",
-                                        size = 0.5, linetype = "solid"),)
-
-tiff("../Figures/observed_richness_maps.tif", width=2000, height=2100, res=350, 
-     compression = "lzw")
-grid.arrange(s.cntr, s.plot, ncol=1, nrow=2)
-dev.off()
 
 # ------------------------------------------------------------------------------
 # BIOGEOGRAPHIC REALMS

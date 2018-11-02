@@ -10,6 +10,8 @@
 # (package 'brms'). The fitted objects are exported to files, so that they
 # can be further used for predictions and inference.
 
+# Note: All predictors are scaled to 0 mean and variance of 1. Also, some
+# predictors (Area_km, Tree_dens) are log transformed.
 
 ################################################################################ 
 # LOAD THE DATA AND THE PACKAGES
@@ -20,32 +22,34 @@ source("4.1_Data_loading_standardization_and_centering.r")
 
 
 ################################################################################ 
-# THE MODEL FORMULAS
+# DEFINING THE R MODEL FORMULAS
 ################################################################################
 
-REALM.formula <- S ~ REALM + poly(Area_km,3):REALM +  
-  Tree_dens + Tree_dens:Area_km + 
-  min_DBH + min_DBH:Area_km +
-  GPP + GPP:Area_km + 
-  ANN_T + ANN_T:Area_km +
-  ISO_T + ISO_T:Area_km + 
-  MIN_P + MIN_P:Area_km +  
-  P_SEAS + P_SEAS:Area_km + 
-  ALT_DIF + ALT_DIF:Area_km +
-  ISLAND + ISLAND:Area_km 
+REALM.formula <- S ~ 
+  REALM + poly(Area_km,3):REALM + # biogeographic realm
+  Tree_dens + Tree_dens:Area_km + # tree density
+  min_DBH + min_DBH:Area_km +     # minimum DBH
+  GPP + GPP:Area_km +             # gross primary productivity
+  ANN_T + ANN_T:Area_km +         # mean annual temperature
+  ISO_T + ISO_T:Area_km +         # mean isothermality 
+  MIN_P + MIN_P:Area_km +         # minimum precipitation in the driest quarter of the year
+  P_SEAS + P_SEAS:Area_km +       # mean precipitation seasonality
+  ALT_DIF + ALT_DIF:Area_km +     # altitude difference
+  ISLAND + ISLAND:Area_km         # insularity
 
 
-SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
-  poly(Area_km, 3) +  
-  Tree_dens + Tree_dens:Area_km + 
-  min_DBH + min_DBH:Area_km +
-  GPP + GPP:Area_km + 
-  ANN_T + ANN_T:Area_km +
-  ISO_T + ISO_T:Area_km + 
-  MIN_P + MIN_P:Area_km +  
-  P_SEAS + P_SEAS:Area_km + 
-  ALT_DIF + ALT_DIF:Area_km +
-  ISLAND + ISLAND:Area_km 
+SMOOTH.formula <- S ~ 
+  s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) + # smooth region effect
+  poly(Area_km, 3) +              # species-area relationship
+  Tree_dens + Tree_dens:Area_km + # tree density
+  min_DBH + min_DBH:Area_km +     # minimum DBH
+  GPP + GPP:Area_km +             # gross primary productivity
+  ANN_T + ANN_T:Area_km +         # mean annual temperature
+  ISO_T + ISO_T:Area_km +         # mean isothermality 
+  MIN_P + MIN_P:Area_km +         # minimum precipitation in the driest quarter of the year
+  P_SEAS + P_SEAS:Area_km +       # mean precipitation seasonality
+  ALT_DIF + ALT_DIF:Area_km +     # altitude difference
+  ISLAND + ISLAND:Area_km         # insularity
 
 
 

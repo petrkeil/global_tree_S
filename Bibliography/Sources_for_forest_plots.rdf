@@ -1,0 +1,3909 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:link="http://purl.org/rss/1.0/modules/link/"
+ xmlns:vcard="http://nwalsh.com/rdf/vCard#">
+    <bib:Article rdf:about="#item_520">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>7</prism:volume>
+                <dc:title>Applied Ecology and Environmental Research</dc:title>
+                <dcterms:alternative>Appl. Ecol. Env. Res.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>Lalfakawma</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sahoo</foaf:surname>
+                        <foaf:givenname>U</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Roy</foaf:surname>
+                        <foaf:givenname>S</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vanlalhriatpuia</foaf:surname>
+                        <foaf:givenname>K</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vanalalhluna</foaf:surname>
+                        <foaf:givenname>P.C.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1285"/>
+        <bib:pages>303-318</bib:pages>
+        <dc:date>January 1, 2010</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Community composition and tree population structure in undisturbed and disturbed tropical semi-evergreen forest stands of North-East India</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1285">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/286163103_Community_composition_and_tree_population_structure_in_undisturbed_and_disturbed_tropical_semi-evergreen_forest_stands_of_North-East_India</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 10:17:33</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Document rdf:about="http://inventaire-forestier.ign.fr/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                   <foaf:Person><foaf:surname>IGN</foaf:surname></foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://inventaire-forestier.ign.fr/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2017</dc:date>
+        <dc:title>French National Forest Inventory (FNFI)</dc:title>
+    </bib:Document>
+    <bib:Book rdf:about="#item_523">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Cairns</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>CSIRO and the Cooperative Research Centre for Tropical Rainforest Ecology and Management. Rainforest CRC</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Graham</foaf:surname>
+                        <foaf:givenname>A. W.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:date>2006</dc:date>
+        <dc:title>The CSIRO Rainforest permanent plots of North Queensland - Site, structural, floristic and edaphic descriptions.</dc:title>
+    </bib:Book>
+    <bib:Book rdf:about="#item_524">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Trento, Italy</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Ispettorato Generale del Corpo Forestale dello Stato, CRA-ISAFA</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>De Natale</foaf:surname>
+                        <foaf:givenname>F.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Floris</foaf:surname>
+                        <foaf:givenname>A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gasparini</foaf:surname>
+                        <foaf:givenname>P.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Scrinzi</foaf:surname>
+                        <foaf:givenname>G.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tabacchi</foaf:surname>
+                        <foaf:givenname>G.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tosi</foaf:surname>
+                        <foaf:givenname>V.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:date>2005</dc:date>
+        <dc:title>Inventario nazionale delle foreste e dei serbatoi forestali di carbonio</dc:title>
+    </bib:Book>
+    <bib:Book rdf:about="#item_525">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Missouri, St. Louis</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Missouri Botanical Garden Press</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Phillips</foaf:surname>
+                        <foaf:givenname>O. L.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Miller</foaf:surname>
+                        <foaf:givenname>J. S.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:date>2002</dc:date>
+        <dc:title>Global patterns of plant diversity: Alwyn H. Gentry's forest transect data set</dc:title>
+    </bib:Book>
+    <bib:Article rdf:about="#item_526">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>19</prism:volume>
+                <dc:title>Journal of Tropical Ecology</dc:title>
+                <dcterms:alternative>J. Trop. Ecol.</dcterms:alternative>
+                <dc:identifier>DOI 10.1017/S0266467403006035</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Phillips</foaf:surname>
+                        <foaf:givenname>Oliver L.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vasquez Marti­nez</foaf:surname>
+                        <foaf:givenname>R</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Núñez Vargas</foaf:surname>
+                        <foaf:givenname>Percy</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lorenzo Monteagudo</foaf:surname>
+                        <foaf:givenname>Abel</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zans</foaf:surname>
+                        <foaf:givenname>María Elena</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Galiano Sánchez</foaf:surname>
+                        <foaf:givenname>Washington</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Peña Cruz</foaf:surname>
+                        <foaf:givenname>Antonio</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Timana</foaf:surname>
+                        <foaf:givenname>Martin</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yli-Halla</foaf:surname>
+                        <foaf:givenname>Markku</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rose</foaf:surname>
+                        <foaf:givenname>Sam</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1307"/>
+        <link:link rdf:resource="#item_1306"/>
+        <dc:date>November 1, 2003</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Efficient plot-based floristic assessment of tropical forests</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1307">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Markku_Yli-Halla/publication/33037184_Efficient_plot-based_floristic_assessment_of_tropical_forests/links/00b7d5155bb82a6d7e000000/Efficient-plot-based-floristic-assessment-of-tropical-forests.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:22:28</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1306">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/33037184_Efficient_plot-based_floristic_assessment_of_tropical_forests</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:22:28</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Book rdf:about="https://www.fia.fs.fed.us/">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>US Department of Agriculture</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>US Department of Agriculture</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.fia.fs.fed.us/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2016</dc:date>
+        <dc:title>Forest inventory and analysis – fiscal year 2016 bussiness report</dc:title>
+    </bib:Book>
+    <bib:Book rdf:about="#item_528">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>NZ</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Landcare Research NZ Ltd</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wiser</foaf:surname>
+                        <foaf:givenname>S.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:date>2016</dc:date>
+        <dc:title>New Zealand forest plot data in global forest biodiversity dataset</dc:title>
+    </bib:Book>
+    <bib:Article rdf:about="http://www.biodiversity-science.net/CN/abstract/abstract8524.shtml">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1005-0094"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shu-Qing</foaf:surname>
+                        <foaf:givenname>Zhao</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jing-Yun</foaf:surname>
+                        <foaf:givenname>Fang</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shi-Long</foaf:surname>
+                        <foaf:givenname>Piao</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhan-Jiang</foaf:surname>
+                        <foaf:givenname>Zong</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xiao-Pu</foaf:surname>
+                        <foaf:givenname>W. U.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tao</foaf:surname>
+                        <foaf:givenname>G. U.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1287"/>
+        <link:link rdf:resource="#item_1286"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/CN/abstract/abstract8524.shtml</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>182-189</bib:pages>
+        <dcterms:dateSubmitted>2017-12-08 09:39:52</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.biodiversity-science.net</z:libraryCatalog>
+        <z:language>cn</z:language>
+        <dc:title>Structure and species diversity of boreal forests in Mt. Baikalu, Huzhong area, Daxing'an Mountains, Northeast China</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1005-0094">
+        <prism:volume>12</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>Biodiversity Science</dc:title>
+        <dc:identifier>ISSN 1005-0094</dc:identifier>
+        <dcterms:alternative>Biodivers. Sci.</dcterms:alternative>
+        <dc:identifier>DOI 10.17520/biods.2004022</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1287">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/CN/article/downloadArticleFile.do?attachType=PDF&amp;id=8524</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:40:06</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1286">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/EN/abstract/abstract8524.shtml</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:40:09</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.biodiversity-science.net/CN/abstract/abstract8873.shtml">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>12</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Biodiversity Science</dc:title>
+                <dc:identifier>ISSN 1005-0094</dc:identifier>
+                <dcterms:alternative>Biodivers. Sci.</dcterms:alternative>
+                <dc:identifier>DOI 10.17520/biods.2004008</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cheng-Yang</foaf:surname>
+                        <foaf:givenname>Zheng</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zeng-Li</foaf:surname>
+                        <foaf:givenname>L. I. U.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jing-Yun</foaf:surname>
+                        <foaf:givenname>Fang</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1289"/>
+        <link:link rdf:resource="#item_1288"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/CN/abstract/abstract8873.shtml</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>63-74</bib:pages>
+        <dcterms:dateSubmitted>2017-12-08 09:38:26</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.biodiversity-science.net</z:libraryCatalog>
+        <z:language>cn</z:language>
+        <dc:title>Tree species diversity along latitudinal gradient on southeastern and northwestern slopes of Mt. Huanggang, Wuyi Mountains, Fujian, China</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1289">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/CN/article/downloadArticleFile.do?attachType=PDF&amp;id=8873</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:38:46</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1288">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/EN/abstract/abstract8873.shtml</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:38:51</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_531">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>30</prism:volume>
+                <dc:title>African Study Monographs</dc:title>
+                <dcterms:alternative>Afr. Study. Monogr.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yasuoka</foaf:surname>
+                        <foaf:givenname>Hirokazu</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1291"/>
+        <link:link rdf:resource="#item_1290"/>
+        <bib:pages>89-119</bib:pages>
+        <dc:date>November 30, 2008</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>The variety of forest vegetations in south-eastern Cameroon, with special reference to the availability of wild yams for the forest hunter-gatherers</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1291">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Hirokazu_Yasuoka/publication/32181760_The_Variety_of_Forest_Vegetations_in_Southeastern_Cameroonwith_Special_Reference_to_the_Av_ailability_of_Wild_Yams_for_the_Forest_Hunter-Gatherers/links/00b7d5387b160366d1000000/The-Variety-of-Forest-Vegetations-in-Southeastern-Cameroon-with-Special-Reference-to-the-Av-ailability-of-Wild-Yams-for-the-Forest-Hunter-Gatherers.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:36:24</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1290">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/32181760_The_Variety_of_Forest_Vegetations_in_Southeastern_Cameroonwith_Special_Reference_to_the_Av_ailability_of_Wild_Yams_for_the_Forest_Hunter-Gatherers</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:36:24</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_532">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>13</prism:volume>
+                <dc:title>South East Asian Studies</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yamada</foaf:surname>
+                        <foaf:givenname>Isamu</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1292"/>
+        <bib:pages>513-534</bib:pages>
+        <dc:date>January 1, 1976</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Forest ecological studies of the montane forest of Mt. Pangrango, West Java: II. Stratification and floristic composition of the forest vegetation of the higher part of Mt. Pangrango</dc:title>
+        <z:shortTitle>Forest Ecological Studies of the Montane Forest of Mt. Pangrango, West Java</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1292">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/32159426_Forest_Ecological_Studies_of_the_Montane_Forest_of_Mt_Pangrango_West_Java_II_Stratification_and_Floristic_Composition_of_the_Forest_Vegetation_of_the_Higher_Part_of_Mt_Pangrango</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:35:03</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_533">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>12</prism:volume>
+                <dc:title>Biodiversity Science</dc:title>
+                <dcterms:alternative>Biodivers. Sci.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wu</foaf:surname>
+                        <foaf:givenname>X.-P</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhu</foaf:surname>
+                        <foaf:givenname>B</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhao</foaf:surname>
+                        <foaf:givenname>S.-Q</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1293"/>
+        <bib:pages>174-181</bib:pages>
+        <dc:date>January 1, 2004</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Comparison of community structure and species diversity of mixed forests of deciduous broad-leaved tree and Korean pine in Northeast China</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1293">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/285158680_Comparison_of_community_structure_and_species_diversity_of_mixed_forests_of_deciduous_broad-leaved_tree_and_Korean_pine_in_Northeast_China</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:34:05</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_534">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>6</prism:volume>
+                <dc:title>Journal of Resources and Ecology</dc:title>
+                <dcterms:alternative>J. Res. Ecol.</dcterms:alternative>
+                <dc:identifier>DOI 10.5814/j.issn.1674-764X.2015.04.003</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wusheng</foaf:surname>
+                        <foaf:givenname>Xiang</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tao</foaf:surname>
+                        <foaf:givenname>Ding</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shihong</foaf:surname>
+                        <foaf:givenname>Lü</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Li</foaf:surname>
+                        <foaf:givenname>Xiankun</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1294"/>
+        <bib:pages>208-216</bib:pages>
+        <dc:date>July 1, 2015</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>A comparison of tree species diversity in two subtropical forests, Guangxi, Southwest China</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1294">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/280988695_A_Comparison_of_Tree_Species_Diversity_in_Two_Subtropical_Forests_Guangxi_Southwest_China</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:32:51</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="http://doi.wiley.com/10.1111/j.1654-1103.2007.tb02569.x">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:11009233"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Szwagrzyk</foaf:surname>
+                        <foaf:givenname>Jerzy</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gazda</foaf:surname>
+                        <foaf:givenname>Anna</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://doi.wiley.com/10.1111/j.1654-1103.2007.tb02569.x</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>555-562</bib:pages>
+        <dc:date>08/2007</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:31:32</dcterms:dateSubmitted>
+        <z:libraryCatalog>CrossRef</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Above-ground standing biomass and tree species diversity in natural stands of Central Europe</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:11009233">
+        <prism:volume>18</prism:volume>
+        <prism:number>4</prism:number>
+        <dc:title>Journal of Vegetation Science</dc:title>
+        <dc:identifier>ISSN 11009233</dc:identifier>
+        <dcterms:alternative>J. Veg. Sci.</dcterms:alternative>
+        <dc:identifier>DOI 10.1111/j.1654-1103.2007.tb02569.x</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="#item_536">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>7</prism:volume>
+                <dc:title>Sci. Rep.</dc:title>
+                <dcterms:alternative>Sci. Rep.</dcterms:alternative>
+                <dc:identifier>DOI 10.1038/srep39102</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sullivan</foaf:surname>
+                        <foaf:givenname>Martin</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Talbot</foaf:surname>
+                        <foaf:givenname>Joey</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lewis</foaf:surname>
+                        <foaf:givenname>Simon</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Phillips</foaf:surname>
+                        <foaf:givenname>Oliver</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Qie</foaf:surname>
+                        <foaf:givenname>Lan</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kouob Begne</foaf:surname>
+                        <foaf:givenname>Serge</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Castellanos</foaf:surname>
+                        <foaf:givenname>Hernan</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>cuni  sanchez</foaf:surname>
+                        <foaf:givenname>Aida</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hubau</foaf:surname>
+                        <foaf:givenname>Wannes</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lopez-Gonzalez</foaf:surname>
+                        <foaf:givenname>Gabriela</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Miles</foaf:surname>
+                        <foaf:givenname>Lera</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Monteagudo-Mendoza</foaf:surname>
+                        <foaf:givenname>Abel</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sonké</foaf:surname>
+                        <foaf:givenname>Bonaventure</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sunderland</foaf:surname>
+                        <foaf:givenname>Terry</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>ter Steege</foaf:surname>
+                        <foaf:givenname>Hans</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>White</foaf:surname>
+                        <foaf:givenname>Lee</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Affum-Baffoe</foaf:surname>
+                        <foaf:givenname>Kofi</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Aiba</foaf:surname>
+                        <foaf:givenname>Shin-Ichiro</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Almeida</foaf:surname>
+                        <foaf:givenname>Everton</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zemagho</foaf:surname>
+                        <foaf:givenname>Lise</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1296"/>
+        <link:link rdf:resource="#item_1295"/>
+        <dc:date>January 17, 2017</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Diversity and carbon storage across the tropical forest biome</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1296">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Martin_Sullivan4/publication/309739320_Diversity_and_carbon_storage_across_the_tropical_forest_biome/links/58a191b245851598bab8d929/Diversity-and-carbon-storage-across-the-tropical-forest-biome.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:29:52</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1295">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/309739320_Diversity_and_carbon_storage_across_the_tropical_forest_biome</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:29:53</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="http://onlinelibrary.wiley.com/doi/10.1111/j.1744-7429.2004.tb00346.x/abstract">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1744-7429"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sheil</foaf:surname>
+                        <foaf:givenname>Douglas</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Salim</foaf:surname>
+                        <foaf:givenname>Agus</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1297"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>African semi-deciduous rain forest</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>bark damage</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cynometra alexandri</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>herbivory</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Loxodonta africana</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>monodominant</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>succession</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>tolerance</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Uganda</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/j.1744-7429.2004.tb00346.x/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>505-521</bib:pages>
+        <dc:date>December 1, 2004</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:28:31</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Forest tree persistence, elephants, and stem scars</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1744-7429">
+        <prism:volume>36</prism:volume>
+        <prism:number>4</prism:number>
+        <dc:title>Biotropica</dc:title>
+        <dc:identifier>ISSN 1744-7429</dc:identifier>
+        <dcterms:alternative>Biotropica</dcterms:alternative>
+        <dc:identifier>DOI 10.1111/j.1744-7429.2004.tb00346.x</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1297">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/j.1744-7429.2004.tb00346.x/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:28:32</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://onlinelibrary.wiley.com/doi/10.1111/j.1654-1103.2005.tb02391.x/abstract">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1654-1103"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Splechtna</foaf:surname>
+                        <foaf:givenname>Bernhard E.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gratzer</foaf:surname>
+                        <foaf:givenname>Georg</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Black</foaf:surname>
+                        <foaf:givenname>Bryan A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1298"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Boundary-line method</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Disturbance regime</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Forest dynamics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Release</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Spatial pattern analysis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/j.1654-1103.2005.tb02391.x/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>511-522</bib:pages>
+        <dc:date>October 1, 2005</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:28:00</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Disturbance history of a European old-growth mixed-species forest—A spatial dendro-ecological analysis</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1654-1103">
+        <prism:volume>16</prism:volume>
+        <prism:number>5</prism:number>
+        <dc:title>Journal of Vegetation Science</dc:title>
+        <dc:identifier>ISSN 1654-1103</dc:identifier>
+        <dcterms:alternative>J. Veg. Sci.</dcterms:alternative>
+        <dc:identifier>DOI 10.1111/j.1654-1103.2005.tb02391.x</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1298">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/j.1654-1103.2005.tb02391.x/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:28:17</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S0367253013000315">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0367-2530"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sanchez</foaf:surname>
+                        <foaf:givenname>Maryland</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pedroni</foaf:surname>
+                        <foaf:givenname>Fernando</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Eisenlohr</foaf:surname>
+                        <foaf:givenname>Pedro V.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Oliveira-Filho</foaf:surname>
+                        <foaf:givenname>Ary T.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1299"/>
+        <link:link rdf:resource="#item_1300"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Altitudinal gradient</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Diversity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Floristic composition</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Montane forest</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Vegetation patterns</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0367253013000315</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>184-196</bib:pages>
+        <dc:date>March 1, 2013</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:26:45</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:title>Changes in tree community composition and structure of Atlantic rain forest on a slope of the Serra do Mar range, southeastern Brazil, from near sea level to 1000m of altitude</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0367-2530">
+        <prism:volume>208</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Flora - Morphology, Distribution, Functional Ecology of Plants</dc:title>
+        <dc:identifier>ISSN 0367-2530</dc:identifier>
+        <dcterms:alternative>Flora</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/j.flora.2013.03.002</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1299">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ac.els-cdn.com/S0367253013000315/1-s2.0-S0367253013000315-main.pdf?_tid=e86f2b22-dbf9-11e7-965c-00000aacb362&amp;acdnat=1512725385_77f8e471b88a4faa4e525bdf3addd6f7</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:26:53</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1300">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S0367253013000315</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:26:51</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_540">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>87</prism:volume>
+                <dc:title>Journal of the Japanese Forest Society</dc:title>
+                <dcterms:alternative>J. Japan. Forest Soc.</dcterms:alternative>
+                <dc:identifier>DOI 10.4005/jjfs.87.293</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sawada</foaf:surname>
+                        <foaf:givenname>H</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ohkubo</foaf:surname>
+                        <foaf:givenname>Tatsuhiro</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kaji</foaf:surname>
+                        <foaf:givenname>M</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Oomura</foaf:surname>
+                        <foaf:givenname>K</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1301"/>
+        <bib:pages>293-303</bib:pages>
+        <dc:date>January 1, 2005</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Spatial distribution and topographic dependence of vegetation types and tree populations of natural forests in the Chichibu Mountains, central Japan.</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1301">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/274685312_Spatial_Distribution_and_Topographic_Dependence_of_Vegetation_Types_and_Tree_Populations_of_Natural_Forests_in_the_Chichibu_Mountains_Central_Japan</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:25:34</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="http://onlinelibrary.wiley.com/doi/10.1890/10-0133.1/abstract">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1939-9170"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ramesh</foaf:surname>
+                        <foaf:givenname>B. R.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Swaminath</foaf:surname>
+                        <foaf:givenname>M. H.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Patil</foaf:surname>
+                        <foaf:givenname>Santoshgouda V.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                   <foaf:Person><foaf:surname>Dasappa</foaf:surname></foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pélissier</foaf:surname>
+                        <foaf:givenname>Raphaël</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Venugopal</foaf:surname>
+                        <foaf:givenname>P. Dilip</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Aravajy</foaf:surname>
+                        <foaf:givenname>S.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Elouard</foaf:surname>
+                        <foaf:givenname>Claire</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ramalingam</foaf:surname>
+                        <foaf:givenname>S.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1302"/>
+        <link:link rdf:resource="#item_1303"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>biodiversity sampling plots</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>central Western Ghats</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>India</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Karnataka</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>mesoscale plot network</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>plant species abundances</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>tropical forest types</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1890/10-0133.1/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>3118-3118</bib:pages>
+        <dc:date>October 1, 2010</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:24:35</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Forest stand structure and composition in 96 sites along environmental gradients in the central Western Ghats of India</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1939-9170">
+        <prism:volume>91</prism:volume>
+        <prism:number>10</prism:number>
+        <dc:title>Ecology</dc:title>
+        <dc:identifier>ISSN 1939-9170</dc:identifier>
+        <dc:identifier>DOI 10.1890/10-0133.1</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1302">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/store/10.1890/10-0133.1/asset/ecy201091103118.pdf?v=1&amp;t=jaxpg9fo&amp;s=22fb95e66e3f4cc907614e08f143fb21a4bfed06</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:24:44</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1303">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1890/10-0133.1/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:24:41</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_542">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>5</prism:volume>
+                <dc:title>Scientific Reports</dc:title>
+                <dcterms:alternative>Sci. Rep.</dcterms:alternative>
+                <dc:identifier>DOI 10.1038/srep14689</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Popradit</foaf:surname>
+                        <foaf:givenname>Ananya</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Srisatit</foaf:surname>
+                        <foaf:givenname>Thares</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kiratiprayoon</foaf:surname>
+                        <foaf:givenname>Somboon</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yoshimura</foaf:surname>
+                        <foaf:givenname>Jin</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ishida</foaf:surname>
+                        <foaf:givenname>Atsushi</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shiyomi</foaf:surname>
+                        <foaf:givenname>Masae</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Murayama</foaf:surname>
+                        <foaf:givenname>Takehiko</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chantaranothai</foaf:surname>
+                        <foaf:givenname>Pranom</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Outtaranakorn</foaf:surname>
+                        <foaf:givenname>Somkid</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Phromma</foaf:surname>
+                        <foaf:givenname>Issara</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1305"/>
+        <link:link rdf:resource="#item_1304"/>
+        <bib:pages>14689</bib:pages>
+        <dc:date>October 5, 2015</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Anthropogenic effects on a tropical forest according to the distance from human settlements</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1305">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Issara_Phromma2/publication/282619422_Anthropogenic_effects_on_a_tropical_forest_according_to_the_distance_from_human_settlements/links/5693996c08aee91f69a83b26/Anthropogenic-effects-on-a-tropical-forest-according-to-the-distance-from-human-settlements.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:24:02</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1304">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/282619422_Anthropogenic_effects_on_a_tropical_forest_according_to_the_distance_from_human_settlements</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:24:02</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="https://link.springer.com/article/10.1007/s11258-009-9662-8">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1385-0237,%201573-5052"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Namikawa</foaf:surname>
+                        <foaf:givenname>Kanji</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Matsui</foaf:surname>
+                        <foaf:givenname>Tetsuya</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kobayashi</foaf:surname>
+                        <foaf:givenname>Makoto</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Goto</foaf:surname>
+                        <foaf:givenname>Ryota</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kuramoto</foaf:surname>
+                        <foaf:givenname>Shigeo</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1308"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1007/s11258-009-9662-8</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>161-174</bib:pages>
+        <dc:date>2010/03/01</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:21:58</dcterms:dateSubmitted>
+        <z:libraryCatalog>link.springer.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Initial establishment and regeneration processes of an outlying isolated Fagus crenata Blume forest stand in the northernmost boundary of its range in Hokkaido, northern Japan</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1385-0237,%201573-5052">
+        <prism:volume>207</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>Plant Ecology</dc:title>
+        <dc:identifier>ISSN 1385-0237, 1573-5052</dc:identifier>
+        <dcterms:alternative>Plant. Ecol.</dcterms:alternative>
+        <dc:identifier>DOI 10.1007/s11258-009-9662-8</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1308">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1007/s11258-009-9662-8</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:22:01</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_544">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>208</prism:volume>
+                <dc:title>Plant Ecology</dc:title>
+                <dcterms:alternative>Plant. Ecol.</dcterms:alternative>
+                <dc:identifier>DOI 10.1007/s11258-009-9707-z</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nagel</foaf:surname>
+                        <foaf:givenname>A. T.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Svoboda</foaf:surname>
+                        <foaf:givenname>Miroslav</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rugani</foaf:surname>
+                        <foaf:givenname>Tihomir</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Diaci</foaf:surname>
+                        <foaf:givenname>Jurij</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1309"/>
+        <link:link rdf:resource="#item_1310"/>
+        <bib:pages>307-318</bib:pages>
+        <dc:date>June 1, 2010</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Gap regeneration and replacement patterns in an old-growth Fagus–Abies forest of Bosnia–Herzegovina</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1309">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Miroslav_Svoboda/publication/226403015_Gap_regeneration_and_replacement_patterns_in_an_old-growth_Fagus-Abies_forest_of_Bosnia-Herzegovina/links/09e4150b5c598cfecf000000/Gap-regeneration-and-replacement-patterns-in-an-old-growth-Fagus-Abies-forest-of-Bosnia-Herzegovina.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:20:50</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1310">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/226403015_Gap_regeneration_and_replacement_patterns_in_an_old-growth_Fagus-Abies_forest_of_Bosnia-Herzegovina</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:20:50</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="http://onlinelibrary.wiley.com/doi/10.1111/1365-2745.12436/abstract">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1365-2745"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Myers</foaf:surname>
+                        <foaf:givenname>Jonathan A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chase</foaf:surname>
+                        <foaf:givenname>Jonathan M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Crandall</foaf:surname>
+                        <foaf:givenname>Raelene M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jiménez</foaf:surname>
+                        <foaf:givenname>Iván</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1311"/>
+        <link:link rdf:resource="#item_1312"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>community composition</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>community size</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+                <rdf:value>determinants of plant community diversity and structure</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>ecological drift</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>environmental filtering</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>niche-based community assembly</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ozarks</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>prescribed fire</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>restoration ecology</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>temperate oak–hickory forest</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/1365-2745.12436/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1291-1299</bib:pages>
+        <dc:date>September 1, 2015</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:20:12</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Disturbance alters beta-diversity but not the relative importance of community assembly mechanisms</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1365-2745">
+        <prism:volume>103</prism:volume>
+        <prism:number>5</prism:number>
+        <dc:title>Journal of Ecology</dc:title>
+        <dc:identifier>ISSN 1365-2745</dc:identifier>
+        <dcterms:alternative>J. Ecol.</dcterms:alternative>
+        <dc:identifier>DOI 10.1111/1365-2745.12436</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1311">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/store/10.1111/1365-2745.12436/asset/jec12436.pdf?v=1&amp;t=jaxpamul&amp;s=450c22dbdddbee198de3fa97ef21cd61d03eb26a</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:20:21</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1312">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/1365-2745.12436/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:20:19</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_546">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>45</prism:volume>
+                <dc:title>Fragmenta Floristica et Geobotanica</dc:title>
+                <dcterms:alternative>Fragm. Flor. Geobot.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Maycock</foaf:surname>
+                        <foaf:givenname>F. P.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Guzik</foaf:surname>
+                        <foaf:givenname>J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jankovic</foaf:surname>
+                        <foaf:givenname>Jaroslav</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shevera</foaf:surname>
+                        <foaf:givenname>M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Carleton</foaf:surname>
+                        <foaf:givenname>J.T.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1314"/>
+        <link:link rdf:resource="#item_1313"/>
+        <bib:pages>281-321</bib:pages>
+        <dc:date>January 1, 2000</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Composition, structure and ecological aspects of mesic old growth carpathian deciduous forests of Slovakia, southern Poland and the western Ukraine</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1314">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Jaroslav_Jankovic/publication/239863219_Composition_structure_and_ecological_aspects_of_Mesic_Old_Growth_Carpathian_Deciduous_Forests_of_Slovakia_Southern_Poland_and_the_Western_Ukraine/links/574c3e3d08ae8d6e6a7b592e/Composition-structure-and-ecological-aspects-of-Mesic-Old-Growth-Carpathian-Deciduous-Forests-of-Slovakia-Southern-Poland-and-the-Western-Ukraine.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:18:08</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1313">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/239863219_Composition_structure_and_ecological_aspects_of_Mesic_Old_Growth_Carpathian_Deciduous_Forests_of_Slovakia_Southern_Poland_and_the_Western_Ukraine</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:18:08</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_547">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>22</prism:volume>
+                <dc:title>Journal of Tropical Ecology</dc:title>
+                <dcterms:alternative>J. Trop. Ecol.</dcterms:alternative>
+                <dc:identifier>DOI 10.1017/S026646740600318X</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Malizia</foaf:surname>
+                        <foaf:givenname>A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grau</foaf:surname>
+                        <foaf:givenname>Ricardo</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1316"/>
+        <link:link rdf:resource="#item_1315"/>
+        <bib:pages>331-339</bib:pages>
+        <dc:date>May 1, 2006</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Liana–host tree associations in a subtropical montane forest of north-western Argentina</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1316">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Ricardo_Grau2/publication/231940697_Liana-host_tree_associations_in_a_subtropical_montane_forest_of_north-western_Argentina/links/02e7e53bd4e0696694000000/Liana-host-tree-associations-in-a-subtropical-montane-forest-of-north-western-Argentina.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:16:44</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1315">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/231940697_Liana-host_tree_associations_in_a_subtropical_montane_forest_of_north-western_Argentina</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:16:45</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_548">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>22</prism:volume>
+                <dc:title>Journal of Tropical Forest Science</dc:title>
+                <dcterms:alternative>J. Trop. Forest. Sci.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lü</foaf:surname>
+                        <foaf:givenname>Xiao-Tao</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yin</foaf:surname>
+                        <foaf:givenname>Jx</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tang</foaf:surname>
+                        <foaf:givenname>Jian-Wei</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1317"/>
+        <link:link rdf:resource="#item_1318"/>
+        <bib:pages>260-270</bib:pages>
+        <dc:date>July 1, 2010</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Structure, tree pecies diversity and composition of tropical seasonal rainforests in Xishuangbanna, South-West China</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1317">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Xiao-Tao_Lue/publication/228481446_Structure_tree_pecies_diversity_and_composition_of_tropical_seasonal_rainforests_in_Xishuangbanna_South-West_China/links/0c9605182e271c5482000000/Structure-tree-pecies-diversity-and-composition-of-tropical-seasonal-rainforests-in-Xishuangbanna-South-West-China.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:16:00</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1318">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/228481446_Structure_tree_pecies_diversity_and_composition_of_tropical_seasonal_rainforests_in_Xishuangbanna_South-West_China</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:16:00</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="https://link.springer.com/article/10.1007/s11258-007-9380-z">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>198</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Plant Ecology</dc:title>
+                <dc:identifier>ISSN 1385-0237, 1573-5052</dc:identifier>
+                <dcterms:alternative>Plant. Ecol.</dcterms:alternative>
+                <dc:identifier>DOI 10.1007/s11258-007-9380-z</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lopes</foaf:surname>
+                        <foaf:givenname>Clarissa Gomes Reis</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ferraz</foaf:surname>
+                        <foaf:givenname>Elba Maria Nogueira</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Araújo</foaf:surname>
+                        <foaf:givenname>Elcida de Lima</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1319"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1007/s11258-007-9380-z</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1-18</bib:pages>
+        <dc:date>2008/09/01</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:15:23</dcterms:dateSubmitted>
+        <z:libraryCatalog>link.springer.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Physiognomic-structural characterization of dry- and humid-forest fragments (Atlantic Coastal Forest) in Pernambuco State, NE Brazil</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1319">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1007/s11258-007-9380-z</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:15:26</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S0378112797000765">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0378-1127"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Linder</foaf:surname>
+                        <foaf:givenname>Per</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Elfving</foaf:surname>
+                        <foaf:givenname>Björn</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zackrisson</foaf:surname>
+                        <foaf:givenname>Olle</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1320"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Coarse woody debris</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Forest fire</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Nature conservation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Stand structure</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Successional trends</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Virgin forests</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0378112797000765</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>17-33</bib:pages>
+        <dc:date>October 22, 1997</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:14:51</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:title>Stand structure and successional trends in virgin boreal forest reserves in Sweden</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0378-1127">
+        <prism:volume>98</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>Forest Ecology and Management</dc:title>
+        <dc:identifier>ISSN 0378-1127</dc:identifier>
+        <dcterms:alternative>Forest Ecol. Manag.</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/S0378-1127(97)00076-5</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1320">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S0378112797000765</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:14:58</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.tropecol.com/volumes/toc/en/toc51_2_e.htm">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>51</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Tropical Ecology</dc:title>
+                <dcterms:alternative>Trop. Ecol.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Krishnamurthy</foaf:surname>
+                        <foaf:givenname>Y. L.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Prakasha</foaf:surname>
+                        <foaf:givenname>H. M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nanda</foaf:surname>
+                        <foaf:givenname>A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Krishnappa</foaf:surname>
+                        <foaf:givenname>M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dattaraja</foaf:surname>
+                        <foaf:givenname>H. S.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Suresh</foaf:surname>
+                        <foaf:givenname>H. S.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1322"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.tropecol.com/volumes/toc/en/toc51_2_e.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>235-246</bib:pages>
+        <dc:date>2010</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:13:04</dcterms:dateSubmitted>
+        <z:libraryCatalog>eprints.iisc.ernet.in</z:libraryCatalog>
+        <dc:title>Vegetation structure and floristic composition of a tropical dry deciduous forest in Bhadra Wildlife Sanctuary, Karnataka, India</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1322">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://eprints.iisc.ernet.in/26987/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:13:13</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.jstor.org/stable/43582345">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0128-1283"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kohira</foaf:surname>
+                        <foaf:givenname>M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ninomiya</foaf:surname>
+                        <foaf:givenname>I.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ibrahim</foaf:surname>
+                        <foaf:givenname>Ahmed Zainudin</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Latiff</foaf:surname>
+                        <foaf:givenname>Abdul</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.jstor.org/stable/43582345</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>460-476</bib:pages>
+        <dc:date>2001</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:12:03</dcterms:dateSubmitted>
+        <z:libraryCatalog>JSTOR</z:libraryCatalog>
+        <dc:title>Diversity, diameter structure and spatial pattern of trees in semi-evergreen rain forest of Langkawi island, Malaysia</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0128-1283">
+        <prism:volume>13</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Journal of Tropical Forest Science</dc:title>
+        <dc:identifier>ISSN 0128-1283</dc:identifier>
+        <dcterms:alternative>J. Trop. Forest Sci.</dcterms:alternative>
+    </bib:Journal>
+    <bib:Article rdf:about="https://link.springer.com/article/10.1007/BF02489543">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0006-808X,%201618-0860"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kohyama</foaf:surname>
+                        <foaf:givenname>Takashi</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1007/BF02489543</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>267-279</bib:pages>
+        <dc:date>1986/09/01</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:09:25</dcterms:dateSubmitted>
+        <z:libraryCatalog>link.springer.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Tree size structure of stands and each species in primary warm-temperate rain forests of Southern Japan</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0006-808X,%201618-0860">
+        <prism:volume>99</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>The Botanical Magazine Tokyo</dc:title>
+        <dc:identifier>ISSN 0006-808X, 1618-0860</dc:identifier>
+        <dcterms:alternative>Bot. Mag. Tokyo</dcterms:alternative>
+        <dc:identifier>DOI 10.1007/BF02489543</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="#item_554">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>18</prism:volume>
+                <dc:title>Ecological Research</dc:title>
+                <dcterms:alternative>Ecol. Res.</dcterms:alternative>
+                <dc:identifier>DOI 10.1046/j.1440-1703.2003.00568.x</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hirayama</foaf:surname>
+                        <foaf:givenname>Kimiko</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sakimoto</foaf:surname>
+                        <foaf:givenname>Michinori</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1323"/>
+        <bib:pages>443-454</bib:pages>
+        <dc:date>2003</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Spatial distribution of canopy and subcanopy species along a sloping topography in a cool‐temperate conifer‐hardwood forest in the snowy region of Japan</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1323">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/229998917_Spatial_distribution_of_canopy_and_subcanopy_species_along_a_sloping_topography_in_a_cool-temperate_conifer-hardwood_forest_in_the_snowy_region_of_Japan</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:08:23</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.biodiversity-science.net/CN/abstract/abstract8807.shtml">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>12</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Biodiversity Science</dc:title>
+                <dc:identifier>ISSN 1005-0094</dc:identifier>
+                <dcterms:alternative>Biodivers. Sci.</dcterms:alternative>
+                <dc:identifier>DOI 10.17520/biods.2004005</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jing-Yun</foaf:surname>
+                        <foaf:givenname>Fang</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yi-De</foaf:surname>
+                        <foaf:givenname>L. I.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Biao</foaf:surname>
+                        <foaf:givenname>Z. H. U.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Guo-Hua</foaf:surname>
+                        <foaf:givenname>L. I. U.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Guang-Yi</foaf:surname>
+                        <foaf:givenname>Zhou</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1325"/>
+        <link:link rdf:resource="#item_1324"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/CN/abstract/abstract8807.shtml</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>29-43</bib:pages>
+        <dcterms:dateSubmitted>2017-12-08 09:06:21</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.biodiversity-science.net</z:libraryCatalog>
+        <z:language>cn</z:language>
+        <dc:title>Community structures and species richness in the montane rain forest of Jianfengling, Hainan Island, China</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1325">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/CN/article/downloadArticleFile.do?attachType=PDF&amp;id=8807</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:06:38</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1324">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.biodiversity-science.net/EN/abstract/abstract8807.shtml</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:06:46</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://link.springer.com/article/10.1023/B:BIOC.0000011724.34275.73">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0960-3115,%201572-9710"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fashing</foaf:surname>
+                        <foaf:givenname>Peter J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Forrestel</foaf:surname>
+                        <foaf:givenname>Alison</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Scully</foaf:surname>
+                        <foaf:givenname>Christina</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cords</foaf:surname>
+                        <foaf:givenname>Marina</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1023/B:BIOC.0000011724.34275.73</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>753-771</bib:pages>
+        <dc:date>2004/04/01</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:05:25</dcterms:dateSubmitted>
+        <z:libraryCatalog>link.springer.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Long-term tree population dynamics and their implications for the conservation of the Kakamega Forest, Kenya</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0960-3115,%201572-9710">
+        <prism:volume>13</prism:volume>
+        <prism:number>4</prism:number>
+        <dc:title>Biodiversity &amp; Conservation</dc:title>
+        <dc:identifier>ISSN 0960-3115, 1572-9710</dc:identifier>
+        <dcterms:alternative>Biodivers. Conserv.</dcterms:alternative>
+        <dc:identifier>DOI 10.1023/B:BIOC.0000011724.34275.73</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S0378112711000533">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>261</prism:volume>
+                <prism:number>9</prism:number>
+                <dc:title>Forest Ecology and Management</dc:title>
+                <dc:identifier>ISSN 0378-1127</dc:identifier>
+                <dcterms:alternative>Forest Ecol. Manag.</dcterms:alternative>
+                <dc:identifier>DOI 10.1016/j.foreco.2011.01.021</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Eshete</foaf:surname>
+                        <foaf:givenname>Abeje</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sterck</foaf:surname>
+                        <foaf:givenname>Frank</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bongers</foaf:surname>
+                        <foaf:givenname>Frans</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Dry woodlands</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ethiopia</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Productivity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Species composition</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Species richness</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0378112711000533</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>1499-1509</bib:pages>
+        <dc:date>May 1, 2011</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:04:17</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:title>Diversity and production of Ethiopian dry woodlands explained by climate- and soil-stress gradients</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="https://link.springer.com/article/10.1046/j.1440-1703.2003.00549.x">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0912-3814,%201440-1703"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Enoki</foaf:surname>
+                        <foaf:givenname>Tsutomu</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1326"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1046/j.1440-1703.2003.00549.x</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>103-113</bib:pages>
+        <dc:date>2003/03/01</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:03:45</dcterms:dateSubmitted>
+        <z:libraryCatalog>link.springer.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Microtopography and distribution of canopy trees in a subtropical evergreen broad-leaved forest in the northern part of Okinawa Island, Japan</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0912-3814,%201440-1703">
+        <prism:volume>18</prism:volume>
+        <prism:number>2</prism:number>
+        <dc:title>Ecological Research</dc:title>
+        <dc:identifier>ISSN 0912-3814, 1440-1703</dc:identifier>
+        <dcterms:alternative>Ecol. Res.</dcterms:alternative>
+        <dc:identifier>DOI 10.1046/j.1440-1703.2003.00549.x</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1326">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1046/j.1440-1703.2003.00549.x</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:04:03</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://onlinelibrary.wiley.com/doi/10.1111/j.1654-1103.2005.tb02352.x/abstract">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>16</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Journal of Vegetation Science</dc:title>
+                <dc:identifier>ISSN 1654-1103</dc:identifier>
+                <dcterms:alternative>J. Veg. Sci.</dcterms:alternative>
+                <dc:identifier>DOI 10.1111/j.1654-1103.2005.tb02352.x</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Davis</foaf:surname>
+                        <foaf:givenname>Mark A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Curran</foaf:surname>
+                        <foaf:givenname>Claudia</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tietmeyer</foaf:surname>
+                        <foaf:givenname>Andrea</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Miller</foaf:surname>
+                        <foaf:givenname>Andy</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1327"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Disturbance</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Intermediate-disturbance hypothesis</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Oak woodland</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Spatial pattern</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Temperate forest</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Tree aggregation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/j.1654-1103.2005.tb02352.x/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>167-174</bib:pages>
+        <dc:date>April 1, 2005</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:03:15</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Dynamic tree aggregation patterns in a species-poor temperate woodland disturbed by fire</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1327">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://onlinelibrary.wiley.com/doi/10.1111/j.1654-1103.2005.tb02352.x/abstract</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:03:28</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S2351989415000724">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2351-9894"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Do</foaf:surname>
+                        <foaf:givenname>Tran Van</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sato</foaf:surname>
+                        <foaf:givenname>Tamotsu</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Saito</foaf:surname>
+                        <foaf:givenname>Satoshi</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kozan</foaf:surname>
+                        <foaf:givenname>Osamu</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yamagawa</foaf:surname>
+                        <foaf:givenname>Hiromi</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nagamatsu</foaf:surname>
+                        <foaf:givenname>Dai</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nishimura</foaf:surname>
+                        <foaf:givenname>Naoyuki</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Manabe</foaf:surname>
+                        <foaf:givenname>Tohru</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1328"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Edaphic condition</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Elevational zone</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Species diversity</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Stand structure</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Topography</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S2351989415000724</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>185-196</bib:pages>
+        <dc:date>July 1, 2015</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 09:02:20</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:title>Effects of micro-topographies on stand structure and tree species diversity in an old-growth evergreen broad-leaved forest, southwestern Japan</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2351-9894">
+        <prism:volume>4</prism:volume>
+        <prism:number>Supplement C</prism:number>
+        <dc:title>Global Ecology and Conservation</dc:title>
+        <dc:identifier>ISSN 2351-9894</dc:identifier>
+        <dcterms:alternative>Glob. Ecol. Conserv.</dcterms:alternative>
+        <dc:identifier>DOI 10.1016/j.gecco.2015.06.010</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1328">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ac.els-cdn.com/S2351989415000724/1-s2.0-S2351989415000724-main.pdf?_tid=7f7048f2-dbf6-11e7-9e9d-00000aab0f02&amp;acdnat=1512723920_da04dda586aaa986c4fd0678bf221346</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:02:59</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_561">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>1</prism:volume>
+                <dc:title>Forests</dc:title>
+                <dc:identifier>DOI 10.3390/f1030154</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Eichhorn</foaf:surname>
+                        <foaf:givenname>Markus</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1530"/>
+        <link:link rdf:resource="#item_1529"/>
+        <bib:pages>154-176</bib:pages>
+        <dc:date>September 1, 2010</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Boreal forests of Kamchatka: structure and composition</dc:title>
+        <z:shortTitle>Boreal Forests of Kamchatka</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1530">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Markus_Eichhorn/publication/46485783_Boreal_Forests_of_Kamchatka_Structure_and_Composition/links/0deec5199e528c5bf6000000/Boreal-Forests-of-Kamchatka-Structure-and-Composition.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:01:48</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1529">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/46485783_Boreal_Forests_of_Kamchatka_Structure_and_Composition</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 09:01:48</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="https://link.springer.com/article/10.1023/A:1018367630923">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>6</prism:volume>
+                <prism:number>7</prism:number>
+                <dc:title>Biodiversity &amp; Conservation</dc:title>
+                <dc:identifier>ISSN 0960-3115, 1572-9710</dc:identifier>
+                <dcterms:alternative>Biodivers. Conserv.</dcterms:alternative>
+                <dc:identifier>DOI 10.1023/A:1018367630923</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cao</foaf:surname>
+                        <foaf:givenname>Min</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhang</foaf:surname>
+                        <foaf:givenname>Jianhou</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1534"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1023/A:1018367630923</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>995-1006</bib:pages>
+        <dc:date>1997/07/01</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 08:57:39</dcterms:dateSubmitted>
+        <z:libraryCatalog>link.springer.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Tree species diversity of tropical forest vegetation in Xishuangbanna, SW China</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1534">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://link.springer.com/article/10.1023/A:1018367630923</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:57:46</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S0378112703002299">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>186</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Forest Ecology and Management</dc:title>
+                <dc:identifier>ISSN 0378-1127</dc:identifier>
+                <dcterms:alternative>Forest Ecol. Manag.</dcterms:alternative>
+                <dc:identifier>DOI 10.1016/S0378-1127(03)00229-9</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cairns</foaf:surname>
+                        <foaf:givenname>Michael A</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Olmsted</foaf:surname>
+                        <foaf:givenname>Ingrid</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Granados</foaf:surname>
+                        <foaf:givenname>Julián</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Argaez</foaf:surname>
+                        <foaf:givenname>Jorge</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1535"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Aboveground biomass</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Allometric regression equations</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Carbon dynamics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Forest composition</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Semi-evergreen tropical dry forest</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Yucatan Peninsula</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0378112703002299</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>125-132</bib:pages>
+        <dc:date>December 5, 2003</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 08:57:04</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:title>Composition and aboveground tree biomass of a dry semi-evergreen forest on Mexico’s Yucatan Peninsula</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1535">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S0378112703002299</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:57:10</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_565">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>57</prism:volume>
+                <dc:title>Natural History Bulletin of the Siam Society</dc:title>
+                <dcterms:alternative>Nat. Hist. Bull. Siam Soc.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Round</foaf:surname>
+                        <foaf:givenname>Philip</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pierce</foaf:surname>
+                        <foaf:givenname>Andrew</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sankamethawee</foaf:surname>
+                        <foaf:givenname>Wangworn</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gale</foaf:surname>
+                        <foaf:givenname>George</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1537"/>
+        <link:link rdf:resource="#item_1536"/>
+        <bib:pages>57-80</bib:pages>
+        <dc:date>January 1, 2011</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>The Mo Singto forest dynamics plot, Khao Yai National Park, Thailand</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1537">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Wangworn_Sankamethawee/publication/235980798_The_Mo_Singto_forest_dynamics_plot_Khao_Yai_National_Park_Thailand/links/00b495159528a6728c000000/The-Mo-Singto-forest-dynamics-plot-Khao-Yai-National-Park-Thailand.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:54:45</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1536">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/235980798_The_Mo_Singto_forest_dynamics_plot_Khao_Yai_National_Park_Thailand</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:54:45</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/S0378112704007984">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>206</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Forest Ecology and Management</dc:title>
+                <dc:identifier>ISSN 0378-1127</dc:identifier>
+                <dcterms:alternative>Forest Ecol. Manag.</dcterms:alternative>
+                <dc:identifier>DOI 10.1016/j.foreco.2004.11.009</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bonino</foaf:surname>
+                        <foaf:givenname>Emma E.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Araujo</foaf:surname>
+                        <foaf:givenname>Publio</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Argentina</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Dry Chaco</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Management</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Primary forest</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Secondary forest</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/S0378112704007984</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>407-412</bib:pages>
+        <dc:date>February 15, 2005</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 08:53:04</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:title>Structural differences between a primary and a secondary forest in the Argentine Dry Chaco and management implications</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="#item_567">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>125</prism:volume>
+                <dc:title>Journal of the Torrey Botanical Society</dc:title>
+                <dcterms:alternative>J. Torrey Bot. Soc.</dcterms:alternative>
+                <dc:identifier>DOI 10.2307/2997243</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ansley</foaf:surname>
+                        <foaf:givenname>S. Jolie-Anne</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Battles</foaf:surname>
+                        <foaf:givenname>J. John</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1540"/>
+        <bib:pages>297-308</bib:pages>
+        <dc:date>October 1, 1998</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Forest composition, structure, and change in an old-growth mixed conifer forest in the northern Sierra Nevada</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1540">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/271799868_Forest_Composition_Structure_and_Change_in_an_Old-Growth_Mixed_Conifer_Forest_in_the_Northern_Sierra_Nevada</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:44:03</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_568">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>53</prism:volume>
+                <dc:title>The Journal of Ecology</dc:title>
+                <dcterms:alternative>J. Ecol.</dcterms:alternative>
+                <dc:identifier>DOI 10.2307/2257627</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Beals</foaf:surname>
+                        <foaf:givenname>W. E.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1538"/>
+        <bib:pages>679-694</bib:pages>
+        <dc:date>November 1, 1965</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>The remnant cedar forests of Lebanon</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1538">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/271804881_The_Remnant_Cedar_Forests_of_Lebanon</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:45:59</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_569">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>8</prism:volume>
+                <dc:title>Biodiversity and Conservation</dc:title>
+                <dcterms:alternative>Biodivers. Conserv.</dcterms:alternative>
+                <dc:identifier>DOI 10.1023/A:1008940803073</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Narayanan</foaf:surname>
+                        <foaf:givenname>Ayyappan</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Parthasarathy</foaf:surname>
+                        <foaf:givenname>N</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1539"/>
+        <bib:pages>1533-1554</bib:pages>
+        <dc:date>November 1, 1999</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Biodiversity inventory of trees in a large scale permanent plot of tropical evergreen forest at Varagaliar. Anamalais, Western Ghats, India</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1539">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/227060591_Biodiversity_inventory_of_trees_in_a_large_scale_permanent_plot_of_tropical_evergreen_forest_at_Varagaliar_Anamalais_Western_Ghats_India</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:45:28</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_570">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>18</prism:volume>
+                <dc:title>Journal of Tropical Forest Science</dc:title>
+                <dcterms:alternative>J. Trop. Forest Sci.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Adekunle</foaf:surname>
+                        <foaf:givenname>V. A. J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1541"/>
+        <link:link rdf:resource="#item_1542"/>
+        <bib:pages>91-101</bib:pages>
+        <dc:date>April 1, 2006</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Conservation of tree species diversity in tropical rainforest ecosystem of South-West Nigeria</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1541">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/V_A_J_Adekunle/publication/228432388_Conservation_of_tree_species_diversity_in_tropical_rainforest_ecosystem_of_South-West_Nigeria/links/550f0f700cf2752610a00a31/Conservation-of-tree-species-diversity-in-tropical-rainforest-ecosystem-of-South-West-Nigeria.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:43:23</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1542">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/228432388_Conservation_of_tree_species_diversity_in_tropical_rainforest_ecosystem_of_South-West_Nigeria</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:43:24</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_571">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>1</prism:volume>
+                <dc:title>International Journal of Biodiversity and Conservation</dc:title>
+                <dcterms:alternative>Int. J. Biodiv. Conserv.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Addo-Fordjour</foaf:surname>
+                        <foaf:givenname>Patrick</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Obeng</foaf:surname>
+                        <foaf:givenname>S</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Anning</foaf:surname>
+                        <foaf:givenname>Alexander</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Addo</foaf:surname>
+                        <foaf:givenname>Matthew</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1544"/>
+        <link:link rdf:resource="#item_1543"/>
+        <bib:pages>21-37</bib:pages>
+        <dc:date>June 1, 2009</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <dc:title>Floristic composition, structure and natural regeneration in a moist semi-deciduous forest following anthropogenic disturbances and plant invasion</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1544">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/profile/Alexander_Anning/publication/228613528_Floristic_composition_structure_and_natural_regeneration_in_a_moist_semi-deciduous_forest_following_anthropogenic_disturbances_and_plant_invasion/links/0046351d7506c45be8000000/Floristic-composition-structure-and-natural-regeneration-in-a-moist-semi-deciduous-forest-following-anthropogenic-disturbances-and-plant-invasion.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:42:46</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1543">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/publication/228613528_Floristic_composition_structure_and_natural_regeneration_in_a_moist_semi-deciduous_forest_following_anthropogenic_disturbances_and_plant_invasion</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:42:46</dcterms:dateSubmitted>
+        <dc:title>ResearchGate Link</dc:title>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_572">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>13</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Journal of Tropical Forest Science</dc:title>
+                <dcterms:alternative>J. Trop. Forest Sci.</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Adam</foaf:surname>
+                        <foaf:givenname>J. H.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:pages>76-92</bib:pages>
+        <dc:title>Changes in forest community structures of tropical montane rain forest on the slope of Mt. Trus Madi in Sabah, Malaysia</dc:title>
+    </bib:Article>
+    <bib:Article rdf:about="http://www.sciencedirect.com/science/article/pii/037811278490077X">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>9</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Forest Ecology and Management</dc:title>
+                <dc:identifier>ISSN 0378-1127</dc:identifier>
+                <dcterms:alternative>Forest Ecol. Manag.</dcterms:alternative>
+                <dc:identifier>DOI 10.1016/0378-1127(84)90077-X</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Abbott</foaf:surname>
+                        <foaf:givenname>Ian</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1546"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.sciencedirect.com/science/article/pii/037811278490077X</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>101-126</bib:pages>
+        <dc:date>September 1, 1984</dc:date>
+        <dcterms:dateSubmitted>2017-12-08 08:36:04</dcterms:dateSubmitted>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:title>Comparisons of spatial pattern, structure, and tree composition between virgin and cut-over jarrah forest in Western Australia</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1546">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/037811278490077X</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:36:26</dcterms:dateSubmitted>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://www.pnas.org/content/113/3/674">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0027-8424,%201091-6490"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ricklefs</foaf:surname>
+                        <foaf:givenname>Robert E.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>He</foaf:surname>
+                        <foaf:givenname>Fangliang</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1549"/>
+        <link:link rdf:resource="#item_1548"/>
+        <link:link rdf:resource="#item_1547"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>climate effect</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>forest dynamics plots</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>global biodiversity</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>latitudinal gradient</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>tree species richness</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.pnas.org/content/113/3/674</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>674-679</bib:pages>
+        <dc:date>01/19/2016</dc:date>
+        <dc:description>PMID: 26733680</dc:description>
+        <dcterms:dateSubmitted>2017-12-08 08:34:07</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.pnas.org</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Region effects influence local tree species diversity</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0027-8424,%201091-6490">
+        <prism:volume>113</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Proceedings of the National Academy of Sciences</dc:title>
+        <dc:identifier>ISSN 0027-8424, 1091-6490</dc:identifier>
+        <dcterms:alternative>Proc. Natl. Acad. Sci. USA</dcterms:alternative>
+        <dc:identifier>DOI 10.1073/pnas.1523683113</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1549">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.pnas.org/content/113/3/674.full.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:34:22</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1548">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/26733680</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:34:58</dcterms:dateSubmitted>
+        <dc:title>PubMed entry</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_1547">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://www.pnas.org/content/113/3/674.full?sid=a3e7cff5-066c-476a-ab08-fd323fcc797b</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2017-12-08 08:34:57</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="http://rspb.royalsocietypublishing.org/lookup/doi/10.1098/rspb.2016.1587">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0962-8452,%201471-2954"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Coelho de Souza</foaf:surname>
+                        <foaf:givenname>Fernanda</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dexter</foaf:surname>
+                        <foaf:givenname>Kyle G.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Phillips</foaf:surname>
+                        <foaf:givenname>Oliver L.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Brienen</foaf:surname>
+                        <foaf:givenname>Roel J. W.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chave</foaf:surname>
+                        <foaf:givenname>Jerome</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Galbraith</foaf:surname>
+                        <foaf:givenname>David R.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lopez Gonzalez</foaf:surname>
+                        <foaf:givenname>Gabriela</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Monteagudo Mendoza</foaf:surname>
+                        <foaf:givenname>Abel</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pennington</foaf:surname>
+                        <foaf:givenname>R. Toby</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Poorter</foaf:surname>
+                        <foaf:givenname>Lourens</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Alexiades</foaf:surname>
+                        <foaf:givenname>Miguel</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Álvarez-Dávila</foaf:surname>
+                        <foaf:givenname>Esteban</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Andrade</foaf:surname>
+                        <foaf:givenname>Ana</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Aragão</foaf:surname>
+                        <foaf:givenname>Luis E. O. C.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Araujo-Murakami</foaf:surname>
+                        <foaf:givenname>Alejandro</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Arets</foaf:surname>
+                        <foaf:givenname>Eric J. M. M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Aymard C</foaf:surname>
+                        <foaf:givenname>Gerardo A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baraloto</foaf:surname>
+                        <foaf:givenname>Christopher</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Barroso</foaf:surname>
+                        <foaf:givenname>Jorcely G.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bonal</foaf:surname>
+                        <foaf:givenname>Damien</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Boot</foaf:surname>
+                        <foaf:givenname>Rene G. A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Camargo</foaf:surname>
+                        <foaf:givenname>José L. C.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Comiskey</foaf:surname>
+                        <foaf:givenname>James A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Valverde</foaf:surname>
+                        <foaf:givenname>Fernando Cornejo</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>de Camargo</foaf:surname>
+                        <foaf:givenname>Plínio B.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Di Fiore</foaf:surname>
+                        <foaf:givenname>Anthony</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Elias</foaf:surname>
+                        <foaf:givenname>Fernando</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Erwin</foaf:surname>
+                        <foaf:givenname>Terry L.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Feldpausch</foaf:surname>
+                        <foaf:givenname>Ted R.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ferreira</foaf:surname>
+                        <foaf:givenname>Leandro</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fyllas</foaf:surname>
+                        <foaf:givenname>Nikolaos M.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gloor</foaf:surname>
+                        <foaf:givenname>Emanuel</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Herault</foaf:surname>
+                        <foaf:givenname>Bruno</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Herrera</foaf:surname>
+                        <foaf:givenname>Rafael</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Higuchi</foaf:surname>
+                        <foaf:givenname>Niro</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Honorio Coronado</foaf:surname>
+                        <foaf:givenname>Eurídice N.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Killeen</foaf:surname>
+                        <foaf:givenname>Timothy J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Laurance</foaf:surname>
+                        <foaf:givenname>William F.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Laurance</foaf:surname>
+                        <foaf:givenname>Susan</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lloyd</foaf:surname>
+                        <foaf:givenname>Jon</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lovejoy</foaf:surname>
+                        <foaf:givenname>Thomas E.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Malhi</foaf:surname>
+                        <foaf:givenname>Yadvinder</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Maracahipes</foaf:surname>
+                        <foaf:givenname>Leandro</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Marimon</foaf:surname>
+                        <foaf:givenname>Beatriz S.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Marimon-Junior</foaf:surname>
+                        <foaf:givenname>Ben H.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mendoza</foaf:surname>
+                        <foaf:givenname>Casimiro</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Morandi</foaf:surname>
+                        <foaf:givenname>Paulo</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Neill</foaf:surname>
+                        <foaf:givenname>David A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vargas</foaf:surname>
+                        <foaf:givenname>Percy Núñez</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Oliveira</foaf:surname>
+                        <foaf:givenname>Edmar A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lenza</foaf:surname>
+                        <foaf:givenname>Eddie</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Palacios</foaf:surname>
+                        <foaf:givenname>Walter A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Peñuela-Mora</foaf:surname>
+                        <foaf:givenname>Maria C.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pipoly</foaf:surname>
+                        <foaf:givenname>John J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pitman</foaf:surname>
+                        <foaf:givenname>Nigel C. A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Prieto</foaf:surname>
+                        <foaf:givenname>Adriana</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Quesada</foaf:surname>
+                        <foaf:givenname>Carlos A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ramirez-Angulo</foaf:surname>
+                        <foaf:givenname>Hirma</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rudas</foaf:surname>
+                        <foaf:givenname>Agustin</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ruokolainen</foaf:surname>
+                        <foaf:givenname>Kalle</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Salomão</foaf:surname>
+                        <foaf:givenname>Rafael P.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Silveira</foaf:surname>
+                        <foaf:givenname>Marcos</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Stropp</foaf:surname>
+                        <foaf:givenname>Juliana</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>ter Steege</foaf:surname>
+                        <foaf:givenname>Hans</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Thomas-Caesar</foaf:surname>
+                        <foaf:givenname>Raquel</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>van der Hout</foaf:surname>
+                        <foaf:givenname>Peter</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>van der Heijden</foaf:surname>
+                        <foaf:givenname>Geertje M. F.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>van der Meer</foaf:surname>
+                        <foaf:givenname>Peter J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vasquez</foaf:surname>
+                        <foaf:givenname>Rodolfo V.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vieira</foaf:surname>
+                        <foaf:givenname>Simone A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vilanova</foaf:surname>
+                        <foaf:givenname>Emilio</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vos</foaf:surname>
+                        <foaf:givenname>Vincent A.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenname>Ophelia</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Young</foaf:surname>
+                        <foaf:givenname>Kenneth R.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zagt</foaf:surname>
+                        <foaf:givenname>Roderick J.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baker</foaf:surname>
+                        <foaf:givenname>Timothy R.</foaf:givenname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1640"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://rspb.royalsocietypublishing.org/lookup/doi/10.1098/rspb.2016.1587</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>20161587</bib:pages>
+        <dc:date>2016-12-14</dc:date>
+        <dcterms:dateSubmitted>2018-10-26 07:25:45</dcterms:dateSubmitted>
+        <z:libraryCatalog>Crossref</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>Evolutionary heritage influences Amazon tree ecology</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0962-8452,%201471-2954">
+        <prism:volume>283</prism:volume>
+        <prism:number>1844</prism:number>
+        <dc:title>Proceedings of the Royal Society B: Biological Sciences</dc:title>
+        <dc:identifier>ISSN 0962-8452, 1471-2954</dc:identifier>
+        <dcterms:alternative>Proc. R. Soc. B</dcterms:alternative>
+        <dc:identifier>DOI 10.1098/rspb.2016.1587</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1640">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://rspb.royalsocietypublishing.org/content/royprsb/283/1844/20161587.full.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2018-10-26 07:25:50</dcterms:dateSubmitted>
+        <dc:title>Full Text</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+</rdf:RDF>

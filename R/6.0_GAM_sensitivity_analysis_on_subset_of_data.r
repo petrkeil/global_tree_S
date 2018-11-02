@@ -93,7 +93,6 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
   ISLAND + ISLAND:Area_km
 
 
-
 ################################################################################ 
 # FIT THE MODELS
 ################################################################################
@@ -113,7 +112,7 @@ AIC(gam.NULL, gam.REALM, gam.SMOOTH)
 
 
 ################################################################################ 
-# LOT OBSERVED VS. PREDICTED VALUES
+# PLOT OBSERVED VS. PREDICTED VALUES
 ################################################################################
 
 pred.REALM <- data.frame( DAT, pred=predict(gam.REALM, type="response"),
@@ -140,101 +139,11 @@ dev.off()
 
 
 
-################################################################################ 
-# MORAN'S I CORRELOGRAMS OF THE RESIDUALS for both models at two scales
-################################################################################
-
-# width of the correlogram increment [km]
-increment = 200
-
-# Residual correlograms for Model REALM -----------------
-res.REALM <- data.frame(Lat=DAT$Lat, Lon=DAT$Lon, S=DAT$S, 
-                        DAT_TYPE=DAT$DAT_TYPE, 
-                        resid=residuals(gam.REALM))
-
-res.REALM.cntr <- res.REALM[res.REALM$DAT_TYPE=="Country",]
-res.REALM.plot <- res.REALM[res.REALM$DAT_TYPE=="Plot",]
-
-cor.REALM.cntr <- ncf::correlog(x=res.REALM.cntr$Lat, y=res.REALM.cntr$Lon, 
-                                z=res.REALM.cntr$resid, 
-                                latlon=TRUE, resamp=1, increment=increment)
-cor.REALM.plot <- ncf::correlog(x=res.REALM.plot$Lat, y=res.REALM.plot$Lon, 
-                                z=res.REALM.plot$resid, 
-                                latlon=TRUE, resamp=1, increment=increment)
-
-
-# Residual correlograms for Model SMOOTH -----------------
-res.SMOOTH <- data.frame(Lat=DAT$Lat, Lon=DAT$Lon, S=DAT$S, 
-                         DAT_TYPE=DAT$DAT_TYPE, 
-                         resid=residuals(gam.SMOOTH))
-
-res.SMOOTH.cntr <- res.SMOOTH[res.SMOOTH$DAT_TYPE=="Country",]
-res.SMOOTH.plot <- res.SMOOTH[res.SMOOTH$DAT_TYPE=="Plot",]
-
-cor.SMOOTH.cntr <- ncf::correlog(x=res.SMOOTH.cntr$Lat, y=res.SMOOTH.cntr$Lon, 
-                                 z=res.SMOOTH.cntr$resid, 
-                                 latlon=TRUE, resamp=1, increment=increment)
-cor.SMOOTH.plot <- ncf::correlog(x=res.SMOOTH.plot$Lat, y=res.SMOOTH.plot$Lon, 
-                                 z=res.SMOOTH.plot$resid, 
-                                 latlon=TRUE, resamp=1, increment=increment)
-
-# Correlograms for S
-cor.S.cntr <- ncf::correlog(x=res.SMOOTH.cntr$Lat, y=res.SMOOTH.cntr$Lon, 
-                            z=res.SMOOTH.cntr$S, 
-                            latlon=TRUE, resamp=1, increment=increment)
-cor.S.plot <- ncf::correlog(x=res.SMOOTH.plot$Lat, y=res.SMOOTH.plot$Lon, 
-                            z=res.SMOOTH.plot$S, 
-                            latlon=TRUE, resamp=1, increment=increment)
-
-
-# extract the correlograms for further plotting
-N <- length(cor.REALM.plot$mean.of.class)
-
-RP <- data.frame(Dist=cor.REALM.plot$mean.of.class, 
-                 Cor=cor.REALM.plot$correlation,
-                 Scale=rep("Plot"), 
-                 Variable=rep("REALM residuals"))
-RC <- data.frame(Dist=cor.REALM.cntr$mean.of.class, 
-                 Cor=cor.REALM.cntr$correlation,
-                 Scale=rep("Country"), 
-                 Variable=rep("REALM residuals"))
-SP <- data.frame(Dist=cor.SMOOTH.plot$mean.of.class, 
-                 Cor=cor.SMOOTH.plot$correlation,
-                 Scale=rep("Plot"), 
-                 Variable=rep("SMOOTH residuals"))
-SC <- data.frame(Dist=cor.SMOOTH.cntr$mean.of.class, 
-                 Cor=cor.SMOOTH.cntr$correlation,
-                 Scale=rep("Country"), 
-                 Variable=rep("SMOOTH residuals"))
-RIC <- data.frame(Dist=cor.S.cntr$mean.of.class, 
-                  Cor=cor.S.cntr$correlation,
-                  Scale=rep("Country"), 
-                  Variable=rep("Species richness S"))
-RIP <- data.frame(Dist=cor.S.plot$mean.of.class, 
-                  Cor=cor.S.plot$correlation,
-                  Scale=rep("Plot"), 
-                  Variable=rep("Species richness S"))
-
-cor.data <- rbind(RP, RC, SP, SC, RIP, RIC)
-
-
-# plot the correlograms
-png("../Figures/Subset_data_sensitivity_analysis/subset_correlograms.png", width=2000, height=900, res=250)
-ggplot(cor.data, aes(x=Dist, y=Cor)) + 
-  geom_point(aes(colour=Variable, shape=Variable)) + 
-  geom_line(aes(colour=Variable)) + 
-  geom_hline(yintercept = 0, colour="darkgrey") +
-  xlim(c(0, 3000)) + ylim(c(-0.2,0.5)) +
-  scale_colour_brewer(palette="Set1") +
-  facet_grid(.~Scale) +
-  xlab("Distance [km]") + ylab("Moran's I") +
-  theme_bw()
-dev.off()
 
 
 
 ################################################################################ 
-# 6. PLOT MAPS
+# PLOT MAPS
 ################################################################################
 
 # extract the smooth GAM surfaces representing history
@@ -441,39 +350,41 @@ dev.off()
 
 
 ################################################################################
-# 7. FIT THE MODELS IN STAN, using 'brms' function 'brm'
+# FIT THE MODELS IN STAN, using 'brms' function 'brm'
 ################################################################################
 
 # Beware, this will take several hours to run.
-# YOU CAN SKIP THIS AND LAOD THE FITTED MODELS IN STEP 8!!!
+# YOU CAN SKIP THIS AND LAOD THE FITTED MODELS IN THE NEXT STEP (DEFAULT BEHAVIOR)
 
-brm.SMOOTH <- brm(SMOOTH.formula, family="negbinomial", data=DAT,
-                  cores=3,
-                  seed=12355,
-                  chains=3, iter=3000, warmup=1000, thin=10)
+fit.brm = TRUE # Should we skip this step? TRUE/FALSE
+if(fit.brm){
+  brm.SMOOTH <- brm(SMOOTH.formula, family="negbinomial", data=DAT,
+                    cores=3,
+                    seed=12355,
+                    chains=3, iter=3000, warmup=1000, thin=10)
+  
+  save(brm.SMOOTH , file="../Models/subset_brms_SMOOTH.RData")
+  
+  brm.REALM <- brm(REALM.formula, family="negbinomial", data=DAT,
+                   cores=3,
+                   seed=12355,
+                   chains=3, iter=3000, warmup=1000, thin=10)
+  
+  save(brm.REALM, file="../Models/subset_brms_REALM.RData")
+}
 
-save(brm.SMOOTH , file="../STAN_models/subset_brms_SMOOTH.RData")
 
-brm.REALM <- brm(REALM.formula, family="negbinomial", data=DAT,
-                 cores=3,
-                 seed=12355,
-                 chains=3, iter=3000, warmup=1000, thin=10)
+################################################################################
+# LOAD THE FITTED STAN OBJECTS
+################################################################################
 
-save(brm.REALM, file="../STAN_models/subset_brms_REALM.RData")
+load("../Models/subset_brms_SMOOTH.RData")
+load("../Models/subset_brms_REALM.RData")
 
 
 
 ################################################################################
-# 8. LOAD THE FITTED STAN OBJECTS
-################################################################################
-
-load("../STAN_models/subset_brms_SMOOTH.RData")
-load("../STAN_models/subset_brms_REALM.RData")
-
-
-
-################################################################################
-# 9. DISSECTING THE STAN MODEL RESULTS
+# DISSECTING THE STAN MODEL RESULTS
 ################################################################################
 
 # are the predictions from the brms and mgcv models the same?
@@ -492,22 +403,58 @@ pars.SMOOTH <- rownames(data.frame(summary(brm.SMOOTH$fit)[1]))[1:51]
 
 # traceplots - this indicate if the convergence is good (which it is)
 
-png("../Figures/Subset_data_sensitivity_analysis/subset_traceplot_REALM.png", width = 2000, height=2000, res=150)
 rstan::traceplot(brm.REALM$fit, pars=pars.REALM)
-dev.off()
-
-png("../Figures/Subset_data_sensitivity_analysis/subset_traceplot_SMOOTH.png", width = 2000, height=2000, res=150)
 rstan::traceplot(brm.SMOOTH$fit, pars=pars.SMOOTH)
-dev.off()
+
 
 # caterpillar plots
-
-png("../Figures/caterpillar_REALM.png", width = 2000, height=2000, res=150)
 rstan::plot(brm.REALM$fit, pars=pars.REALM)
-dev.off()
+
 
 # this is how to get the data out:
 standata(brm.REALM)
+
+
+# ------------------------------------------------------------------------------
+# OBSERVED VS PREDICTED PLOTS
+
+# Observed vs predicted values with the full Bayesian uncertainty
+
+pred.REALM.brm <- predict(brm.REALM, type="response", 
+                          probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
+pred.REALM.brm <- data.frame(pred.REALM.brm, 
+                             S = DAT$S, 
+                             grain = DAT$DAT_TYPE,
+                             model = "Model REALM")
+
+pred.SMOOTH.brm <- predict(brm.SMOOTH, type="response", 
+                           probs = c(0.025, 0.25, 0.5, 0.75, 0.975))
+pred.SMOOTH.brm <- data.frame(pred.SMOOTH.brm,  
+                              S = DAT$S, 
+                              grain = DAT$DAT_TYPE,
+                              model = "Model SMOOTH")
+
+pred.brm <- rbind(pred.REALM.brm, pred.SMOOTH.brm)
+
+
+# observed vs predicted plots
+obs.pred.brm <- ggplot(pred.brm, aes(x = S, y = Q50)) +
+  geom_linerange(aes(ymin = Q2.5, ymax = Q97.5, colour = grain), alpha = 0.2) +
+  geom_linerange(aes(ymin = Q25, ymax = Q75, colour = grain), size=1, alpha = 0.4) +
+  geom_point(aes(colour=grain), shape = 1) +
+  xlab("Observed S") + 
+  ylab("Predicted S") +
+  geom_abline(intercept = 0, slope = 1, colour="black") + theme_bw() +
+  scale_x_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) + 
+  scale_y_continuous(trans = "log10", breaks = c(1, 10, 100, 1000, 10000)) +
+  facet_grid(.~model) +
+  labs(colour = "grain") +
+  guides(colour = guide_legend(override.aes = list(size=4, shape=19), title="grain"))
+
+obs.pred.brm
+
+
+
 
 # ------------------------------------------------------------------------------
 # brm.SMOOTH results
@@ -604,7 +551,7 @@ draw.all <- function(par.names, vars, brm.fit, probs=c(0.025, 0.25, 0.5,0.75, 0.
 }
 
 ################################################################################
-# 10. SUMMARIZE THE REALM PREDICTIONS
+# SUMMARIZE THE REALM PREDICTIONS
 ################################################################################
 
 
@@ -658,7 +605,7 @@ lay.mat <- matrix(c(1, 1, 2,
                     3, 3, 3), 2, 3, byrow = TRUE)
 
 png("../Figures/Subset_data_sensitivity_analysis/subset_historical_effects_curves.png", width=3500, height=2200, res=350)
-grid.arrange(realm.plot + ggtitle("A") , 
+grid.arrange(realm.plot + ggtitle("a") , 
              p.hist.single, 
              p.hist.multi, 
              #p.hist.linear,
@@ -671,7 +618,7 @@ dev.off()
 
 
 ################################################################################
-# 11. TRIPHASIC SAR CURVE FROM THE SMOOTH PREDICTIONS
+# TRIPHASIC SAR CURVE FROM THE SMOOTH PREDICTIONS
 ################################################################################
 
 prd.area.SMOOTH <- draw.all(par.names = area.parnames.SMOOTH, 
@@ -697,7 +644,7 @@ dev.off()
 
 
 ################################################################################
-# 12. GRAIN-DEPENDENT ENVIRONMENTAL PREDICTORS
+# GRAIN-DEPENDENT ENVIRONMENTAL PREDICTORS
 ################################################################################
 
 data.frame(all.varnames.REALM)
@@ -835,22 +782,6 @@ coef.plot
 
 png("../Figures/Subset_data_sensitivity_analysis/subset_envir_effects.png", width=3000, height=800, res=250)
 coef.plot
-dev.off()
-
-
-################################################################################
-# 13. PAIRPLOTS SHOWING COLLINEARITY BETWEEN THE PREDICTORS
-################################################################################
-
-
-for.pairs <- dplyr::select(DAT, Tree_dens, min_DBH, GPP, ANN_T, ISO_T, 
-                           MIN_P, P_SEAS, ALT_DIF, ISLAND, REALM, DAT_TYPE)
-for.pairs$ISLAND <- as.factor(for.pairs$ISLAND)
-p <- ggpairs(for.pairs, aes(colour=DAT_TYPE)) + theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-png("../Figures/Subset_data_sensitivity_analysis/subset_pairplot.png", width=1500, height=1700, res=100)
-p
 dev.off()
 
 
