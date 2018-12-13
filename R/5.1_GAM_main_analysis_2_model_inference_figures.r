@@ -182,8 +182,8 @@ prd.brm.REALM <- all.vars.REALM %*% all.pars.REALM
 res.brm.REALM <- prd.brm.REALM - log(DAT$S)
 
 prd.history.REALM <- draw.all(par.names = hist.parnames.REALM, 
-                        vars = hist.vars.REALM, 
-                        brm.fit = brm.REALM)
+                              vars = hist.vars.REALM, 
+                              brm.fit = brm.REALM)
 
 resid.REALM <- prd.history.REALM[,'50%'] + res.brm.REALM
   
@@ -402,6 +402,10 @@ scale.coefs$variable <- factor(scale.coefs$variable,
                                         "Annual T", "Isothermality", 
                                         "Tree density", "Minimum DBH") )
 
+# remove minDBH (on request of one of the referees)
+scale.coefs <- scale.coefs[scale.coefs$variable != "Minimum DBH", ]
+
+
 # ------------------------------------------------------------------------------
 # plot the coefficients
 
@@ -420,7 +424,7 @@ coef.plot <- ggplot(scale.coefs, aes(x=exp(A*A.sd + A.mean), y=X50.)) +
              ylab("Environment effect") +
              scale_colour_brewer(palette = "Set1") +
              scale_fill_brewer(palette = "Set1") +
-  scale_x_continuous(trans = "log10",
+             scale_x_continuous(trans = "log10",
                      minor_breaks = NULL,
                      breaks = c(0.001, 1, 1000, 1000000),
                      labels = c(expression(10^-3), "1", expression(10^3), expression(10^6))) +
@@ -429,12 +433,12 @@ coef.plot <- ggplot(scale.coefs, aes(x=exp(A*A.sd + A.mean), y=X50.)) +
 coef.plot
 
 # save to a file
-png("../Figures/environment_effects.png", width=2200, height=600, res=200)
+png("../Figures/environment_effects.png", width=2200, height=500, res=200)
 coef.plot
 dev.off()
 
 # save to a file
-pdf("../Figures/environment_effects.pdf", width=11, height=3)
+pdf("../Figures/environment_effects.pdf", width=11, height=2.5)
 coef.plot
 dev.off()
 

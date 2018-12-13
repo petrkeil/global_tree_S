@@ -197,14 +197,14 @@ plot.gr.diff <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=std.diff)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral") +
+  scale_fill_viridis(option = "magma") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(paste((q[97.5] - q[2.5]) / q[50])), title="k") +
+  labs(subtitle = expression(paste((q[97.5] - q[2.5]) / q[50], ", hexagons")), title="k") +
     theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
   
-plot.gr.diff
+#plot.gr.diff
 
 
 plot.pl.diff <- ggplot(MAINL, aes(long, lat, group=group)) +
@@ -214,14 +214,14 @@ plot.pl.diff <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=std.diff))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral") +
+  scale_colour_viridis(option = "magma") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(paste((q[97.5] - q[2.5]) / q[50])), title="l") +
+  labs(subtitle = expression(paste((q[97.5] - q[2.5]) / q[50], ", plots")), title="l") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 
-plot.pl.diff
+#plot.pl.diff
 
 # ------------------------------------------------------------------------------
 
@@ -235,15 +235,15 @@ plot.gr.high <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=Q97.5)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral", 
+  scale_fill_viridis(option = "magma", 
                        limits=c(1,max(grid5.mlf$Q97.5)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(q[97.5]), title="a") +
+  labs(subtitle = expression(paste(q[97.5], ", hexagons")), title="a") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
-plot.gr.high
+#plot.gr.high
 
 # predicted S in hexagons
 plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
@@ -254,15 +254,15 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=Q50)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral",
+  scale_fill_viridis(option = "magma",
                        limits=c(1,max(grid5.mlf$Q97.5)),
                        trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(q[50]), title="c") +
+  labs(subtitle = expression(paste(q[50], ", hexagons")), title="c") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
-plot.gr.S
+#plot.gr.S
 
 plot.gr.low <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
@@ -272,13 +272,13 @@ plot.gr.low <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=Q2.5)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral", 
-                       limits=c(1,max(grid5.mlf$Q97.5)),
-                       trans="log10") +
+  scale_fill_viridis(option = "magma", 
+                     limits=c(1,max(grid5.mlf$Q97.5)),
+                     trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(q[2.5]), title="e") +
+  labs(subtitle = expression(paste(q[2.5], ", hexagons")), title="e") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 #plot.gr.low
 
@@ -293,14 +293,14 @@ plot.pl.high <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=Q97.5))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral", 
+  scale_colour_viridis(option = "magma", 
                          name=expression(S[plot]),
                          limits=c(1,max(plot.preds.ml$Q97.5)),
                          trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(q[97.5]), title="b") +
+  labs(subtitle = expression(paste(q[97.5], ", plots")), title="b") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 
 #plot.pl.high
@@ -312,14 +312,14 @@ plot.pl.S <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=Q50))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral", 
+  scale_colour_viridis(option = "magma", 
                          name=expression(S[plot]),
                          limits=c(1,max(plot.preds.ml$Q97.5)),
                          trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(q[50]), title="d") +
+  labs(subtitle = expression(paste(q[50], ", plots")), title="d") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 
 #plot.pl.S 
@@ -331,14 +331,14 @@ plot.pl.low <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=Q2.5))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral", 
+  scale_colour_viridis(option = "magma", 
                          name=expression(S[plot]),
                          limits=c(1,max(plot.preds.ml$Q97.5)),
                          trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(q[2.5]), title="f") +
+  labs(subtitle = expression(paste(q[2.5], ", plots")), title="f") +
   theme_minimal() + blank.theme + theme(plot.title = element_text(face=quote(bold)))
 
 #plot.pl.low
@@ -356,7 +356,7 @@ rank.gr.lin <- ggplot(data = grid.rank, aes(x = order(Q50), y = Q50)) +
                  #size = 1, 
                  colour="darkgrey") +
   geom_point(size = 0.5) + theme_bw() +
-  xlab("Rank") + ylab("Predicted S")  + ggtitle("g") + 
+  xlab("Rank") + ylab("Predicted S in hexagons")  + ggtitle("g") + 
   theme(plot.title = element_text(face=quote(bold)))
 rank.gr.lin
 
@@ -371,7 +371,7 @@ rank.gr.log <- ggplot(data = grid.rank, aes(x = order(Q50), y = Q50)) +
                scale_y_continuous(trans = "log10", 
                                   labels = c(1,10,100,1000, 10000),
                                   breaks = c(1,10,100,1000, 10000)) +
-               xlab("Rank") + ylab("Predicted S") + ggtitle("h") +
+               xlab("Rank") + ylab("Predicted S in hexagons") + ggtitle("h") +
                geom_point(size = 0.5) + theme_bw() + 
                theme(plot.title = element_text(face=quote(bold)))
 rank.gr.log
@@ -388,7 +388,7 @@ rank.pl.lin <- ggplot(data = plot.rank, aes(x = order(Q50), y = Q50)) +
                  #size = 1, 
                  colour="darkgrey") +
   geom_point(size = 0.5) + theme_bw() +
-  xlab("Rank") + ylab("Predicted S") + ggtitle("i") + 
+  xlab("Rank") + ylab("Predicted S in plots") + ggtitle("i") + 
   theme(plot.title = element_text(face=quote(bold)))
 rank.pl.lin
 
@@ -402,7 +402,7 @@ rank.pl.log <- ggplot(data = plot.rank, aes(x = order(Q50), y = Q50)) +
                scale_y_continuous(trans = "log10", 
                                  labels = c(1,10,100,1000, 10000),
                                   breaks = c(1,10,100,1000, 10000)) +
-               xlab("Rank") + ylab("Predicted S") +
+               xlab("Rank") + ylab("Predicted S in plots") +
                geom_point(size = 0.5) + theme_bw() + ggtitle("j") + 
   theme(plot.title = element_text(face=quote(bold)))
 rank.pl.log

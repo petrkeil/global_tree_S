@@ -304,7 +304,7 @@ g.cntr <- ggplot(C.fort, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
                colour="darkgrey", size=0.2) +
   geom_polygon(aes(fill=smooth.country), colour="black", size=.2) + 
-  scale_fill_distiller(palette = "Spectral", 
+  scale_fill_viridis(option = "viridis", 
                        limits=c(-1, 0.8),
                        name="Region\neffect") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
@@ -318,7 +318,7 @@ g.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
                colour="darkgrey", size=0.2) +
   geom_polygon(fill="white", colour="black", size=.2) + 
   geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL, colour=smooth.plot)) +
-  scale_colour_distiller(palette = "Spectral", 
+  scale_colour_viridis(option = "viridis", 
                          limits=c(-1, 0.8),
                          name="Region\neffect") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
@@ -338,7 +338,7 @@ s.pred.cntr <- ggplot(C.fort, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
                colour="darkgrey", size=0.2) +
   geom_polygon(aes(fill=S.pred), colour="black", size=.2) + 
-  scale_fill_distiller(palette = "Spectral", name="Predicted S", 
+  scale_fill_viridis(option = "magma", name="Predicted S", 
                        trans="log10") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
   ggtitle("Predicted richness at country grain (model SMOOTH)") + theme_minimal() +
@@ -349,7 +349,7 @@ s.pred.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
                colour="darkgrey", size=0.2) +
   geom_polygon(fill="white", colour="black", size=.2) + 
   geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL, colour=S.pred)) +
-  scale_colour_distiller(palette = "Spectral", name="Predicted S", 
+  scale_colour_viridis(option = "magma", name="Predicted S", 
                          trans="log10") +
   scale_x_continuous(limits = c(-13000000, 16000000)) +
   ggtitle("Predicted richness at plot grain (model SMOOTH)") + theme_minimal() +
@@ -367,7 +367,7 @@ s.cntr <- ggplot(C.fort, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
                colour="darkgrey", size=0.2) +
   geom_polygon(aes(fill=S), colour="black", size=.2) + 
-  scale_fill_distiller(palette = "Spectral", name="S", 
+  scale_fill_viridis(option = "magma", name="S", 
                        trans="log10", limits=c(1,10000)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
@@ -382,7 +382,7 @@ s.plot <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL, colour=S), size=1) +
   #geom_point(data=PRED.PLOTS, aes(x=X, y=Y, group=NULL), size=1, colour="black", 
   #           shape =1 , size=.2) +
-  scale_colour_distiller(palette = "Spectral", name="S", 
+  scale_colour_viridis(option = "magma", name="S", 
                          trans="log10", limits=c(1,10000)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +

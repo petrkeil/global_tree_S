@@ -1,7 +1,7 @@
 ################################################################################
 # Author: Petr Keil
 # Email: pkeil@seznam.cz
-# Date: April 26 2018
+# Date: Dec 13 2018
 ################################################################################
 
 # Description: Here is where model SMOOTH is used to generate predictions to the
@@ -195,7 +195,9 @@ blank.theme <- theme(axis.line=element_blank(),axis.text.x=element_blank(),
                      panel.grid.minor=element_blank(),plot.background=element_blank())
 
 
-  
+S.option = "magma"
+R.option = "viridis"
+
 # predicted S in hexagons
 plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(data=LINES,  aes(long, lat, group=group), 
@@ -205,7 +207,7 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=S)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral", 
+  scale_fill_viridis(option = S.option, 
                        name=expression(S[hex]), 
                        #limits=c(1,5000),
                        trans="log10") +
@@ -215,7 +217,8 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   #ggtitle("A") +  
   labs(subtitle = expression(hat(S)[hex] ~ "- predicted richness in 209,903" ~ km^2 ~ "hexagons")) +
   theme_minimal() + blank.theme
-plot.gr.S
+#plot.gr.S
+
 
 # predicted S in plots
 plot.pl.S <- ggplot(MAINL, aes(long, lat, group=group)) +
@@ -225,7 +228,7 @@ plot.pl.S <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=S))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral", 
+  scale_colour_viridis(option = S.option, 
                          name=expression(S[plot]),
                          #limits=c(1,5000),
                          trans="log10") +
@@ -245,7 +248,7 @@ plot.beta.S <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=beta))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral", 
+  scale_colour_viridis(option = S.option, 
                          name=expression(beta),
                          trans="log10") +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
@@ -265,7 +268,7 @@ plot.gr.smth <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=smooth.country)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral", 
+  scale_fill_viridis(option = R.option, 
                        name="Region effect",
                        limits=c(-2, 2)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
@@ -284,15 +287,15 @@ plot.pl.smth <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=smooth.plot))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral", 
-                         limits=c(-2, 2),
-                         name="Region effect") +
+  scale_colour_viridis(option = R.option, 
+                       limits=c(-2, 2),
+                       name= R.option) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
   xlab("") + ylab("") +
-  labs(subtitle = expression(s[1](Lat, Lon) ~ "- smooth region effects in 1 ha plots)")) +
+  labs(subtitle = expression(s[1](Lat, Lon) ~ "- smooth region effects in 1 ha plots")) +
   theme_minimal() + blank.theme 
-plot.pl.smth
+#plot.pl.smth
 
 # predicted ratios of region effects between local and hexagon grains
 plot.beta.smth <- ggplot(MAINL, aes(long, lat, group=group)) +
@@ -302,7 +305,7 @@ plot.beta.smth <- ggplot(MAINL, aes(long, lat, group=group)) +
   geom_point(data=plot.preds.ml, size=0.01,
              aes(x=X, y=Y, group=NULL, colour=reg.beta))  +
   geom_polygon(colour="black", fill=NA, size=.2) + 
-  scale_colour_distiller(palette = "Spectral", 
+  scale_colour_viridis(option = R.option, 
                          name=expression("Region" ~ beta)) +
   scale_x_continuous(limits = c(-12000000, 16000000)) +
   scale_y_continuous(limits = c(-6.4e+06, 8.8e+06)) +
@@ -310,7 +313,7 @@ plot.beta.smth <- ggplot(MAINL, aes(long, lat, group=group)) +
   #ggtitle("F") +  
   labs(subtitle = expression(Delta ~ "=" ~ e^s[2](Lat, Lon) / e^s[1](Lat, Lon) )) +
   theme_minimal() + blank.theme
-plot.beta.smth
+#plot.beta.smth
 
 # ------------------------------------------------------------------------------
 
@@ -325,6 +328,15 @@ tiff("../Figures/SMOOTH_prediction_grids.tif", width=4000, height=3400, res=350,
             nrow=3, ncol=2,
             labels = c("a", "d", "b", "e", "c", "f"), vjust = 1.1, hjust = -0.1)
 dev.off()
+
+#pdf("../Figures/SMOOTH_prediction_grids.pdf", width=10, height=8.5)
+#plot_grid(plot.gr.S, plot.gr.smth,
+#          plot.pl.S, plot.pl.smth, 
+#          plot.beta.S, plot.beta.smth,
+#          nrow=3, ncol=2,
+#          labels = c("a", "d", "b", "e", "c", "f"), vjust = 1.1, hjust = -0.1)
+#dev.off()
+
 
 
 ################################################################################

@@ -52,7 +52,8 @@ library(colorRamps)
 library(GGally)
 library(ggthemes)
 library(rasterVis)
-
+library(viridis)
+library(latex2exp)
 
 # ------------------------------------------------------------------------------
 # PROJECTIONS for GIS operations
