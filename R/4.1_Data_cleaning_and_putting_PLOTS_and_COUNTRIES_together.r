@@ -16,6 +16,19 @@ source("0_libraries_functions_settings.r")
 PLOTS <- read.csv("../Data/PLOTS/PLOTS_with_environment.csv")
 CNTRS <- readOGR(dsn = "../Data/COUNTRIES", layer = "COUNTRIES_with_environment")
 
+#####
+# Source table for the countries
+sources.cntr <- data.frame(Dataset = c("Brazil_states", 
+                                       "GlobalTreeDatabase",
+                                       "US_states",
+                                       "China_regions"),
+                           Source = c("http://floradobrasil.jbrj.gov.br",
+                                      "http://www.bgci.org/global_tree_search.php?sec=globaltreesearch",
+                                      "http://bonap.net/tdc",
+                                      "Qian, H. (2013) Environmental determinants of woody plant diversity at a regional scale in China. PLoS ONE: 8, e75832."))
+
+CNTRS@data <- left_join(CNTRS@data, sources.cntr, by = "Dataset")
+
 
 ################################################################################
 # PROCESSING PLOTS
@@ -57,27 +70,30 @@ names(PLOTS.subset)[names(PLOTS.subset) == "ISLAND_ST"] <- "ISL_ST" # some corre
 
 # 3. SELECT ONLY THE VARIABLES RELEVANT FOR THE ANALYSES
 
-
+PLOTS <- data.frame(PLOTS, DAT_TYPE="Plot")
 PLOTS <- dplyr::select(PLOTS, Dataset, Loc_ID = Plot_ID, Lat, Lon, 
                        Area_km = Area_ha,
                        S, N, min_DBH_cm, GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, 
                        P_SEAS, 
                        ALT_DIF, ELONG, ISL_LS, ISL_ST, ISL_DIS, 
-                       HABITAT, REALM, REALM_PK = REALM_PK)
+                       HABITAT, REALM, REALM_PK = REALM_PK, 
+                       DAT_TYPE, 
+                       Source = Ref_long)
 PLOTS$Area_km <- PLOTS$Area_km/100
-PLOTS <- data.frame(PLOTS, DAT_TYPE="Plot")
 PLOTS <- na.omit(PLOTS)
 
 # ---------------
 
+PLOTS.subset <- data.frame(PLOTS.subset, DAT_TYPE="Plot")
 PLOTS.subset <- dplyr::select(PLOTS.subset, Dataset, Loc_ID = Plot_ID, Lat, Lon, 
                        Area_km = Area_ha,
                        S, N, min_DBH_cm, GPP, ET, ANN_T, WARM_T, ISO_T, MIN_P, 
                        P_SEAS, 
                        ALT_DIF, ELONG, ISL_LS, ISL_ST, ISL_DIS, 
-                       HABITAT, REALM, REALM_PK = REALM_PK)
+                       HABITAT, REALM, REALM_PK = REALM_PK,
+                       DAT_TYPE,
+                       Source = Ref_long)
 PLOTS.subset$Area_km <- PLOTS.subset$Area_km/100
-PLOTS.subset <- data.frame( PLOTS.subset, DAT_TYPE="Plot")
 PLOTS.subset <- na.omit(PLOTS.subset)
 
 
@@ -85,13 +101,13 @@ PLOTS.subset <- na.omit(PLOTS.subset)
 # PROCESSING COUNTRIES
 ################################################################################
 
-
-CNTRS.dat <- dplyr::select(CNTRS@data, Aggregated, Dataset, Loc_ID = NAME, Lat, Lon, Area_km,
-                            S, N = TREE_DENS, min_DBH_cm, GPP, ET, ANN_T, WARM_T, 
-                            ISO_T, MIN_P, P_SEAS, 
+CNTRS.dat <- data.frame(CNTRS@data, DAT_TYPE="Country")
+CNTRS.dat <- dplyr::select(CNTRS.dat, Aggregated, Dataset, Loc_ID = NAME, Lat, Lon, Area_km,
+                           S, N = TREE_DENS, min_DBH_cm, GPP, ET, ANN_T, WARM_T, 
+                           ISO_T, MIN_P, P_SEAS, 
                            ALT_DIF, ELONG, ISL_LS, ISL_ST, ISL_DIS, 
-                           HABITAT, REALM, REALM_PK = REALM_3)
-CNTRS.dat <- data.frame(CNTRS.dat, DAT_TYPE="Country")
+                           HABITAT, REALM, REALM_PK = REALM_3, DAT_TYPE,
+                           Source = Source)
 
 
 # remove Antarctica and Oceania
