@@ -8,7 +8,7 @@
 
 This repository contains all data and code for the global analysis of drivers of tree species richness at multiple spatial resolutions, which is due to appear in *Nature Ecology and Evolution*.
 
-The main dataset that was used to fit the models reported in the paper is the Data/Main_dataset_full_detail.csv
+The main dataset that was used to fit the models reported in the paper is the [Data/Main_dataset_full_detail.csv](https://github.com/petrkeil/global_tree_S/blob/master/Data/Main_dataset_full_detail.csv).
 
 
 ## License
