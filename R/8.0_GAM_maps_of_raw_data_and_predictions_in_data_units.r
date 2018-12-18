@@ -155,6 +155,10 @@ tiff("../Figures/observed_richness_maps.tif", width=2000, height=2100, res=350,
 grid.arrange(s.cntr, s.plot, ncol=1, nrow=2)
 dev.off()
 
+pdf("../Figures/observed_richness_maps.pdf", width=6, height=6.1)
+grid.arrange(s.cntr, s.plot, ncol=1, nrow=2)
+dev.off()
+
 
 # ------------------------------------------------------------------------------
 # PREDICTED RICHNESS MAPS

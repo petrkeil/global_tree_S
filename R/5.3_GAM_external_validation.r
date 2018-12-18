@@ -41,7 +41,7 @@ scal.tab <- scal.tab[scal.tab$var %in% c("ET","WARM_T") == FALSE,]
 # scale the grid data in the same way as the original data
 data.frame(names(grid5.dat))
 
-grid5.dat[,1:10] <- scale(grid5.dat[,1:10],
+grid5.dat[,1:9] <- scale(grid5.dat[,1:9],
                          center = scal.tab$centr, 
                          scale = scal.tab$scale)
 
@@ -49,8 +49,11 @@ grid5.dat[,1:10] <- scale(grid5.dat[,1:10],
 # Read the external data from the 3 databases
 
 RB <- read.csv("../Data/VALIDATION/RAINBIO_Africa_SN_grid5.csv")
+RB$id <- as.factor(RB$id)
 EU <- read.csv("../Data/VALIDATION/EUForest_SN_grid5.csv")
+EU$id <- as.factor(EU$id)
 BI <- read.csv("../Data/VALIDATION/BIEN_woody_grid5.csv")
+BI$id <- as.factor(BI$id)
 
 ################################################################################
 ### Make the predictions
@@ -92,15 +95,15 @@ BIEN <- data.frame(BIEN, Dataset = "New World - BIEN")
 all.external <- rbind(RAINBIO, EUForest, BIEN)
 
 # create the predicted vs observed plots
-p.valid <- ggplot(data = all.external, aes(x=S.y, y = X50.ile)) + 
-            geom_linerange(aes(x=S.y, ymin = X2.5.ile, ymax = X97.5.ile, colour = Dataset), 
+p.valid <- ggplot(data = all.external, aes(x=S.y, y = Q50)) + 
+            geom_linerange(aes(x=S.y, ymin = Q2.5, ymax = Q97.5, colour = Dataset), 
                            alpha = 0.5) +
-            geom_linerange(aes(x=S.y, ymin = X25.ile, ymax = X75.ile, colour = Dataset), 
+            geom_linerange(aes(x=S.y, ymin = Q25, ymax = Q75, colour = Dataset), 
                            alpha = 0.5, size=1.5) +
             geom_point(aes(colour=Dataset)) +
-              scale_y_log10(limits = c(10, max(all.external$X97.5.ile)), 
+              scale_y_log10(limits = c(10, max(all.external$Q97.5)), 
                             breaks = c(10,100, 1000, 10000))  +  
-              scale_x_log10(limits = c(10, max(all.external$X97.5.ile)),
+              scale_x_log10(limits = c(10, max(all.external$Q97.5)),
                             breaks = c(10,100, 1000, 10000)) +
             geom_abline(intercept = 0, slope=1) +
              # xlab("Observed S") + ylab("Predicted S") +
@@ -162,7 +165,7 @@ plot.gr.S <- ggplot(grid5.mlf, aes(long, lat, group=group)) +
   geom_polygon(aes(fill=S.y)) + 
   geom_polygon(data=MAINL, aes(long, lat, group=group), 
                fill=NA, colour="black", size=.2) +
-  scale_fill_distiller(palette = "Spectral", 
+  scale_fill_viridis(option = "magma", 
                        name=expression(S), 
                        #limits=c(1,5000),
                        trans="log10") +

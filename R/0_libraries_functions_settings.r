@@ -54,6 +54,7 @@ library(ggthemes)
 library(rasterVis)
 library(viridis)
 library(latex2exp)
+library(cowplot)
 
 # ------------------------------------------------------------------------------
 # PROJECTIONS for GIS operations

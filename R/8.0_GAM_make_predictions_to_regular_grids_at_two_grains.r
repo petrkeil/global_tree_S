@@ -319,7 +319,7 @@ plot.beta.smth <- ggplot(MAINL, aes(long, lat, group=group)) +
 
 # write to file
 
-library(cowplot)
+
 tiff("../Figures/SMOOTH_prediction_grids.tif", width=4000, height=3400, res=350,
      compression = "lzw")
   plot_grid(plot.gr.S, plot.gr.smth,
@@ -329,13 +329,13 @@ tiff("../Figures/SMOOTH_prediction_grids.tif", width=4000, height=3400, res=350,
             labels = c("a", "d", "b", "e", "c", "f"), vjust = 1.1, hjust = -0.1)
 dev.off()
 
-#pdf("../Figures/SMOOTH_prediction_grids.pdf", width=10, height=8.5)
-#plot_grid(plot.gr.S, plot.gr.smth,
-#          plot.pl.S, plot.pl.smth, 
-#          plot.beta.S, plot.beta.smth,
-#          nrow=3, ncol=2,
-#          labels = c("a", "d", "b", "e", "c", "f"), vjust = 1.1, hjust = -0.1)
-#dev.off()
+cairo_pdf("../Figures/SMOOTH_prediction_grids.pdf", width=10, height=8.5)
+plot_grid(plot.gr.S, plot.gr.smth,
+          plot.pl.S, plot.pl.smth, 
+          plot.beta.S, plot.beta.smth,
+          nrow=3, ncol=2,
+          labels = c("a", "d", "b", "e", "c", "f"), vjust = 1.1, hjust = -0.1)
+dev.off()
 
 
 
