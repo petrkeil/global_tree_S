@@ -741,7 +741,7 @@
         <dcterms:isPartOf>
             <bib:Journal>
                 <prism:volume>7</prism:volume>
-                <dc:title>Sci. Rep.</dc:title>
+                <dc:title>Scientific Reports</dc:title>
                 <dcterms:alternative>Sci. Rep.</dcterms:alternative>
                 <dc:identifier>DOI 10.1038/srep39102</dc:identifier>
             </bib:Journal>
@@ -920,6 +920,9 @@
         </bib:authors>
         <link:link rdf:resource="#item_1297"/>
         <dc:subject>
+           <z:AutomaticTag><rdf:value>succession</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
             <z:AutomaticTag>
                <rdf:value>African semi-deciduous rain forest</rdf:value>
             </z:AutomaticTag>
@@ -942,9 +945,6 @@
         </dc:subject>
         <dc:subject>
            <z:AutomaticTag><rdf:value>monodominant</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>succession</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
            <z:AutomaticTag><rdf:value>tolerance</rdf:value></z:AutomaticTag>
@@ -1097,12 +1097,12 @@
         <link:link rdf:resource="#item_1299"/>
         <link:link rdf:resource="#item_1300"/>
         <dc:subject>
+           <z:AutomaticTag><rdf:value>Diversity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
             <z:AutomaticTag>
                <rdf:value>Altitudinal gradient</rdf:value>
             </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Diversity</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
@@ -1276,6 +1276,9 @@
         <link:link rdf:resource="#item_1302"/>
         <link:link rdf:resource="#item_1303"/>
         <dc:subject>
+           <z:AutomaticTag><rdf:value>India</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
             <z:AutomaticTag>
                <rdf:value>biodiversity sampling plots</rdf:value>
             </z:AutomaticTag>
@@ -1284,9 +1287,6 @@
             <z:AutomaticTag>
                <rdf:value>central Western Ghats</rdf:value>
             </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>India</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
            <z:AutomaticTag><rdf:value>Karnataka</rdf:value></z:AutomaticTag>
@@ -1626,6 +1626,11 @@
         <link:link rdf:resource="#item_1312"/>
         <dc:subject>
             <z:AutomaticTag>
+               <rdf:value>ecological drift</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
                <rdf:value>community composition</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
@@ -1635,11 +1640,6 @@
         <dc:subject>
             <z:AutomaticTag>
                 <rdf:value>determinants of plant community diversity and structure</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>ecological drift</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
@@ -1760,7 +1760,7 @@
         <bib:pages>281-321</bib:pages>
         <dc:date>January 1, 2000</dc:date>
         <z:libraryCatalog>ResearchGate</z:libraryCatalog>
-        <dc:title>Composition, structure and ecological aspects of mesic old growth carpathian deciduous forests of Slovakia, southern Poland and the western Ukraine</dc:title>
+        <dc:title>Composition, structure and ecological aspects of mesic old growth Carpathian deciduous forests of Slovakia, southern Poland and the western Ukraine</dc:title>
     </bib:Article>
     <z:Attachment rdf:about="#item_1314">
         <z:itemType>attachment</z:itemType>
@@ -2184,7 +2184,7 @@
             </dcterms:URI>
         </dc:identifier>
         <bib:pages>267-279</bib:pages>
-        <dc:date>1986/09/01</dc:date>
+        <dc:date>1986</dc:date>
         <dcterms:dateSubmitted>2017-12-08 09:09:25</dcterms:dateSubmitted>
         <z:libraryCatalog>link.springer.com</z:libraryCatalog>
         <z:language>en</z:language>
@@ -2295,6 +2295,7 @@
             </dcterms:URI>
         </dc:identifier>
         <bib:pages>29-43</bib:pages>
+        <dc:date>2004</dc:date>
         <dcterms:dateSubmitted>2017-12-08 09:06:21</dcterms:dateSubmitted>
         <z:libraryCatalog>www.biodiversity-science.net</z:libraryCatalog>
         <z:language>cn</z:language>
@@ -2410,13 +2411,9 @@
             </rdf:Seq>
         </bib:authors>
         <dc:subject>
-           <z:AutomaticTag><rdf:value>Dry woodlands</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Ethiopia</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Productivity</rdf:value></z:AutomaticTag>
+            <z:AutomaticTag>
+               <rdf:value>Species richness</rdf:value>
+            </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
@@ -2424,9 +2421,13 @@
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>Species richness</rdf:value>
-            </z:AutomaticTag>
+           <z:AutomaticTag><rdf:value>Productivity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Dry woodlands</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ethiopia</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:identifier>
             <dcterms:URI>
@@ -2632,6 +2633,14 @@
         <link:link rdf:resource="#item_1328"/>
         <dc:subject>
             <z:AutomaticTag>
+               <rdf:value>Species diversity</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Stand structure</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
                <rdf:value>Edaphic condition</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
@@ -2639,14 +2648,6 @@
             <z:AutomaticTag>
                <rdf:value>Elevational zone</rdf:value>
             </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>Species diversity</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Stand structure</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
            <z:AutomaticTag><rdf:value>Topography</rdf:value></z:AutomaticTag>
@@ -3048,7 +3049,7 @@
         <dcterms:isPartOf>
             <bib:Journal>
                 <prism:volume>53</prism:volume>
-                <dc:title>The Journal of Ecology</dc:title>
+                <dc:title>Journal of Ecology</dc:title>
                 <dcterms:alternative>J. Ecol.</dcterms:alternative>
                 <dc:identifier>DOI 10.2307/2257627</dc:identifier>
             </bib:Journal>
@@ -3058,7 +3059,7 @@
                 <rdf:li>
                     <foaf:Person>
                         <foaf:surname>Beals</foaf:surname>
-                        <foaf:givenname>W. E.</foaf:givenname>
+                        <foaf:givenname>E. W.</foaf:givenname>
                     </foaf:Person>
                 </rdf:li>
             </rdf:Seq>
@@ -3331,6 +3332,11 @@
         <link:link rdf:resource="#item_1548"/>
         <link:link rdf:resource="#item_1547"/>
         <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>latitudinal gradient</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
            <z:AutomaticTag><rdf:value>climate effect</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
@@ -3341,11 +3347,6 @@
         <dc:subject>
             <z:AutomaticTag>
                <rdf:value>global biodiversity</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>latitudinal gradient</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
