@@ -10,7 +10,6 @@ This repository contains all data and code for the global analysis of drivers of
 
 The main dataset that was used to fit the models reported in the paper is the [Data/Main_dataset_full_detail.csv](https://github.com/petrkeil/global_tree_S/blob/master/Data/Main_dataset_full_detail.csv).
 
-
 ## License
 
 This work is licensed under a [Creative Commons Attribution 4.0 Generic License](https://creativecommons.org/licenses/by/4).

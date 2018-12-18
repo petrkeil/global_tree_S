@@ -37,7 +37,7 @@ REALM.formula <- S ~ REALM + poly(Area_km,3):REALM +
   MIN_P + MIN_P:Area_km +  
   P_SEAS + P_SEAS:Area_km + 
   ALT_DIF + ALT_DIF:Area_km +
-  ISL_LS + ISL_LS:Area_km +
+  ISLAND + ISLAND:Area_km #+
   # ISL_ST + ISL_ST:Area_km #+
   # ISL_DIS + ISL_DIS:Area_km #+
   # ELONG + ELONG:Area_km
@@ -53,7 +53,7 @@ SMOOTH.formula <- S ~ s(Lat, Lon, by=DAT_TYPE, bs="sos", k=14) +
   MIN_P + MIN_P:Area_km +  
   P_SEAS + P_SEAS:Area_km + 
   ALT_DIF + ALT_DIF:Area_km +
-  ISL_LS + ISL_LS:Area_km #+
+  ISLAND + ISLAND:Area_km #+
   # ISL_ST + ISL_ST:Area_km# +
   # ISL_DIS + ISL_DIS:Area_km# +
   # ELONG + ELONG:Area_km

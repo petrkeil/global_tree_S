@@ -1,0 +1,26 @@
+Field name,Units (if applicable),Description
+Dataset ,,Unique code for the reference from which a datum comes from
+Loc_ID,,Unique location id
+Lat,Decimal degrees,"Latitude. If country, then this is for its centroid."
+Lon,Decimal degrees,"Longitude. If country, then this if for its centroid."
+Area_km,km^2,Area of a plot or a country
+S,count,Number of species
+N,count,Number of individuals
+min_DBH_cm,cm,Minimum DBH used for a plot. For countries this is set to 0.
+GPP,gC/m2/yr,Mean Gross Primary Productivity (MOD17 from www.ntsg.umt.edu)
+ET,Multiply by 0.1 to get the ET in mm/year,Evapotranspiration (MOD16 from www.ntsg.umt.edu)
+ANN_T,Deg. C,Mean annual temperature (WorldClim BIO1)
+WARM_T,Deg. C,Mean temperature in the driest quarter of the year (WorldClim BIO10)
+ISO_T,ratio of temperature ranges,Isothermality (WorldClim BIO3)
+MIN_P,mm,Precipitation in the driest quarter of the year (WorldClim BIO17)
+P_SEAS,coefficient of variation,Precipitation seasonality (WorldClim BIO15)
+ALT_DIF,m,Absolute difference between highest and lowest elevation
+ELONG,ratio,Elongation – ratio of the longest dimension to the dimension perpendicular to the longest one.
+ISL_LS,,Binary factor identifying mainland vs all other islands
+ISL_ST,,"Factor identifying true islands, shelf islands, and mainland"
+ISL_DIS,,"The same as ISL_ST, but also introduces a “disjunct” category for countries composed of both true islands and mainland"
+HABITAT,,WWF_MHTNAM classification of Olson et al. (2001) Bioscience 51: 933-938.
+REALM,,WWF_REALM2 classification of  Olson et al. (2001) Bioscience 51: 933-938.
+REALM_PK,,Classification of realms as used in Keil & Chase Nat. Ecol. Evol.
+DAT_TYPE,,Factor identifying if the datum is at a plot or country grain.
+Source,,Source from which the datum was taken. Should be credited in case the data are re-used.
